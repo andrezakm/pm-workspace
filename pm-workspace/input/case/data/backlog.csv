@@ -1,0 +1,13 @@
+id,feature,beschreibung,kundenwunsche,strategischer_fit,aufwand,status
+1,Onboarding-Agent,"KI-Agent der neue Mitarbeiter durch den ersten Monat führt — Fragen beantworten, Dokumente verlinken, Checklisten abarbeiten",7,hoch,L,backlog
+2,Status-Report-Generator,Automatisches Zusammenstellen von Wochenberichten aus Jira + Slack + Kalender,5,hoch,M,geplant
+3,Meeting-Zusammenfassung,"Transkript eines Meetings einlesen und strukturierte Zusammenfassung mit Entscheidungen und Aufgaben ausgeben",6,hoch,S,backlog
+4,Wissensbase-Builder,"Projekterfahrungen automatisch in durchsuchbare Wissensdatenbank überführen beim Projektabschluss",4,hoch,XL,idee
+5,Backlog-Priorisierer,"Feature-Backlog nach strategischem Fit und Kundenwunsch gewichten und visualisieren",3,mittel,M,idee
+6,Retro-Moderator,"Retro-Daten aus mehreren Projekten aggregieren und Muster identifizieren",3,mittel,M,idee
+7,Angebots-Generator,"Aus Kundenbriefing und Projektvorlagen automatisch ein erstes Angebot erzeugen",4,hoch,L,backlog
+8,Interview-Auswertung,"Kundeninterview-Transkripte einlesen und nach Schmerzen / Wünschen / Kontext clustern",5,hoch,S,geplant
+9,Projekt-Dashboard,"Live-Übersicht über alle aktiven Projekte — Status, Risiken, nächste Schritte",2,mittel,L,idee
+10,Skill-Matching,"Verfügbare Consultant-Skills mit Projektanforderungen automatisch abgleichen",3,niedrig,XL,idee
+11,Kundenfeedback-Sammler,"Strukturiertes Feedback am Projektende automatisch einholen und auswerten",4,mittel,M,backlog
+12,Dokumentations-Agent,"Code-Kommentare und Confluence-Seiten automatisch aktuell halten",2,niedrig,L,idee

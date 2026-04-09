@@ -15,4 +15,16 @@ neben Kundenprojekten.
 
 ## Dein Kontext
 
-<!-- Ersetze das Beispiel mit deiner eigenen Roadmap -->
+**Committed (Q2 2026):**
+- 3 laufende Kundenprojekte laufen durch — volle Engineer-Kapazität gebunden
+
+**Geplant:**
+- Pattern-Team (Lisa + Tom) evaluiert Onboarding-Agent als erstes skalierbares Produkt
+- HR-Recruiting-Anfragen werden gesammelt und ausgewertet
+
+**Offen / Kandidaten:**
+- Meeting-Summarizer als zweiter Produkt-Kandidat
+- HR-Automation (Recruiting oder HR-Ops) als dritter Kandidat
+
+**Constraint:** Kein dediziertes Produktteam. Alles was gebaut wird, muss neben
+laufenden Kundenprojekten mit Lisa + Tom machbar sein.

@@ -14,4 +14,15 @@ erstes Produkt.
 
 ## Dein Kontext
 
-<!-- Ersetze das Beispiel mit deinen eigenen Learnings -->
+**Was funktioniert:**
+- Onboarding-Agents: niedriger Integrationsaufwand (meistens nur Intranet + HR-System)
+- Meeting-Summarizer: solide wenn Transkriptions-Qualität gut ist
+
+**Was schwierig ist:**
+- Meeting-Summarizer variieren stark je nach Transkriptions-Qualität beim Kunden
+- Tier-1-Support: Multi-Channel (Telefon + Chat + Mail) ist zu komplex für ein erstes Produkt
+- Enterprise Sales: Vertrauensaufbau dauert zu lang, GDPR-Friction ist realer Blocker
+
+**Muster die sich wiederholen:**
+- Kunden haben meistens schon Workarounds (CSV-Exports, manuelle Prozesse) — Agents müssen dort ansetzen wo die Leute bereits arbeiten
+- Die einfachsten Workflows haben den höchsten Adoptions-Erfolg

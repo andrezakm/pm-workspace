@@ -15,4 +15,20 @@ die den Cashflow sichern. 2 von 14 Leuten suchen nach Mustern
 
 ## Dein Kontext
 
-<!-- Ersetze das Beispiel mit deiner eigenen Strategie -->
+**Horizon 1 (jetzt):** Custom AI Agent Beratung auf T&M-Basis —
+Umsatz generieren und echte Muster sammeln. Wir bauen was zahlt und zur Vision passt.
+
+**Horizon 2 (Ziel):** Produktunternehmen — AI Agents die nicht custom
+für einen Kunden gebaut werden, sondern ohne Custom-Development bei vielen
+Unternehmen ausrollbar sind.
+
+**Die Brücke:** Pattern Recognition über Kundenprojekte — Agent-Typen die
+branchenübergreifend wiederkehren, werden zu skalierbaren Produkten.
+Aktueller Fokus: HR-Sektor könnte das erste Cross-Industry-Produktmuster liefern.
+
+**Constraints:**
+- Keine externe Finanzierung — keine Investorenrunden, keine Bankkredite, keine Verwässerung
+- Revenue ist Runway — jedes Engagement muss positiven Cashflow generieren
+- Vision-Filter — nur Arbeit innerhalb von "AI Agents die Mitarbeiterfähigkeiten ersetzen"
+- DACH-first — Deutschland primär, keine internationale GTM-Strategie aktuell
+- Kein reines Enterprise Sales — zu langsame Trust-Zyklen, GDPR-Friction ist bekannter Blocker

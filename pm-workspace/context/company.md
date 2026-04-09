@@ -13,4 +13,22 @@ Kunden gebaut — keine Produkte von der Stange.
 
 ## Dein Kontext
 
-<!-- Ersetze das Beispiel mit deinem eigenen Unternehmen -->
+**NeoEmployee**
+
+Wir bauen custom AI Agents die Mitarbeiterfähigkeiten in Unternehmen ersetzen.
+Wir arbeiten als Beratung: wir gehen in Unternehmen, analysieren Prozesse,
+identifizieren Engpässe und Skill-Gaps, und bauen maßgeschneiderte AI Agents.
+
+**Geschäftsmodell:** Time & Material. Vollständig custom pro Kunde.
+Noch keine Produkte — nur Custom-Software.
+
+**Team:** 14 Leute. Vollständig bootstrapped — keine Investoren, keine Bankkredite.
+Revenue ist Runway. 2 von 14 Leuten arbeiten im Hintergrund an Pattern Recognition
+über alle Kundenprojekte hinweg.
+
+**Tech Stack:** N8n (Agent-Orchestrierung), Claude API, OpenAI API, Python.
+Custom Runtimes je nach Projekt.
+
+**Stärken:** Operative AI-Agent-Implementierung in echten Unternehmen.
+Tiefes Verständnis wo Automatisierung in der Praxis scheitert.
+Wachsende Inbound-Pipeline — zunehmend Anfragen aus HR-Abteilungen.

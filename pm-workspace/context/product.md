@@ -13,4 +13,16 @@ verschiedene LLMs je nach Kunde. Deployment: kundenspezifisch.
 
 ## Dein Kontext
 
-<!-- Ersetze das Beispiel mit deinem eigenen Produkt -->
+Kein eigenes Produkt. Portfolio aus Custom-Agents für Kunden:
+
+| Agent-Typ | Gebaut | Status |
+|-----------|--------|--------|
+| Onboarding-Bots | 4x | Bewährt, niedriger Integrationsaufwand |
+| Meeting-Summarizer | 4x | Bewährt, variiert je nach Transkriptions-Qualität |
+| Tier-1-Support-Agents | 2x angefragt | Komplex (Multi-Channel) |
+| HR-Recruiting-Agents | in Pipeline | Wachsende Inbound-Anfragen |
+
+**Stack:** Python, N8n, Claude API / OpenAI API je nach Kunde.
+Deployment: vollständig kundenspezifisch, keine eigene Infrastruktur.
+
+**Noch nicht gebaut:** Kein SaaS, kein Self-Serve, keine gemeinsame Plattform.
