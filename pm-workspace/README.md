@@ -14,41 +14,85 @@ Von rohem Feedback bis zum Dev-Handoff — in einem Repo, mit einem gemeinsamen 
 4. `context/` befüllen — dein Unternehmen, deine Strategie, dein Team
 5. Starte mit: `/system-auditor`
 
-> Prototypen starten: `.venv` aktivieren, dann `streamlit run output/prototyping/app.py`
+> Prototypen starten: `.venv` aktivieren, dann `streamlit run output/YYYY-MM-DD/prototyping/app.py`
 
-## Die 7 Bereiche
+---
 
-### Discovery
-Du hast Feedback — aus Slack, Interviews, Emails, internen Docs. Discovery strukturiert dieses Rohmaterial in thematische Cluster mit Belegen. Erst verstehen, dann bewerten.
+## Skill-Übersicht
 
-### Strategy
-Aus Clustern werden Entscheidungen. Der opportunity-scorer bewertet Muster systematisch. Der decision-brief destilliert die Empfehlung auf eine Seite. Der devils-advocate greift sie an. Der business-case-debater führt eine vollständige Analyse durch — mit Web-Research, Hypothesen und einer 5-Rollen-Debatte.
+Die Skills liegen technisch flach in `.claude/skills/` — konzeptuell sind sie in 7 Bereiche gegliedert:
 
-### Roadmap
-Erweiterungspunkt. Hier leben Skills die aus Entscheidungen eine priorisierte Roadmap machen — mit Anbindung an Tools wie Linear oder Jira.
+```
+Discovery
+├── /feedback-synthesizer   Rohes Feedback → thematische Cluster
+├── /interview-analyzer     Interviews → Einzel-Analysen + Synthese
+└── /slack-importer         Slack-Export → strukturiertes Feedback (Platzhalter)
 
-### Spec & Eval
-Die Grenze zwischen PM und Dev. Der spec-writer übersetzt einen Brief in eine Spec: Was gebaut wird, nicht Wie. Der eval-writer schreibt die Kriterien mit denen der Prototyp bewertet wird. Was hier entsteht, geht rüber.
+Strategy
+├── /opportunity-scorer     Cluster → Scorecard (Vision / Wiederholbarkeit / Baubarkeit)
+├── /decision-brief         Scorecard → 1-Pager (BUILD / SKIP / MEHR DATEN)
+├── /devils-advocate        Brief → Annahmen-Kritik + Verdikt
+└── /business-case-debater  Vollständige Analyse: Research → Debatte → Synthese
 
-### Prototyping
-Aus der Spec wird Code. Der option-stormer baut drei strukturell verschiedene Prototypen — nicht eine Lösung und dann hoffen, sondern drei Richtungen und dann entscheiden. Der eval-runner prüft den Code gegen die Eval. Fällt ein Prototyp durch die Eval, muss er nicht verworfen werden: welche Prinzipien funktionieren dennoch? Rekombination aus mehreren Optionen führt oft zu besseren Ergebnissen als eine einzelne Iteration.
+Roadmap
+└── (Erweiterungspunkt — Plugin-Kandidaten: Linear, Jira, Notion)
 
-### Handoff
-Alles was Dev braucht, gebündelt. Kein Copy-Paste — nur ein Cover-Sheet mit Verweisen, konkreten nächsten Schritten, und der expliziten Trennung was PM bereits evaluiert hat und was Dev noch prüfen soll.
+Spec & Eval
+├── /spec-writer            Brief → Spec (Was, nicht Wie)
+├── /eval-writer            Spec → 8–12 pass/fail Kriterien
+└── /build-eval             Orchestrator: Brief → Spec + Eval + Prototyp
 
-### Meta
-Das System über sich selbst. Der system-auditor prüft was ausgefüllt ist, was fehlt, und was als nächstes sinnvoll ist. Starte hier wenn du nicht weißt wo du stehst.
+Prototyping
+├── /prototype-builder      Spec → eine Streamlit-App
+├── /option-stormer         Spec → 3 strukturell verschiedene Apps + Vergleich
+└── /eval-runner            Eval + App → PASS/FAIL/UNKLAR pro Kriterium
 
-## Architektur-Entscheidung
+Handoff
+└── /handoff-packager       Alle Artefakte → Cover-Sheet für Dev
 
-Diese CLAUDE.md ist bewusst kurz gehalten.
-Details zu einzelnen Skills leben in den README.md Files der jeweiligen `skills/`-Unterordner.
-Die Skills selbst liegen in `.claude/skills/` und werden mit `/skill-name` aufgerufen.
+Meta
+└── /system-auditor         Workspace-Audit: was fehlt, was als nächstes tun
+```
 
-Claude lädt die CLAUDE.md bei jeder Session. Je größer sie ist, desto weniger Kontext
-bleibt für die eigentliche Arbeit. Folder-Indexes werden nur geladen wenn Claude navigiert.
+---
 
-Wenn du das System erweiterst: neuen Skill in `.claude/skills/[name]/SKILL.md`,
-Folder-Index updaten, fertig. Die CLAUDE.md bleibt unberührt.
+## Typischer Flow
 
-*(Claude wird versuchen, alles zentral reinzupacken. Lass es nicht.)*
+```
+input/raw_feedback/         input/interviews/
+        ↓                           ↓
+/feedback-synthesizer       /interview-analyzer
+        ↓
+/opportunity-scorer
+        ↓
+/decision-brief
+        ↓
+/devils-advocate
+        ↓
+/spec-writer [brief]
+        ↓
+/option-stormer             (oder /build-eval für alles auf einmal)
+        ↓
+/eval-runner
+        ↓
+/handoff-packager
+```
+
+Alle Outputs landen in `output/YYYY-MM-DD/` — ein Run, ein Verzeichnis.
+
+---
+
+## Prototyping-Prinzip
+
+Drei Varianten, dann entscheiden — nicht eine Lösung und hoffen. Fällt eine Variante durch die Eval, heißt das nicht verwerfen: welche Prinzipien funktionieren? Rekombination aus mehreren Optionen führt oft zu besseren Ergebnissen als Iteration auf einer.
+
+---
+
+## Architektur
+
+- Skills: `.claude/skills/[name]/SKILL.md` — aufgerufen mit `/name`
+- Kontext: `context/` — wird von jedem Skill gelesen
+- Input: `input/` — Rohdaten, Briefs, Datendateien
+- Output: `output/YYYY-MM-DD/` — ein Verzeichnis pro Run
+
+CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/README.md`.
