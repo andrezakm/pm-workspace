@@ -6,9 +6,9 @@ Aus der Spec wird Code. Aus Code wird Evidenz.
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [prototype-builder](prototype-builder/SKILL.md) | Spec → lauffähige Streamlit-App (eine Variante) |
-| [option-stormer](option-stormer/SKILL.md) | Spec → 3 strukturell verschiedene Prototypen + Vergleichstabelle |
-| [eval-runner](eval-runner/SKILL.md) | Eval + App → PASS/FAIL/UNKLAR pro Kriterium mit Begründung |
+| /prototype-builder | Spec → lauffähige Streamlit-App (eine Variante) |
+| /option-stormer | Spec → 3 strukturell verschiedene Prototypen + Vergleichstabelle |
+| /eval-runner | Eval + App → PASS/FAIL/UNKLAR pro Kriterium mit Begründung |
 
 ## Typischer Flow
 
@@ -27,12 +27,6 @@ output/spec-eval/spec.md
     → output/prototyping/eval-results.md
 ```
 
-## Der Willison-Move
-
-Der option-stormer ist der wichtigste Skill in diesem Bereich.
-Drei verschiedene Prototypen zu bauen kostet fast nichts — einen zu bauen
-und dann zu hoffen kostet viel. Drei Varianten ermöglichen echte Entscheidungen.
-
 ## Technische Constraints (alle Prototypen)
 
 - Nur `streamlit` + `pandas` — kein matplotlib, plotly, altair
@@ -42,7 +36,7 @@ und dann zu hoffen kostet viel. Drei Varianten ermöglichen echte Entscheidungen
 
 ## Output-Pfade
 
-- `output/prototyping/app.py` (prototype-builder)
-- `output/prototyping/option-a/app.py`, `option-b/`, `option-c/` (option-stormer)
+- `output/prototyping/app.py`
+- `output/prototyping/option-a/app.py`, `option-b/`, `option-c/`
 - `output/prototyping/option-comparison.md`
 - `output/prototyping/eval-results.md`

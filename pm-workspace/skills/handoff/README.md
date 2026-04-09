@@ -6,7 +6,7 @@ Alles was Dev braucht, gebündelt. Kein Copy-Paste — nur Verweise.
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [handoff-packager](handoff-packager/SKILL.md) | Spec + Eval + Prototyp + Decision Brief → Cover-Sheet mit Links und nächsten Schritten |
+| /handoff-packager | Spec + Eval + Prototyp + Decision Brief → Cover-Sheet mit Links und nächsten Schritten |
 
 ## Typischer Flow
 

@@ -6,10 +6,10 @@ Aus Mustern Entscheidungen machen. Von Clustern zur Empfehlung.
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [opportunity-scorer](opportunity-scorer/SKILL.md) | Feedback-Cluster bewerten: Vision-Fit × Wiederholbarkeit × Baubarkeit |
-| [decision-brief](decision-brief/SKILL.md) | Top-Opportunity → 1-Pager mit eindeutiger Empfehlung (BUILD/SKIP/MEHR DATEN) |
-| [devils-advocate](devils-advocate/SKILL.md) | Decision Brief angreifen: Annahmen aufdecken, Verdikt (Proceed/Pause/Kill) |
-| [business-case-debater](business-case-debater/SKILL.md) | Vollständige Business Case Analyse in 6 Phasen (Research → Debatte → Synthese) |
+| /opportunity-scorer | Feedback-Cluster bewerten: Vision-Fit × Wiederholbarkeit × Baubarkeit |
+| /decision-brief | Top-Opportunity → 1-Pager mit eindeutiger Empfehlung (BUILD/SKIP/MEHR DATEN) |
+| /devils-advocate | Decision Brief angreifen: Annahmen aufdecken, Verdikt (Proceed/Pause/Kill) |
+| /business-case-debater | Vollständige Business Case Analyse in 6 Phasen (Research → Debatte → Synthese) |
 
 ## Typischer Flow
 
@@ -28,8 +28,8 @@ output/discovery/feedback-clusters.md
 
 ## business-case-debater — Hinweis
 
-Der business-case-debater ist ein eigenständiges Subsystem mit 6 Phasen und Web-Research.
-Vor dem Start: `skills/strategy/business-case-debater/input.yaml` befüllen.
+Eigenständiges Subsystem mit 6 Phasen und Web-Research.
+Vor dem Start: `.claude/skills/business-case-debater/input.yaml` befüllen.
 Läuft interaktiv — nach jeder Phase Checkpoint.
 
 ## Output-Pfade
@@ -37,4 +37,4 @@ Läuft interaktiv — nach jeder Phase Checkpoint.
 - `output/strategy/opportunity-scorecard.md`
 - `output/strategy/decision-brief.md`
 - `output/strategy/devils-advocate.md`
-- `output/strategy/eval-run-[timestamp]/` (business-case-debater, 10+ Dateien)
+- `output/strategy/eval-run-[timestamp]/`

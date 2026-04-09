@@ -6,9 +6,9 @@ Rohdaten strukturieren. Muster sichtbar machen. Bevor du bewertest, musst du ver
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [feedback-synthesizer](feedback-synthesizer/SKILL.md) | Mehrere Feedback-Quellen → 3-6 thematische Cluster mit Direktzitaten |
-| [interview-analyzer](interview-analyzer/SKILL.md) | Interview-Transkripte → Einzel-Analyse (6 Dimensionen) + Cross-Interview-Synthese |
-| [slack-importer](slack-importer/SKILL.md) | Slack-Export → strukturiertes Feedback (Platzhalter, ans eigene Format anpassen) |
+| /feedback-synthesizer | Mehrere Feedback-Quellen → 3-6 thematische Cluster mit Direktzitaten |
+| /interview-analyzer | Interview-Transkripte → Einzel-Analyse (6 Dimensionen) + Cross-Interview-Synthese |
+| /slack-importer | Slack-Export → strukturiertes Feedback (Platzhalter, ans eigene Format anpassen) |
 
 ## Typischer Flow
 
@@ -26,11 +26,11 @@ Interviews
 
 ## Output-Pfade
 
-- `output/discovery/feedback-clusters.md` — Cluster aus dem feedback-synthesizer
-- `output/discovery/interview-synthesis.md` — Synthese aus dem interview-analyzer
-- `output/discovery/interview-individual-[nachname].md` — Einzel-Analysen pro Interview
-- `output/discovery/slack-feedback.md` — Strukturiertes Slack-Feedback
+- `output/discovery/feedback-clusters.md`
+- `output/discovery/interview-synthesis.md`
+- `output/discovery/interview-individual-[nachname].md`
+- `output/discovery/slack-feedback.md`
 
 ## Weiter mit
 
-`output/discovery/feedback-clusters.md` ist der Input für den [opportunity-scorer](../strategy/opportunity-scorer/SKILL.md).
+`output/discovery/feedback-clusters.md` ist der Input für `/opportunity-scorer`.

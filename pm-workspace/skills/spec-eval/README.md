@@ -6,9 +6,9 @@ Die Grenze zwischen PM und Dev. Was hier entsteht, geht rüber.
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [spec-writer](spec-writer/SKILL.md) | Brief → Spec: Was gebaut wird, nicht Wie |
-| [eval-writer](eval-writer/SKILL.md) | Spec → 8-12 pass/fail Kriterien für den Prototypen |
-| [build-eval](build-eval/SKILL.md) | Orchestrator: Brief → Spec + Eval + lauffähiger Prototyp in einem Lauf |
+| /spec-writer | Brief → Spec: Was gebaut wird, nicht Wie |
+| /eval-writer | Spec → 8-12 pass/fail Kriterien für den Prototypen |
+| /build-eval | Orchestrator: Brief → Spec + Eval + lauffähiger Prototyp in einem Lauf |
 
 ## Typischer Flow
 
@@ -35,8 +35,6 @@ Oder alles auf einmal:
 
 **PM liefert:** spec.md + eval.md (+ optional Prototyp-Optionen)
 **Dev ergänzt:** Implementierungsdetails, technische Eval-Punkte, Performance-Tests
-
-Die Trennung ist explizit im [handoff-packager](../handoff/handoff-packager/SKILL.md).
 
 ## Output-Pfade
 

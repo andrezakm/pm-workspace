@@ -6,7 +6,7 @@ Das System über sich selbst. Starte hier wenn du nicht weißt wo du stehst.
 
 | Skill | Beschreibung |
 |-------|-------------|
-| [system-auditor](system-auditor/SKILL.md) | Workspace-Audit: context ausgefüllt? Skills vollständig? Artefakte vorhanden? |
+| /system-auditor | Workspace-Audit: context ausgefüllt? Skills vollständig? Artefakte vorhanden? |
 
 ## Wann ausführen
 
