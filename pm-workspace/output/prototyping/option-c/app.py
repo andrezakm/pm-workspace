@@ -2,46 +2,59 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="Backlog Prioritizer", layout="wide")
+
 st.title("Was sollen wir als nächstes bauen?")
 st.caption("Kein Chart. Keine Tabelle. Nur eine Entscheidung.")
 
+# CSV laden
 csv_path = st.sidebar.text_input("CSV-Pfad", value="input/case/data/backlog.csv")
 
 try:
-    df = pd.read_csv(csv_path, encoding="utf-8")
+    df = pd.read_csv(csv_path)
 except FileNotFoundError:
     st.error(f"Datei nicht gefunden: {csv_path}")
     st.stop()
 
+# Score berechnen
 fit_map = {"hoch": 3, "mittel": 2, "niedrig": 1}
 aufwand_map = {"S": 4, "M": 3, "L": 2, "XL": 1}
+
 df["fit_num"] = df["strategischer_fit"].map(fit_map).fillna(1)
 df["aufwand_inv"] = df["aufwand"].map(aufwand_map).fillna(1)
 df["score"] = (df["kundenwunsche"] * 0.5 + df["fit_num"] * 0.3 + df["aufwand_inv"] * 0.2).round(2)
 
+# Filter Sidebar
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Filter")
-status_filter = st.sidebar.selectbox("Status", ["alle"] + sorted(df["status"].unique().tolist()))
-fit_filter = st.sidebar.selectbox("Strategischer Fit", ["alle"] + sorted(df["strategischer_fit"].unique().tolist()))
+status_optionen = ["alle"] + sorted(df["status"].unique().tolist())
+status_filter = st.sidebar.selectbox("Status", status_optionen)
+fit_optionen = ["alle"] + sorted(df["strategischer_fit"].unique().tolist())
+fit_filter = st.sidebar.selectbox("Strategischer Fit", fit_optionen)
+
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Scoring-Formel")
 st.sidebar.caption("score = (Kundenwünsche × 0.5) + (Fit × 0.3) + (1/Aufwand × 0.2)")
 st.sidebar.caption("fit: hoch=3, mittel=2, niedrig=1 | aufwand: S=4, M=3, L=2, XL=1")
 
+# Filter anwenden
 gefiltert = df.copy()
 if status_filter != "alle":
     gefiltert = gefiltert[gefiltert["status"] == status_filter]
 if fit_filter != "alle":
     gefiltert = gefiltert[gefiltert["strategischer_fit"] == fit_filter]
+
 gefiltert = gefiltert.sort_values("score", ascending=False).reset_index(drop=True)
 
 if gefiltert.empty:
     st.warning("Keine Features entsprechen den gewählten Filtern.")
     st.stop()
 
+# Top 3 als Kacheln — Entscheidungs-UI
 top3 = gefiltert.head(3)
+
 st.markdown("## Top 3 Kandidaten")
 cols = st.columns(3)
+
 rang_labels = ["#1 Empfehlung", "#2 Alternative", "#3 Reserve"]
 rang_farben = ["🟢", "🟡", "🔵"]
 
@@ -58,6 +71,7 @@ for i, (col, (_, row)) in enumerate(zip(cols, top3.iterrows())):
         c3.metric("Aufwand", row["aufwand"])
         st.markdown(f"`{row['status']}`")
 
+# Rest als kompakte Liste
 if len(gefiltert) > 3:
     st.markdown("---")
     with st.expander(f"Weitere {len(gefiltert) - 3} Features anzeigen"):
