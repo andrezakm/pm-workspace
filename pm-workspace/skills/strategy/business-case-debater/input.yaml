@@ -1,0 +1,49 @@
+# BUSINESS CASE INPUT
+# Befülle dieses File mit deinem spezifischen Business Case.
+# Der Debater funktioniert für beliebige Branchen und Fragestellungen.
+# Alternativ: Verweise company/strategy auf context/ Files:
+#   name: "siehe context/company.md"
+
+company:
+  name: "Dein Unternehmensname"
+  description: |
+    Kurze Beschreibung deines Unternehmens: Was macht ihr, wie groß seid ihr,
+    was ist euer Geschäftsmodell heute, was sind eure Kernstärken?
+    Teamgröße, Finanzierungsmodell (bootstrapped / VC / etc.), aktueller Fokus.
+  tech_stack:
+    - "Dein primäres Tool / Framework"
+    - "Weitere relevante Technologien"
+    - "Programmiersprachen / APIs"
+
+strategy:
+  direction: |
+    Wohin entwickelt sich das Unternehmen strategisch?
+    Horizon 1 (heute): Womit verdient ihr Geld?
+    Horizon 2 (Ziel): Was wollt ihr werden?
+    Die Brücke: Wie kommt ihr von H1 zu H2?
+  constraints:
+    - "Finanzierungsrestriktion (z.B. kein externes Kapital)"
+    - "Geografischer Fokus (z.B. DACH-first)"
+    - "Strategischer Filter (z.B. nur Projekte die X erfüllen)"
+    - "Weitere Randbedingungen"
+
+business_case:
+  topic: |
+    Was ist die strategische Frage, die ihr mit dieser Analyse beantworten wollt?
+    Beschreibt den Kontext: Welches Signal habt ihr im Markt gesehen?
+    Was ist die ungelöste Frage? Was müsst ihr herausfinden?
+  solution_direction: |
+    Was ist eure Arbeitshypothese zur Lösung?
+    Welche Richtung wollt ihr verfolgen — und warum?
+    Welche Varianten / Cluster habt ihr bereits identifiziert?
+    Was sind die offenen Fragen, die diese Analyse beantworten soll?
+  target_market: |
+    Wer ist euer primäres Zielkundensegment?
+    Beschreibt: Unternehmensgröße, Branche, Geografie, Rolle des Buyers.
+    Was ist eure Arbeitshypothese zum idealen ICP?
+
+run_options:
+  debate_rounds: 1        # 1 or 2
+  research_depth: "deep"  # "quick" (3 searches/agent) | "deep" (6 searches/agent)
+  language: "de"          # Research and output language
+  mode: "step"            # "step" (pause after each phase) | "auto" (fully automatic)
