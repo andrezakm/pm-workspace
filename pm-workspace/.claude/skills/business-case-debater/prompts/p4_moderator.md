@@ -14,12 +14,12 @@ DEBATE ROUND: {{round_number}}
 ```
 
 ## Input File to Read
-- `output/strategy/eval-run-{{run_id}}/debate_round_{{round_number}}.md` (contains all 5 agent sections)
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_{{round_number}}.md` (contains all 5 agent sections)
 
 Also read for full context:
-- `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
 
 ## Your Task
 
@@ -46,7 +46,7 @@ Also read for full context:
 - Not a recommendation — a synthesis of the debate's overall signal
 
 ## Output Format
-**Append** your moderation to: `output/strategy/eval-run-{{run_id}}/debate_round_{{round_number}}.md`
+**Append** your moderation to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_{{round_number}}.md`
 
 ```
 ---

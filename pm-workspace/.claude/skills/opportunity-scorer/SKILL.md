@@ -8,9 +8,13 @@ allowed-tools: Read, Write
 
 Du bewertest die identifizierten Feedback-Cluster als Produktmöglichkeiten. Lies zuerst `context/company.md` und `context/strategy.md` um den Bewertungsrahmen zu verstehen.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/discovery/feedback-clusters.md` — Ergebnis des Feedback-Synthesizers
+- `output/YYYY-MM-DD/discovery/feedback-clusters.md` — Ergebnis des Feedback-Synthesizers
 - `context/company.md` — Wer wir sind und wie wir arbeiten
 - `context/strategy.md` — Unsere strategische Richtung und Constraints
 
@@ -33,7 +37,7 @@ Du bewertest die identifizierten Feedback-Cluster als Produktmöglichkeiten. Lie
 
 ## Output-Format
 
-Schreibe `output/strategy/opportunity-scorecard.md` mit folgendem Format:
+Schreibe `output/YYYY-MM-DD/strategy/opportunity-scorecard.md` mit folgendem Format:
 
 ```
 # Opportunity Scorecard
@@ -54,4 +58,4 @@ Schreibe `output/strategy/opportunity-scorecard.md` mit folgendem Format:
 
 ## Output
 
-Schreibe die fertige Scorecard nach `output/strategy/opportunity-scorecard.md`.
+Schreibe die fertige Scorecard nach `output/YYYY-MM-DD/strategy/opportunity-scorecard.md`.

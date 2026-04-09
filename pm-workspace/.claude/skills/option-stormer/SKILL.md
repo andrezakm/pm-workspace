@@ -8,14 +8,18 @@ allowed-tools: Read, Write, Glob
 
 Du nimmst eine Spec und baust 3 verschiedene Prototypen — nicht einen und dann iterieren, sondern drei parallel, dann vergleichen.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/spec-eval/spec.md`
+- `output/YYYY-MM-DD/spec-eval/spec.md`
 - Datendateien die in der Spec referenziert werden (via Glob finden)
 
 ## Vorgehen
 
-1. **Spec lesen** — Lies output/spec-eval/spec.md vollständig. Identifiziere alle UI-Komponenten und Constraints.
+1. **Spec lesen** — Lies `output/YYYY-MM-DD/spec-eval/spec.md` vollständig. Identifiziere alle UI-Komponenten und Constraints.
 2. **Kern-UI-Entscheidung identifizieren** — Was ist die zentrale Design-Entscheidung? Layout, Interaktionsmodell, oder Informationshierarchie?
 3. **3 Varianten bauen** — Schreibe drei vollständige Streamlit-Apps:
    - **Variante A** — Die naheliegendste Lösung
@@ -35,10 +39,10 @@ Du nimmst eine Spec und baust 3 verschiedene Prototypen — nicht einen und dann
 
 ## Output
 
-- `output/prototyping/option-a/app.py`
-- `output/prototyping/option-b/app.py`
-- `output/prototyping/option-c/app.py`
-- `output/prototyping/option-comparison.md`
+- `output/YYYY-MM-DD/prototyping/option-a/app.py`
+- `output/YYYY-MM-DD/prototyping/option-b/app.py`
+- `output/YYYY-MM-DD/prototyping/option-c/app.py`
+- `output/YYYY-MM-DD/prototyping/option-comparison.md`
 
 ## Format: option-comparison.md
 

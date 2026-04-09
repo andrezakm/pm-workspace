@@ -16,7 +16,7 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-ALL files in `output/strategy/eval-run-{{run_id}}/`:
+ALL files in `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/`:
 - research_market.md, research_technology.md, research_problems.md
 - analysis_status_quo.md
 - hypothesis_solution.md, hypothesis_technology.md, hypothesis_business_model.md
@@ -49,7 +49,7 @@ ALL files in `output/strategy/eval-run-{{run_id}}/`:
 - Does it lead to the company the founders want to build?
 
 ## Output Format
-**Append** your section to: `output/strategy/eval-run-{{run_id}}/debate_round_1.md`
+**Append** your section to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md`
 
 ```
 ## STRATEGIST

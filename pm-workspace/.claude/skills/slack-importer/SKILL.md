@@ -30,9 +30,13 @@ Der Pfad zum Slack-Export-Ordner wird beim Aufruf übergeben. Verwende Glob um a
 
 5. **Schreiben** — Schreibe alle strukturierten Einträge in das Output-Format.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Output-Format
 
-Schreibe `output/discovery/slack-feedback.md` im cluster-ready Format:
+Schreibe `output/YYYY-MM-DD/discovery/slack-feedback.md` im cluster-ready Format:
 
 ```
 # Slack Feedback
@@ -58,7 +62,7 @@ Schreibe `output/discovery/slack-feedback.md` im cluster-ready Format:
 
 ## Output
 
-Schreibe die strukturierten Einträge nach `output/discovery/slack-feedback.md`.
+Schreibe die strukturierten Einträge nach `output/YYYY-MM-DD/discovery/slack-feedback.md`.
 
 ## Qualitätskriterien
 

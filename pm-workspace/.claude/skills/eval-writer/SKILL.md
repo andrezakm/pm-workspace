@@ -10,9 +10,13 @@ allowed-tools: Read, Write
 
 Eine Eval ist eine Tabelle mit 8–12 pass/fail-Kriterien. Sie prüft ob der Prototyp die Spec erfüllt. Die Ergebnis-Spalte bleibt leer — die füllt der Mensch (oder der eval-runner).
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/spec-eval/spec.md`
+- `output/YYYY-MM-DD/spec-eval/spec.md`
 
 ## Format
 
@@ -39,4 +43,4 @@ PASS = Bedingung ist erfüllt. FAIL = nicht erfüllt. UNKLAR = nicht aus Code od
 
 ## Output
 
-`output/spec-eval/eval.md`
+`output/YYYY-MM-DD/spec-eval/eval.md`

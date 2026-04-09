@@ -6,24 +6,28 @@ allowed-tools: Read, Write, Glob
 
 Führe die folgenden drei Schritte sequenziell aus. Schreibe alle drei Dateien wirklich — kein Code nur als Text.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Vorbereitung
 
 Der Pfad zum Brief wird beim Aufruf übergeben.
 Prüfe mit Glob welche Datendateien im Brief referenziert werden. Lies den Brief und identifiziere die Datendateien. Wenn keine Datendateien gefunden: stoppe und melde den Fehler.
 
-## Schritt 1: Spec → `output/spec-eval/spec.md`
+## Schritt 1: Spec → `output/YYYY-MM-DD/spec-eval/spec.md`
 
-Prüfe mit Glob ob `output/spec-eval/spec.md` bereits existiert.
+Prüfe mit Glob ob `output/YYYY-MM-DD/spec-eval/spec.md` bereits existiert.
 - **Existiert:** Lies die Datei und melde "spec.md gefunden — wird verwendet." Kein Neuschreiben.
-- **Existiert nicht:** Lies Brief und alle Datendateien. Schreibe `output/spec-eval/spec.md` mit: **Zweck**, **Nutzer**, **Daten-Input**, **UI-Komponenten** (nummeriert), **Constraints**. Was, nicht Wie. Keine Implementierungsdetails.
+- **Existiert nicht:** Lies Brief und alle Datendateien. Schreibe `output/YYYY-MM-DD/spec-eval/spec.md` mit: **Zweck**, **Nutzer**, **Daten-Input**, **UI-Komponenten** (nummeriert), **Constraints**. Was, nicht Wie. Keine Implementierungsdetails.
 
 Verifiziere mit Glob, bevor du weitermachst.
 
-## Schritt 2: Eval → `output/spec-eval/eval.md`
+## Schritt 2: Eval → `output/YYYY-MM-DD/spec-eval/eval.md`
 
-Prüfe mit Glob ob `output/spec-eval/eval.md` bereits existiert.
+Prüfe mit Glob ob `output/YYYY-MM-DD/spec-eval/eval.md` bereits existiert.
 - **Existiert:** Lies die Datei und melde "eval.md gefunden — wird verwendet." Kein Neuschreiben.
-- **Existiert nicht:** Lies `output/spec-eval/spec.md`. Schreibe `output/spec-eval/eval.md` als Tabelle mit 8–12 Kriterien:
+- **Existiert nicht:** Lies `output/YYYY-MM-DD/spec-eval/spec.md`. Schreibe `output/YYYY-MM-DD/spec-eval/eval.md` als Tabelle mit 8–12 Kriterien:
 
 | ID | Kriterium | Wie testen | Pass-Bedingung | Ergebnis |
 |----|-----------|------------|----------------|----------|
@@ -32,9 +36,9 @@ Jedes Kriterium eindeutig pass/fail entscheidbar. Ergebnis-Spalte wird mit FAIL 
 
 Verifiziere mit Glob, bevor du weitermachst.
 
-## Schritt 3: Prototyp → `output/prototyping/app.py`
+## Schritt 3: Prototyp → `output/YYYY-MM-DD/prototyping/app.py`
 
-Lies `output/spec-eval/spec.md`. Schreibe vollständige, lauffähige Streamlit-App:
+Lies `output/YYYY-MM-DD/spec-eval/spec.md`. Schreibe vollständige, lauffähige Streamlit-App:
 - Echte Daten aus Datendatei, kein Hardcoding
 - Alle UI-Komponenten der Spec implementiert
 - Sonderfälle behandelt
@@ -47,6 +51,6 @@ Verifiziere mit Glob.
 ## Abschluss
 
 Alle drei Dateien vorhanden? Dann:
-- Pfade ausgeben: `output/spec-eval/spec.md`, `output/spec-eval/eval.md`, `output/prototyping/app.py`
-- `streamlit run output/prototyping/app.py`
+- Pfade ausgeben: `output/YYYY-MM-DD/spec-eval/spec.md`, `output/YYYY-MM-DD/spec-eval/eval.md`, `output/YYYY-MM-DD/prototyping/app.py`
+- `streamlit run output/YYYY-MM-DD/prototyping/app.py`
 - "Jetzt bist du dran — öffne die eval.md und gehe jeden Punkt manuell durch, bevor du den eval-runner startest."

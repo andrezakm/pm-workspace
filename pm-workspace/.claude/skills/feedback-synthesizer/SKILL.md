@@ -26,9 +26,13 @@ Der Pfad zum Feedback-Ordner wird beim Aufruf übergeben. Verwende Glob um alle 
 - Keine Interpretation die nicht direkt aus dem Datenmaterial ableitbar ist
 - Widersprüche explizit dokumentieren, nicht glätten
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Output-Format
 
-Schreibe `output/discovery/feedback-clusters.md` mit folgendem Format:
+Schreibe `output/YYYY-MM-DD/discovery/feedback-clusters.md` mit folgendem Format:
 
 ```
 # Feedback-Cluster
@@ -49,4 +53,4 @@ Schreibe `output/discovery/feedback-clusters.md` mit folgendem Format:
 
 ## Output
 
-Schreibe die fertige Analyse nach `output/discovery/feedback-clusters.md`.
+Schreibe die fertige Analyse nach `output/YYYY-MM-DD/discovery/feedback-clusters.md`.

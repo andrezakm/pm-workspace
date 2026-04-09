@@ -55,7 +55,7 @@ Research the following with dedicated searches for each:
 - Mark each finding: [Source: platform/url/date]
 
 ## Output Format
-Write your findings in **{{language}}** to the file: `output/strategy/eval-run-{{run_id}}/research_problems.md`
+Write your findings in **{{language}}** to the file: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md`
 
 Structure:
 ```

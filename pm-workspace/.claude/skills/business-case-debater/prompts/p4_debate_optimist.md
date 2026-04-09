@@ -13,7 +13,7 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-ALL files in `output/strategy/eval-run-{{run_id}}/`:
+ALL files in `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/`:
 - research_market.md
 - research_technology.md
 - research_problems.md
@@ -45,7 +45,7 @@ Read all seven documents. Then make the strongest case for this solution directi
 - What is your strongest counter-argument to each?
 
 ## Output Format
-Write in **{{language}}** to: `output/strategy/eval-run-{{run_id}}/debate_round_1.md`
+Write in **{{language}}** to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md`
 
 **Append** your section to the file (do not overwrite — other agents write to the same file):
 

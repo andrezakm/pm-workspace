@@ -45,6 +45,10 @@ Welche Datei(en) werden gelesen, in welchem Format?
 - Constraints sind explizit aufgelistet
 - Kein Spekulieren über Dinge die nicht im Brief stehen
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Output
 
-`output/spec-eval/spec.md`
+`output/YYYY-MM-DD/spec-eval/spec.md`

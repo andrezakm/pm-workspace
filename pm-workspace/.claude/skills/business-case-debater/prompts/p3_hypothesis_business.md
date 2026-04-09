@@ -15,10 +15,10 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-- `output/strategy/eval-run-{{run_id}}/research_market.md`
-- `output/strategy/eval-run-{{run_id}}/research_problems.md`
-- `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_market.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
 
 ## Your Task
 
@@ -57,7 +57,7 @@ OUTPUT LANGUAGE: {{language}}
 - What assumptions in the business model are most fragile?
 
 ## Output Format
-Write in **{{language}}** to: `output/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
+Write in **{{language}}** to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
 
 Structure:
 ```

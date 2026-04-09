@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Glob
 
 # Skill: System Auditor
 
-Du prüfst den aktuellen Zustand des pm-workspace. Welche Context-Files sind ausgefüllt, welche leer? Welche Skills existieren? Welche Output-Ordner haben Artefakte?
+Du prüfst den aktuellen Zustand des pm-workspace. Welche Context-Files sind ausgefüllt, welche leer? Welche Skills existieren? Welche Run-Verzeichnisse gibt es und was liegt darin?
 
 ## Input
 
@@ -16,7 +16,7 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 
 1. **context/ prüfen** — Lies jede Datei in context/. Prüfe ob der Abschnitt `## Dein Kontext` nur den HTML-Kommentar enthält (leer) oder echten Inhalt hat.
 2. **skills/ prüfen** — Verwende Glob um alle SKILL.md Files zu finden. Prüfe ob sie existieren und nicht leer sind.
-3. **output/ prüfen** — Verwende Glob um alle Dateien in output/ zu finden (außer .gitkeep). Gruppiere nach Unterordner.
+3. **output/ prüfen** — Verwende Glob um alle Verzeichnisse direkt unter output/ zu finden. Jedes Verzeichnis nach dem Muster `YYYY-MM-DD` ist ein Run. Liste für jeden Run die vorhandenen Artefakte auf. Ignoriere .gitkeep-Dateien.
 4. **CLAUDE.md prüfen** — Lies CLAUDE.md. Prüfe ob sie unter 500 Tokens ist und die wichtigsten Sektionen enthält.
 5. **Bericht schreiben** — Schreibe output/meta/system-audit.md.
 
@@ -24,6 +24,7 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 
 - Ampelsystem konsequent anwenden: ✅ ausgefüllt / ⚠️ nur Template / ❌ fehlt
 - Heuristik für "ausgefüllt": `## Dein Kontext` Sektion hat mehr als nur den HTML-Kommentar `<!-- ... -->`
+- Run-Verzeichnisse nach Datum sortieren (neueste zuerst)
 - Empfehlung am Ende ist priorisiert: was ist der sinnvollste nächste Schritt?
 
 ## Output: output/meta/system-audit.md
@@ -64,17 +65,14 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 | handoff | handoff-packager | ✅ / ❌ |
 | meta | system-auditor | ✅ |
 
-## Output-Artefakte
+## Runs
 
-| Ordner | Artefakte |
-|--------|-----------|
-| output/discovery/ | [Liste der Dateien oder "leer"] |
-| output/strategy/ | ... |
-| output/roadmap/ | ... |
-| output/spec-eval/ | ... |
-| output/prototyping/ | ... |
-| output/handoff/ | ... |
-| output/meta/ | ... |
+| Run | Artefakte |
+|-----|-----------|
+| output/YYYY-MM-DD/ | [Liste der Dateien gruppiert nach Unterordner, oder "leer"] |
+| output/YYYY-MM-DD/ | ... |
+
+*(Kein Run-Verzeichnis vorhanden → noch kein Skill gelaufen)*
 
 ## CLAUDE.md
 

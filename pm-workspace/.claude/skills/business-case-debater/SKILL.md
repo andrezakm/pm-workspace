@@ -38,7 +38,8 @@ Read `skills/strategy/business-case-debater/input.yaml`. Check:
 If any required field is empty: stop and ask the user to complete it.
 
 ### Step 2: Create run directory
-Create: `output/strategy/eval-run-{{YYYYMMDD_HHMMSS}}/`
+Create: `output/YYYY-MM-DD/strategy/eval-run-{{HHMMSS}}/`
+wobei YYYY-MM-DD das heutige Datum ist und HHMMSS die aktuelle Uhrzeit.
 This is the `{{run_id}}` used in all prompts.
 
 ### Step 3: Prepare context variables
@@ -80,9 +81,9 @@ Run all phases sequentially without pausing. Output a one-line status after each
 
 | Agent | Prompt file | Output file |
 |---|---|---|
-| research-market | `skills/strategy/business-case-debater/prompts/p1_research_market.md` | `output/strategy/eval-run-{{run_id}}/research_market.md` |
-| research-technology | `skills/strategy/business-case-debater/prompts/p1_research_technology.md` | `output/strategy/eval-run-{{run_id}}/research_technology.md` |
-| research-problems | `skills/strategy/business-case-debater/prompts/p1_research_problems.md` | `output/strategy/eval-run-{{run_id}}/research_problems.md` |
+| research-market | `skills/strategy/business-case-debater/prompts/p1_research_market.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_market.md` |
+| research-technology | `skills/strategy/business-case-debater/prompts/p1_research_technology.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_technology.md` |
+| research-problems | `skills/strategy/business-case-debater/prompts/p1_research_problems.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md` |
 
 Before launching: replace all `{{variable}}` placeholders in each prompt with the actual values from input.yaml.
 
@@ -102,7 +103,7 @@ Each agent:
 **Launch 1 agent:**
 - Prompt: `skills/strategy/business-case-debater/prompts/p2_analysis.md`
 - Input: reads the 3 research files from Phase 1
-- Output: `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- Output: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
 
 **Phase 2 complete when:** `analysis_status_quo.md` exists and contains all 5 required sections including "Key Tensions & Open Questions".
 
@@ -116,9 +117,9 @@ Each agent:
 
 | Agent | Prompt file | Output file |
 |---|---|---|
-| hypothesis-solution | `skills/strategy/business-case-debater/prompts/p3_hypothesis_solution.md` | `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md` |
-| hypothesis-technology | `skills/strategy/business-case-debater/prompts/p3_hypothesis_technology.md` | `output/strategy/eval-run-{{run_id}}/hypothesis_technology.md` |
-| hypothesis-business | `skills/strategy/business-case-debater/prompts/p3_hypothesis_business.md` | `output/strategy/eval-run-{{run_id}}/hypothesis_business_model.md` |
+| hypothesis-solution | `skills/strategy/business-case-debater/prompts/p3_hypothesis_solution.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md` |
+| hypothesis-technology | `skills/strategy/business-case-debater/prompts/p3_hypothesis_technology.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_technology.md` |
+| hypothesis-business | `skills/strategy/business-case-debater/prompts/p3_hypothesis_business.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_business_model.md` |
 
 Each agent reads Phase 1 outputs + `analysis_status_quo.md`.
 
@@ -136,11 +137,11 @@ Each agent reads Phase 1 outputs + `analysis_status_quo.md`.
 
 | Agent | Prompt file | Appends to |
 |---|---|---|
-| debate-optimist | `skills/strategy/business-case-debater/prompts/p4_debate_optimist.md` | `output/strategy/eval-run-{{run_id}}/debate_round_1.md` |
-| debate-critic | `skills/strategy/business-case-debater/prompts/p4_debate_critic.md` | `output/strategy/eval-run-{{run_id}}/debate_round_1.md` |
-| debate-technician | `skills/strategy/business-case-debater/prompts/p4_debate_technician.md` | `output/strategy/eval-run-{{run_id}}/debate_round_1.md` |
-| debate-market | `skills/strategy/business-case-debater/prompts/p4_debate_market.md` | `output/strategy/eval-run-{{run_id}}/debate_round_1.md` |
-| debate-strategist | `skills/strategy/business-case-debater/prompts/p4_debate_strategist.md` | `output/strategy/eval-run-{{run_id}}/debate_round_1.md` |
+| debate-optimist | `skills/strategy/business-case-debater/prompts/p4_debate_optimist.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md` |
+| debate-critic | `skills/strategy/business-case-debater/prompts/p4_debate_critic.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md` |
+| debate-technician | `skills/strategy/business-case-debater/prompts/p4_debate_technician.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md` |
+| debate-market | `skills/strategy/business-case-debater/prompts/p4_debate_market.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md` |
+| debate-strategist | `skills/strategy/business-case-debater/prompts/p4_debate_strategist.md` | `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md` |
 
 > Note: All 5 agents append to the same file. Each writes a clearly marked section (## OPTIMIST, ## CRITIC, etc.).
 > Initialize the file with a header before launching agents:
@@ -173,7 +174,7 @@ The Round 2 persona prompts should instruct agents to focus on the specific tens
 **Launch 1 agent:**
 - Prompt: `skills/strategy/business-case-debater/prompts/p5_synthesis.md`
 - Reads: all output files from all previous phases
-- Output: `output/strategy/eval-run-{{run_id}}/final_report.md`
+- Output: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/final_report.md`
 
 **Phase 5 complete when:** `final_report.md` exists and contains the Assessment Scorecard and a clear Recommendation.
 
@@ -184,7 +185,7 @@ The Round 2 persona prompts should instruct agents to focus on the specific tens
 ## PHASE 6 — Flow Documentation
 
 After all phases complete:
-- Update `output/strategy/` with the actual Mermaid diagram reflecting this run
+- Update `output/YYYY-MM-DD/strategy/` with the actual Mermaid diagram reflecting this run
 - Output a brief run summary to the user:
   - Files created
   - Overall recommendation (from final_report.md)
@@ -209,7 +210,7 @@ If research returns no useful results:
 ## File Checklist (successful run)
 
 ```
-output/strategy/eval-run-{{run_id}}/
+output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/
   ✓ research_market.md
   ✓ research_technology.md
   ✓ research_problems.md

@@ -8,9 +8,13 @@ allowed-tools: Read, Write
 
 Du schreibst einen 1-Pager der aus den Scores eine klare Produktempfehlung ableitet.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/strategy/opportunity-scorecard.md` — Scorecard der Opportunities
+- `output/YYYY-MM-DD/strategy/opportunity-scorecard.md` — Scorecard der Opportunities
 - `context/strategy.md` — Strategische Richtung und Constraints
 
 ## Vorgehen
@@ -30,7 +34,7 @@ Du schreibst einen 1-Pager der aus den Scores eine klare Produktempfehlung ablei
 
 ## Output-Format
 
-Schreibe `output/strategy/decision-brief.md` mit folgendem Format:
+Schreibe `output/YYYY-MM-DD/strategy/decision-brief.md` mit folgendem Format:
 
 ```
 # Decision Brief: [Opportunity-Name]
@@ -57,4 +61,4 @@ Schreibe `output/strategy/decision-brief.md` mit folgendem Format:
 
 ## Output
 
-Schreibe den fertigen Brief nach `output/strategy/decision-brief.md`.
+Schreibe den fertigen Brief nach `output/YYYY-MM-DD/strategy/decision-brief.md`.

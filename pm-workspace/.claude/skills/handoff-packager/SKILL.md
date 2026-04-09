@@ -8,15 +8,19 @@ allowed-tools: Read, Write, Glob
 
 Du bündelst alles was Dev braucht um zu starten. Kein neues Artefakt — du sammelst bestehende und schreibst ein Cover-Sheet.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
 Verwende Glob um zu prüfen welche der folgenden Dateien existieren:
-- `output/spec-eval/spec.md` (Pflicht)
-- `output/spec-eval/eval.md` (Pflicht)
-- `output/prototyping/option-comparison.md` (optional)
-- `output/prototyping/option-a/app.py`, `option-b/app.py`, `option-c/app.py` (optional)
-- `output/prototyping/app.py` (optional, falls kein option-stormer gelaufen)
-- `output/strategy/decision-brief.md` (optional)
+- `output/YYYY-MM-DD/spec-eval/spec.md` (Pflicht)
+- `output/YYYY-MM-DD/spec-eval/eval.md` (Pflicht)
+- `output/YYYY-MM-DD/prototyping/option-comparison.md` (optional)
+- `output/YYYY-MM-DD/prototyping/option-a/app.py`, `option-b/app.py`, `option-c/app.py` (optional)
+- `output/YYYY-MM-DD/prototyping/app.py` (optional, falls kein option-stormer gelaufen)
+- `output/YYYY-MM-DD/strategy/decision-brief.md` (optional)
 - `context/product.md`
 - `context/team.md`
 
@@ -26,7 +30,7 @@ Wenn spec.md oder eval.md fehlen: stoppe und melde welche Pflicht-Datei fehlt.
 
 1. Prüfe mit Glob welche Dateien existieren.
 2. Lies alle vorhandenen Dateien.
-3. Schreibe das Cover-Sheet nach `output/handoff/handoff.md`.
+3. Schreibe das Cover-Sheet nach `output/YYYY-MM-DD/handoff/handoff.md`.
 
 ## Qualitätskriterien
 
@@ -35,7 +39,7 @@ Wenn spec.md oder eval.md fehlen: stoppe und melde welche Pflicht-Datei fehlt.
 - Die Trennung PM-Eval vs. Dev-Eval ist explizit benannt
 - Offene Fragen kommen aus dem Decision Brief, nicht erfunden
 
-## Output: output/handoff/handoff.md
+## Output: output/YYYY-MM-DD/handoff/handoff.md
 
 ```
 # Handoff: [Feature-Name aus Spec]
@@ -50,10 +54,10 @@ Wenn spec.md oder eval.md fehlen: stoppe und melde welche Pflicht-Datei fehlt.
 
 | Dokument | Pfad | Status |
 |----------|------|--------|
-| Spec | output/spec-eval/spec.md | ✅ |
-| Eval (PM) | output/spec-eval/eval.md | ✅ |
-| Prototyp-Optionen | output/prototyping/option-comparison.md | ✅ / ⚠️ nicht vorhanden |
-| Decision Brief | output/strategy/decision-brief.md | ✅ / ⚠️ nicht vorhanden |
+| Spec | output/YYYY-MM-DD/spec-eval/spec.md | ✅ |
+| Eval (PM) | output/YYYY-MM-DD/spec-eval/eval.md | ✅ |
+| Prototyp-Optionen | output/YYYY-MM-DD/prototyping/option-comparison.md | ✅ / ⚠️ nicht vorhanden |
+| Decision Brief | output/YYYY-MM-DD/strategy/decision-brief.md | ✅ / ⚠️ nicht vorhanden |
 
 ## Was Dev als nächstes tun soll
 

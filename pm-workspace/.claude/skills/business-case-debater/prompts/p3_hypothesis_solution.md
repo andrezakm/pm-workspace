@@ -13,9 +13,9 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-- `output/strategy/eval-run-{{run_id}}/research_market.md`
-- `output/strategy/eval-run-{{run_id}}/research_problems.md`
-- `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_market.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
 
 ## Your Task
 
@@ -45,7 +45,7 @@ OUTPUT LANGUAGE: {{language}}
 - For each: what evidence would confirm or refute it?
 
 ## Output Format
-Write in **{{language}}** to: `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
+Write in **{{language}}** to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
 
 Structure:
 ```

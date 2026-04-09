@@ -12,9 +12,9 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-- `output/strategy/eval-run-{{run_id}}/research_technology.md`
-- `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_technology.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
 
 ## Your Task
 
@@ -43,7 +43,7 @@ OUTPUT LANGUAGE: {{language}}
 - What is the first technical spike / prototype to build?
 
 ## Output Format
-Write in **{{language}}** to: `output/strategy/eval-run-{{run_id}}/hypothesis_technology.md`
+Write in **{{language}}** to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_technology.md`
 
 Structure:
 ```

@@ -14,7 +14,7 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-ALL files in `output/strategy/eval-run-{{run_id}}/`:
+ALL files in `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/`:
 - research_market.md
 - research_problems.md
 - analysis_status_quo.md
@@ -49,7 +49,7 @@ ALL files in `output/strategy/eval-run-{{run_id}}/`:
 - Is the proposed sales motion (self-serve / sales-assisted / enterprise) right for this buyer?
 
 ## Output Format
-**Append** your section to: `output/strategy/eval-run-{{run_id}}/debate_round_1.md`
+**Append** your section to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md`
 
 ```
 ## MARKET EXPERT

@@ -13,15 +13,15 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read (all of them)
-- `output/strategy/eval-run-{{run_id}}/research_market.md`
-- `output/strategy/eval-run-{{run_id}}/research_technology.md`
-- `output/strategy/eval-run-{{run_id}}/research_problems.md`
-- `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_technology.md`
-- `output/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
-- `output/strategy/eval-run-{{run_id}}/debate_round_1.md`
-- `output/strategy/eval-run-{{run_id}}/debate_round_2.md` (if exists)
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_market.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_technology.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_solution.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_technology.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/hypothesis_business_model.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_2.md` (if exists)
 
 ## Your Task
 
@@ -78,7 +78,7 @@ Include: the 3 most important next steps regardless of recommendation.
 Links to all intermediate files in this run (for reference and traceability)
 
 ## Output Format
-Write in **{{language}}** to: `output/strategy/eval-run-{{run_id}}/final_report.md`
+Write in **{{language}}** to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/final_report.md`
 
 ```
 # Final Report: [Business Case Topic]

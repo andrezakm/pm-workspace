@@ -8,9 +8,13 @@ allowed-tools: Read, Write
 
 Du hinterfragst den Decision Brief systematisch. Deine Aufgabe ist nicht zu zerstören, sondern die Annahmen sichtbar zu machen die still im Raum stehen.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/strategy/decision-brief.md` — Der zu hinterfragende Decision Brief
+- `output/YYYY-MM-DD/strategy/decision-brief.md` — Der zu hinterfragende Decision Brief
 - `context/company.md` — Wer wir sind und wie wir arbeiten
 - `context/strategy.md` — Unsere strategische Richtung und Constraints
 
@@ -53,4 +57,4 @@ Du hinterfragst den Decision Brief systematisch. Deine Aufgabe ist nicht zu zers
 
 ## Output
 
-Schreibe das fertige Dokument nach `output/strategy/devils-advocate.md`.
+Schreibe das fertige Dokument nach `output/YYYY-MM-DD/strategy/devils-advocate.md`.

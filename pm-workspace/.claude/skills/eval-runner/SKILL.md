@@ -8,9 +8,13 @@ allowed-tools: Read, Write
 
 Du liest eine Eval.md und eine app.py und beurteilst jeden Eval-Punkt — soweit aus dem Code entscheidbar.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-Zwei Pfade werden beim Aufruf übergeben. Standardpfade: `output/spec-eval/eval.md` und `output/prototyping/app.py`
+Zwei Pfade werden beim Aufruf übergeben. Standardpfade: `output/YYYY-MM-DD/spec-eval/eval.md` und `output/YYYY-MM-DD/prototyping/app.py`
 
 ## Vorgehen
 
@@ -54,4 +58,4 @@ PASS: X / FAIL: X / UNKLAR: X
 
 ## Output
 
-Schreibe das Ergebnis nach `output/prototyping/eval-results.md`.
+Schreibe das Ergebnis nach `output/YYYY-MM-DD/prototyping/eval-results.md`.

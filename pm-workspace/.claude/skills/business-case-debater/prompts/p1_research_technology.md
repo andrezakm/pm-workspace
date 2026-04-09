@@ -53,7 +53,7 @@ Research the following technology sub-topics with dedicated web searches for eac
 - Mark each fact: [Source: ...]
 
 ## Output Format
-Write your findings in **{{language}}** to the file: `output/strategy/eval-run-{{run_id}}/research_technology.md`
+Write your findings in **{{language}}** to the file: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_technology.md`
 
 Structure:
 ```

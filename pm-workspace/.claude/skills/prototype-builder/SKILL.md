@@ -10,9 +10,13 @@ allowed-tools: Read, Write
 
 Eine lauffähige Streamlit-App, die alle UI-Komponenten der Spec implementiert. Startbar mit `streamlit run`. Keine Placeholder, keine TODOs.
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Input
 
-- `output/spec-eval/spec.md` und die darin referenzierten Datendateien
+- `output/YYYY-MM-DD/spec-eval/spec.md` und die darin referenzierten Datendateien
 
 ## Qualitätskriterien
 
@@ -26,4 +30,4 @@ Eine lauffähige Streamlit-App, die alle UI-Komponenten der Spec implementiert. 
 
 ## Output
 
-`output/prototyping/app.py`
+`output/YYYY-MM-DD/prototyping/app.py`

@@ -19,9 +19,9 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-- `output/strategy/eval-run-{{run_id}}/research_market.md`
-- `output/strategy/eval-run-{{run_id}}/research_technology.md`
-- `output/strategy/eval-run-{{run_id}}/research_problems.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_market.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_technology.md`
+- `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/research_problems.md`
 
 ## Your Task
 
@@ -52,7 +52,7 @@ Read all three research files carefully, then produce the following analysis:
 - What is the most defensible angle for this company given their specific profile?
 
 ## Output Format
-Write your analysis in **{{language}}** to the file: `output/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
+Write your analysis in **{{language}}** to the file: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/analysis_status_quo.md`
 
 Structure:
 ```

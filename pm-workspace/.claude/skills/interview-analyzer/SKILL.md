@@ -46,7 +46,7 @@ Jede Einzel-Analyse muss alle 6 Dimensionen abdecken:
 **6. Notable Quotes**
 - 3–5 Direktzitate, die lebendig, spezifisch oder besonders aufschlussreich sind
 
-Speichere jede Einzel-Analyse nach: `output/discovery/interview-individual-[nachname].md`
+Speichere jede Einzel-Analyse nach: `output/YYYY-MM-DD/discovery/interview-individual-[nachname].md`
 
 ### Schritt 2 — Synthese über alle Interviews
 
@@ -73,7 +73,7 @@ Die Synthese muss folgende 4 Abschnitte enthalten:
 - Frage beantworten: Was ist die einzige Grundursache? Was wäre die Intervention mit dem höchsten Hebel?
 - Direkt und ohne Absicherungen. Aus den Belegen sprechen.
 
-Speichere die Synthese nach: `output/discovery/interview-synthesis.md`
+Speichere die Synthese nach: `output/YYYY-MM-DD/discovery/interview-synthesis.md`
 
 ## Qualitätskriterien
 
@@ -82,8 +82,12 @@ Speichere die Synthese nach: `output/discovery/interview-synthesis.md`
 - Keine Interpretation die nicht direkt aus dem Datenmaterial ableitbar ist
 - Widersprüche explizit dokumentieren, nicht glätten
 
+## Run-Verzeichnis
+
+Der Run-Ordner ist `output/YYYY-MM-DD/` wobei YYYY-MM-DD das heutige Datum ist (z.B. `output/2026-04-09/`).
+
 ## Output
 
-- Eine Datei pro Interviewee: `output/discovery/interview-individual-[nachname].md`
-- Eine Synthese-Datei: `output/discovery/interview-synthesis.md`
+- Eine Datei pro Interviewee: `output/YYYY-MM-DD/discovery/interview-individual-[nachname].md`
+- Eine Synthese-Datei: `output/YYYY-MM-DD/discovery/interview-synthesis.md`
 - Diese Skill-Anweisungen nicht in Output-Dateien aufnehmen

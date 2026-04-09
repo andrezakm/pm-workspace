@@ -14,7 +14,7 @@ OUTPUT LANGUAGE: {{language}}
 ```
 
 ## Input Files to Read
-ALL files in `output/strategy/eval-run-{{run_id}}/`:
+ALL files in `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/`:
 - research_technology.md
 - analysis_status_quo.md
 - hypothesis_solution.md
@@ -46,7 +46,7 @@ ALL files in `output/strategy/eval-run-{{run_id}}/`:
 - What is the minimum viable technical proof point?
 
 ## Output Format
-**Append** your section to: `output/strategy/eval-run-{{run_id}}/debate_round_1.md`
+**Append** your section to: `output/YYYY-MM-DD/strategy/eval-run-{{run_id}}/debate_round_1.md`
 
 ```
 ## TECHNICIAN
