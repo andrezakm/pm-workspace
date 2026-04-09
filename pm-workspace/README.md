@@ -31,7 +31,7 @@ Erweiterungspunkt. Hier leben Skills die aus Entscheidungen eine priorisierte Ro
 Die Grenze zwischen PM und Dev. Der spec-writer übersetzt einen Brief in eine Spec: Was gebaut wird, nicht Wie. Der eval-writer schreibt die Kriterien mit denen der Prototyp bewertet wird. Was hier entsteht, geht rüber.
 
 ### Prototyping
-Aus der Spec wird Code. Der option-stormer baut drei strukturell verschiedene Prototypen — nicht eine Lösung und dann hoffen, sondern drei Richtungen und dann entscheiden. Der eval-runner prüft den Code gegen die Eval.
+Aus der Spec wird Code. Der option-stormer baut drei strukturell verschiedene Prototypen — nicht eine Lösung und dann hoffen, sondern drei Richtungen und dann entscheiden. Der eval-runner prüft den Code gegen die Eval. Fällt ein Prototyp durch die Eval, muss er nicht verworfen werden: welche Prinzipien funktionieren dennoch? Rekombination aus mehreren Optionen führt oft zu besseren Ergebnissen als eine einzelne Iteration.
 
 ### Handoff
 Alles was Dev braucht, gebündelt. Kein Copy-Paste — nur ein Cover-Sheet mit Verweisen, konkreten nächsten Schritten, und der expliziten Trennung was PM bereits evaluiert hat und was Dev noch prüfen soll.
