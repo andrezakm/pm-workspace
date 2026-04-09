@@ -14,19 +14,9 @@ Bevor du irgendeinen Skill ausführst, lies die relevanten Context-Files:
 
 Ohne Kontext kein Output.
 
-## Ordnerstruktur
-
-```
-context/        — permanenter Kontext (company, strategy, product, team, metrics, learnings, roadmap)
-.claude/skills/ — ausführbare Skills, Invocation: /skill-name
-skills/         — Navigation und Flows, Details in skills/README.md
-output/         — Artefakte, gespiegelt nach Bereichen
-input/          — eigene Daten (Feedback, Interviews, Briefs)
-```
-
 ## Handoff-Grenze
 
-`spec-eval/` Skills (spec-writer, eval-writer, build-eval) sind die Grenze zwischen PM und Dev.
+spec-writer, eval-writer, build-eval sind die Grenze zwischen PM und Dev.
 
 ## Navigation
 
