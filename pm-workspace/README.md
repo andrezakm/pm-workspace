@@ -6,9 +6,15 @@ Von rohem Feedback bis zum Dev-Handoff — in einem Repo, mit einem gemeinsamen 
 ## Wie starten
 
 1. Repo klonen
-2. Claude Code öffnen im `pm-workspace/` Ordner
-3. `context/` befüllen — dein Unternehmen, deine Strategie, dein Team
-4. Starte mit: `/system-auditor`
+2. Python-Umgebung einrichten (einmalig):
+   ```bash
+   python -m venv .venv && source .venv/bin/activate && pip install streamlit pandas
+   ```
+3. Claude Code öffnen im `pm-workspace/` Ordner
+4. `context/` befüllen — dein Unternehmen, deine Strategie, dein Team
+5. Starte mit: `/system-auditor`
+
+> Prototypen starten: `.venv` aktivieren, dann `streamlit run output/prototyping/app.py`
 
 ## Die 7 Bereiche
 
