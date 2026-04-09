@@ -1,0 +1,11 @@
+# Output-Artefakte — nie committen, jeder macht seine eigenen Runs
+output/**
+!output/**/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
