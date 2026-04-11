@@ -102,10 +102,29 @@ CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/READM
 
 ---
 
-## Kurse
+## Kurse und Präsentationen
 
-1. `/kurs` — Das System verstehen: Struktur, Flows, Anpassung, Erweiterung
-2. `/zeig_mir_teamwork` — Teamwork in Claude Code: Zimmer/Wohnzimmer, Git-Workflow, scripts/ → PR
-3. `/mini_git_kurs` — Git-Grundlagen: Versionierung, Branches, PRs, Claude als Git-Assistent
+| Kurs | Präsentation | Thema |
+|------|-------------|-------|
+| `/kurs` | `doc/PM-System-Übersicht.html` | Das System verstehen: Struktur, Flows, Anpassung |
+| `/zeig_mir_teamwork` | `doc/PM-Teamwork-Übersicht.html` | Teamwork: Zimmer/Wohnzimmer, Übergabe-Flow |
+| `/mini_git_kurs` | `doc/Git-Grundlagen.html` | Git: Versionierung, Branches, PRs, Claude als Assistent |
 
-**Empfehlung:** Gehe beide Kurse der Reihe nach durch und mach dir dabei Notizen zu deiner eigenen Situation. Am Ende von Kurs 2 kannst du Claude direkt bitten, gemeinsam mit dir einen konkreten Plan zu erstellen — wie du das System auf dein Team anpasst, was du erweiterst, welche Spielregeln ihr festlegt. Die Präsentation `doc/PM-System-Übersicht.html` hilft als Überblick im Team-Gespräch.
+**Empfohlener Kurs-Flow:**
+
+```
+Schritt 1 — Alleine starten
+  /kurs                       System verstehen, Notizen machen
+  → doc/PM-System-Übersicht.html als Referenz
+  → context/ befüllen, /system-auditor, ersten Flow manuell durchlaufen
+
+Schritt 2 — Mit dem Team
+  /mini_git_kurs              Git-Grundlagen (parallel oder vorher)
+  → doc/Git-Grundlagen.html als Referenz
+  /zeig_mir_teamwork          Teamwork-Prinzipien, Notizen machen
+  → doc/PM-Teamwork-Übersicht.html für Team-Gespräch nutzen
+
+Schritt 3 — Plan machen
+  Claude: "Hier sind meine Notizen aus beiden Kursen.
+           Hilf mir einen konkreten Plan zu erstellen."
+```
