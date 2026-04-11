@@ -12,6 +12,8 @@ Der Kurs hat 12 Schritte. Du navigierst mit "weiter" (nächster Schritt) oder "S
 
 **Gut zu wissen:** Claude versteht Git-Kommandos und kann sie für dich ausführen. Du kannst einfach sagen "erstelle einen neuen Branch und committe meine Änderungen" — Claude tut es. Schritt 10 erklärt wie das konkret aussieht.
 
+**Und noch etwas:** Du kannst Claude während des Kurses jederzeit umgangssprachlich fragen. "Was ist nochmal der Unterschied zwischen add und commit?" oder "Ich verstehe Branches nicht — erklär mir das anders." Claude antwortet, und du sagst "weiter" wenn du bereit bist.
+
 ---
 
 ## Lernziele
@@ -431,9 +433,24 @@ Mechanik ansagen, Entscheidungen selbst treffen.
 
 ---
 
+**Finale Reflexion:**
+
+Du hast diesen Kurs durchgearbeitet. Dabei hast du Schritte gelesen, vielleicht Dinge ausprobiert, vielleicht sogar Skills oder Context-Files angepasst.
+
+Stell dir vor, du hast während des Kurses etwas im pm-workspace verbessert — eine Reflexionsfrage schärfer formuliert, einen Skill angepasst, einen Tipp hinzugefügt. Du denkst: das wäre gut für alle Kursteilnehmer, Markus sollte das übernehmen.
+
+**Was müsstest du tun?**
+Und: **Was müsste Markus tun, um deine Änderung wirklich zu übernehmen?**
+
+Denk kurz nach — du weißt jetzt alles was du brauchst um diese Frage zu beantworten.
+
+---
+
 **Kurs abgeschlossen.**
 
 Git ist kein Entwickler-Tool — es ist Infrastruktur für jeden der kontrolliert zusammenarbeiten will. Im pm-workspace ist es der Mechanismus der Zimmer und Wohnzimmer verbindet.
+
+**Zur Beruhigung:** Du musst die Kommandos nicht auswendig kennen. Das Cheat Sheet in Schritt 12 ist immer da. Claude führt sie auf Ansage aus. Was zählt ist das Prinzip — Branch, PR, Review, Merge. Den Rest erledigt die Praxis.
 
 ---
 
