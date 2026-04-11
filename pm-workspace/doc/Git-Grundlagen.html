@@ -241,6 +241,12 @@ __pycache__/
 .DS_Store</code></pre>
   <div class="spacer-sm"></div>
   <div class="spacer-sm"></div>
+  <p class="fragment"><strong>Wo liegt die Datei — wo gilt sie?</strong></p>
+  <p class="fragment dim" style="font-size:0.65em; text-align:left; max-width:680px; margin: 0.3em auto;">
+    Eine <code>.gitignore</code> im <strong>Root des Repos</strong> gilt für das gesamte Repo.<br>
+    Du kannst auch in Unterordnern eine eigene <code>.gitignore</code> ablegen — dann gilt sie nur dort.<br>
+    Im pm-workspace: eine Datei im Root, gilt für alles. Das reicht.
+  </p>
   <p class="fragment"><strong>Wie Einträge kaskadieren:</strong> Regeln werden der Reihe nach gelesen. Eine spätere Regel kann eine frühere aufheben.</p>
   <p class="fragment dim" style="font-size:0.65em; text-align:left; max-width:680px; margin: 0.3em auto;">
     1. <code>output/**</code> → ignoriere alles in output/<br>
