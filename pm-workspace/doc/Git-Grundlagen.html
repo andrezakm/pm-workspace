@@ -207,9 +207,25 @@ git pull</code></pre>
   <p class="fragment dim">Git ≠ GitHub. Git ist das Werkzeug. GitHub hostet das Repo und den PR-Prozess.</p>
 </section>
 
-<!-- 8: .gitignore -->
+<!-- 8a: .gitignore — Konzept -->
 <section>
   <h2>.gitignore — was Git ignoriert</h2>
+  <div class="spacer-sm"></div>
+  <p>Git beobachtet deinen gesamten Ordner. Aber nicht alles soll ins Repo.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Stell dir vor: du hast 50 Prototypen in <code>output/</code> gebaut.<br>
+  <span class="dim">Jeder Run, jede App, jede Analyse. Gigabytes. Und das ist dein persönliches Zimmer — kein anderer braucht das.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Die <code>.gitignore</code>-Datei sagt Git: <span class="highlight">"Diese Ordner und Dateien — vergiss sie. Beobachte sie nicht. Committe sie nie."</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Du legst die Datei einmal an. Danach passiert es automatisch — für immer, für alle die das Repo klonen.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment warn">Keine Angst: die Dateien verschwinden nicht. Sie sind nur für Git unsichtbar.</p>
+</section>
+
+<!-- 8b: .gitignore — Konkret -->
+<section>
+  <h2>.gitignore — konkret im pm-workspace</h2>
   <div class="spacer-sm"></div>
   <pre><code># pm-workspace/.gitignore
 
@@ -217,17 +233,17 @@ git pull</code></pre>
 output/**
 !output/**/.gitkeep
 
-# Python
+# Python-Umgebung (groß, lokal)
 .venv/
 __pycache__/
 
-# macOS
+# macOS-Systemdatei (interessiert niemanden)
 .DS_Store</code></pre>
   <div class="spacer-sm"></div>
   <ul>
-    <li><code>output/</code> ist persönlich — Runs, Prototypen, Drafts. Nicht teilen.</li>
-    <li><code>.gitkeep</code> hält leere Ordner am Leben (Git trackt keine leeren Ordner).</li>
-    <li>Eigene Einträge einfach hinzufügen: <code>notes/</code>, <code>*.local.md</code></li>
+    <li><code>output/**</code> — alles in output/ wird ignoriert</li>
+    <li><code>!output/**/.gitkeep</code> — außer .gitkeep-Dateien: die halten leere Ordner am Leben</li>
+    <li>Eigene Einträge einfach hinzufügen: <code>notes/</code> · <code>*.local.md</code></li>
   </ul>
 </section>
 
