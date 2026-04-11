@@ -240,11 +240,14 @@ __pycache__/
 # macOS-Systemdatei (interessiert niemanden)
 .DS_Store</code></pre>
   <div class="spacer-sm"></div>
-  <ul>
-    <li><code>output/**</code> — alles in output/ wird ignoriert</li>
-    <li><code>!output/**/.gitkeep</code> — außer .gitkeep-Dateien: die halten leere Ordner am Leben</li>
-    <li>Eigene Einträge einfach hinzufügen: <code>notes/</code> · <code>*.local.md</code></li>
-  </ul>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><strong>Wie Einträge kaskadieren:</strong> Regeln werden der Reihe nach gelesen. Eine spätere Regel kann eine frühere aufheben.</p>
+  <p class="fragment dim" style="font-size:0.65em; text-align:left; max-width:680px; margin: 0.3em auto;">
+    1. <code>output/**</code> → ignoriere alles in output/<br>
+    2. <code>!output/**/.gitkeep</code> → außer: .gitkeep-Dateien doch tracken<br>
+    Das <code>!</code> bedeutet immer: <em>"Ausnahme von der Regel darüber."</em>
+  </p>
+  <p class="fragment dim">Eigene Einträge einfach hinzufügen: <code>notes/</code> · <code>*.local.md</code></p>
 </section>
 
 <!-- 9: Claude macht Git -->
