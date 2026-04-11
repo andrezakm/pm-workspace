@@ -10,6 +10,8 @@ Der Kurs hat 12 Schritte. Du navigierst mit "weiter" (nächster Schritt) oder "S
 
 **Hinweis:** Dieser Kurs setzt voraus, dass du weißt wie das System aufgebaut ist (Woche 5, Kurs 1). Für die Git-Mechanik — Branches, Pull Requests, Merge — gibt es einen separaten Mini-Git-Kurs. Hier geht es um das Prinzip, nicht um die Kommandos.
 
+**Was dieser Kurs zeigt — und was nicht:** Die Schritte hier sind Prinzipien, kein Pflichtprogramm. Auf welcher Granularität ihr übergebt, wie schnell ihr reviewt, wer merged, wann ein Artefakt "geteilt genug" ist — das müsst ihr in eurem Team aushandeln. Es gibt keine universelle Antwort. Es gibt nur die Antwort die zu eurer Kultur, eurer Größe, eurem Tempo passt.
+
 ---
 
 ## Lernziele
@@ -38,6 +40,8 @@ Aus dem Zimmer ins Wohnzimmer kommt etwas nur durch Interaktion — synchron (Me
 
 **Reflexion:** Was liegt in deiner aktuellen Arbeit im "Zimmer" — und was wäre reif fürs "Wohnzimmer"?
 
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
+
 Sag "weiter" für Schritt 2.
 
 ---
@@ -57,6 +61,8 @@ Schicht 1 ist das Wohnzimmer. Schicht 3 ist dein Zimmer. Schicht 2 ist dazwische
 Ein PM und ein Designer lesen denselben Slack-Thread. Der PM sieht ein Feature-Signal. Der Designer sieht ein UX-Problem. Beide haben Recht. Geteilte Quelle, persönliche Verarbeitung.
 
 **Reflexion:** Welche dieser drei Schichten ist bei euch heute am schwächsten? Was fehlt?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 3.
 
@@ -85,7 +91,17 @@ Wenn jemand den eval-writer verbessert, profitieren alle — aber nur nach Revie
 **Wie es funktioniert:**
 Jeder klont das Repo. Jeder hat lokal eine Kopie. Änderungen an Skills, Context oder CLAUDE.md laufen über Branches und Pull Requests. Skills sind jetzt quasi Code. Selber Prozess, selbes Tool.
 
+**Git-Begriffe kurz erklärt** *(für alle die das noch nicht täglich nutzen):*
+- **Branch** = deine eigene Arbeitskopie — du änderst, ohne den Stand der anderen zu berühren
+- **Pull Request (PR)** = du sagst dem Team: "Ich habe etwas geändert, bitte schaut drüber"
+- **Review** = jemand liest die Änderungen und gibt grünes Licht (oder macht Kommentare)
+- **Merge** = die Änderungen sind drin — für alle, sofort beim nächsten `git pull`
+
+Für den genauen Ablauf gibt es einen eigenen Mini-Git-Kurs.
+
 **Reflexion:** Was in eurem aktuellen PM-Prozess würde in `context/` gehören? Was würde sich ändern wenn alle dasselbe context/strategy.md lesen?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 4.
 
@@ -148,7 +164,9 @@ Fünf Typen von Inhalten, fünf Wege:
 | **Artefakte** | Persönlich → Slack / Meeting | Bewusste Entscheidung | Decision Brief fertig → Slack oder Weekly. |
 | **Learnings** | `context/learnings.md` | Branch → PR → Merge | "FAQ-Pattern war klar besser als Chat." Eingetragen. Das System weiß es beim nächsten Mal. |
 
-**Reflexion:** Welcher dieser fünf Typen fehlt bei euch am meisten? Was geht heute verloren weil es keinen Weg zurück ins System findet?
+**Reflexion:** Welcher dieser Typen fehlt bei euch am meisten? Was geht heute verloren weil es keinen Weg zurück ins System findet?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 7.
 
@@ -214,6 +232,8 @@ In beiden Fällen: die Entscheidung ist jetzt im Team. Der Brief kann optional i
 **Was ins Repo MUSS:** Wenn Anna dabei den decision-brief Skill verbessert hat — Branch, PR, Review, Merge. Ben bekommt den verbesserten Skill automatisch beim nächsten `git pull`.
 
 **Reflexion:** Wie würde diese Übergabe bei euch heute konkret aussehen? Slack, Meeting, E-Mail, Ticket — was passt zu eurer Kultur?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 9.
 
@@ -341,14 +361,23 @@ Wer ist der Guardian des Wohnzimmers? Wer merged PRs, wer achtet darauf dass con
 
 ---
 
-**Kurs abgeschlossen.**
+**Kurs abgeschlossen. Jetzt: euren Plan bauen.**
 
-Du weißt wie das Zimmer aussieht. Du weißt wie das Wohnzimmer aussieht. Du weißt wie der Übergang funktioniert. Der Rest ist Teamvereinbarung.
+Du weißt wie das Zimmer aussieht. Du weißt wie das Wohnzimmer aussieht. Du weißt wie der Übergang funktioniert.
+
+Wenn du dir während des Kurses Notizen gemacht hast — jetzt ist der Moment. Sag Claude:
+
+> "Ich habe den Teamwork-Kurs durchgearbeitet. Hier sind meine Notizen: [deine Notizen]. Hilf mir einen konkreten Plan zu erstellen: wie setze ich das System mit meinem Team auf, was passe ich an, welche Spielregeln legen wir fest, wer übernimmt was?"
+
+Claude arbeitet dann mit dir durch: was ihr schon habt, was ihr aufbauen müsst, welche Spielregeln ihr festlegen solltet, wer den Guardian des Wohnzimmers macht.
+
+**Für den Überblick:** Die Präsentation `doc/PM-System-Übersicht.html` zeigt alles nochmal komprimiert — Struktur, Flows, Bereiche. Nützlich als Referenz im Team-Gespräch oder beim Onboarding neuer Kollegen.
 
 ---
 
 ## Zusatzmaterial
 
-- `../TeamworkinClaude.md` — Vollständiges Referenz-Dokument mit Beispielen
+- `doc/PM-System-Übersicht.html` — Präsentation: Struktur, Flows, alle Skills im Überblick
 - `README.md` — Skill-Übersicht
 - Mini-Git-Kurs — Branches, PRs, Merge für PM-Teams (separater Kurs)
+- `../TeamworkinClaude.md` — Vollständiges Referenz-Dokument mit Beispielen
