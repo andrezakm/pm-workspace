@@ -17,8 +17,10 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 1. **context/ prüfen** — Lies jede Datei in context/. Prüfe ob der Abschnitt `## Dein Kontext` nur den HTML-Kommentar enthält (leer) oder echten Inhalt hat.
 2. **skills/ prüfen** — Verwende Glob um alle SKILL.md Files zu finden. Prüfe ob sie existieren und nicht leer sind.
 3. **output/ prüfen** — Verwende Glob um alle Verzeichnisse direkt unter output/ zu finden. Jedes Verzeichnis nach dem Muster `YYYY-MM-DD` ist ein Run. Liste für jeden Run die vorhandenen Artefakte auf. Ignoriere .gitkeep-Dateien.
-4. **CLAUDE.md prüfen** — Lies CLAUDE.md. Prüfe ob sie unter 500 Tokens ist und die wichtigsten Sektionen enthält.
-5. **Bericht schreiben** — Schreibe output/meta/system-audit.md.
+4. **scripts/ prüfen** — Prüfe ob scripts/ existiert und ob Dateien darin liegen. Dateien in scripts/ sind Skills in Entwicklung — keine Ampel nötig, nur Auflistung.
+5. **doc/ prüfen** — Prüfe ob die drei Präsentationen vorhanden sind: PM-System-Übersicht.html, PM-Teamwork-Übersicht.html, Git-Grundlagen.html.
+6. **CLAUDE.md prüfen** — Lies CLAUDE.md. Prüfe ob sie unter 500 Tokens ist und die wichtigsten Sektionen enthält.
+7. **Bericht schreiben** — Schreibe output/YYYY-MM-DD/meta/system-audit.md.
 
 ## Qualitätskriterien
 
@@ -73,6 +75,20 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 | output/YYYY-MM-DD/ | ... |
 
 *(Kein Run-Verzeichnis vorhanden → noch kein Skill gelaufen)*
+
+## Scripts (Sandbox)
+
+| Status | Inhalt |
+|--------|--------|
+| ✅ Ordner vorhanden / ❌ fehlt | [Dateien in scripts/ oder "leer"] |
+
+## Präsentationen (doc/)
+
+| Datei | Status |
+|-------|--------|
+| PM-System-Übersicht.html | ✅ / ❌ |
+| PM-Teamwork-Übersicht.html | ✅ / ❌ |
+| Git-Grundlagen.html | ✅ / ❌ |
 
 ## CLAUDE.md
 

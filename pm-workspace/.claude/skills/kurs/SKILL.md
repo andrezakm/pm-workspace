@@ -422,3 +422,5 @@ Claude arbeitet dann mit dir durch: was du schon hast, was du als erstes einrich
 - `README.md` — Übersicht aller Skills und Flows
 - `.claude/skills/[name]/README.md` — Kurzreferenz pro Skill
 - `.claude/skills/[name]/SKILL.md` — Vollständige Instruktionen (für wenn du anpassen willst)
+- `/zeig_mir_teamwork` — Wie das System im Team funktioniert
+- `/mini_git_kurs` — Git-Grundlagen: Branches, PRs, Claude als Git-Assistent
