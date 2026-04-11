@@ -269,10 +269,10 @@ Das System ist open-ended. Die interessanteste Erweiterung kommt nicht von dir a
 
 **Wo du Skills findest:**
 
-- **Pawel Huryn** (pawelonasubstack.com) — PM-Prozesse, Roadmaps, Stakeholder-Management
-- **Aakash Gupta** (aakashg.com) — Growth, Metrics, Feature-Priorisierung  
+- **Pawel Huryn** — github.com/phuryn/pm-skills — PM-Prozesse, Roadmaps, Stakeholder-Management
+- **Aakash Gupta** (aakashg.com) — Growth, Metrics, Feature-Priorisierung
+- **Hannah Stulberg** — github.com/in-the-weeds-hannah-stulberg/team-os-example-repo — Team OS, Betrieb, Zusammenarbeit
 - **Claude Code Community** — github.com/anthropics/claude-code, Discord
-- **Eigene Vorwochen** — die Skills aus Woche 1–4 sind alle übernehmbar
 
 **Wie du einen fremden Skill integrierst:**
 
@@ -360,7 +360,7 @@ Du hast jetzt ein vollständiges Bild: Struktur, Flows, Anpassung, Erweiterung, 
 
 **Wenn du das System mit deinem Team nutzen willst:**
 
-Das ist Woche 6. Dort geht es um: wie führe ich Kollegen ein, wie teilen wir einen Workspace, was sind die Spielregeln wenn mehrere Menschen mit demselben System arbeiten.
+Dafür gibt es einen eigenen Kurs: Grundsätze der Zusammenarbeit mit einem geteilten System — wie führe ich Kollegen ein, wie teilen wir einen Workspace, was sind die Spielregeln wenn mehrere Menschen mit demselben System arbeiten.
 
 **Wenn du experimentieren willst — jetzt:**
 
