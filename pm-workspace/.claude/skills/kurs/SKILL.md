@@ -10,6 +10,8 @@ Der Kurs hat 12 Schritte. Du navigierst mit "weiter" (nächster Schritt) oder "S
 
 **Kein Hands-on erforderlich.** Aber: Alles hier ist live. Wenn du etwas ausprobieren willst, kannst du jederzeit aus dem Kurs heraus einen Skill aufrufen — und dann weitermachen.
 
+**Empfehlung:** Mach dir bei den Reflexionsfragen kurze Notizen — was bei dir heute so ist, was fehlt, was du dir vorstellst. Am Ende des Kurses kannst du Claude bitten, gemeinsam mit dir einen konkreten Bauplan zu erstellen: was du als erstes anpasst, welchen Flow du startest, was du neu baust.
+
 ---
 
 ## Lernziele
@@ -43,6 +45,8 @@ Die Skills kennen dein Unternehmen. Deine Strategie. Dein Team. Dein Produkt. Si
 **Die zweite Idee:** Ein Run = ein Verzeichnis. Alles was heute entsteht liegt in `output/2026-04-11/`. Morgen in `output/2026-04-12/`. Kein Überschreiben. Kein Verlust. Du kannst Runs vergleichen.
 
 **Reflexion:** Was passiert bei dir heute wenn du eine Entscheidung vorbereiten willst? Wie viel Zeit geht für Strukturierung drauf — bevor du überhaupt anfängst zu denken?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 2.
 
@@ -84,6 +88,8 @@ Die `.claude/skills/`-Struktur ist technisch flach — Claude Code braucht das s
 **Das Wichtigste:** `context/` wird von jedem Skill automatisch gelesen. Du befüllst es einmal. Danach kennt das System deinen Kontext — bei jedem Aufruf, bei jedem Skill.
 
 **Reflexion:** Was würdest du in `context/strategy.md` schreiben? Was sind die zwei, drei Dinge die jeder Output über eure Strategie wissen müsste?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 3.
 
@@ -140,6 +146,8 @@ Du willst einen Business Case durchleuchten — mit Web-Research und strukturier
 `/business-case-debater` (eigenständiges Subsystem, läuft interaktiv)
 
 **Reflexion:** Welcher dieser Flows wäre heute in deinem Alltag am nützlichsten? Was liegt gerade auf deinem Tisch das du damit angehen könntest?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 5.
 
@@ -199,6 +207,8 @@ Einfach eine Zeile hinzufügen. Claude liest es beim nächsten Skill-Aufruf.
 
 **Reflexion:** Welche Information fehlt in den Standard-Context-Files die für euch besonders relevant wäre? Habt ihr etwas das die meisten PM-Teams nicht haben — und das in den Kontext sollte?
 
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
+
 Sag "weiter" für Schritt 7.
 
 ---
@@ -228,6 +238,8 @@ Der Handoff landet in `output/YYYY-MM-DD/handoff/handoff.md`. Du könntest ihn:
 **Aber:** Mach das nicht als erstes. Mach es wenn du dem Flow vertraust.
 
 **Reflexion:** Welche Datenquelle würdest du als erstes anbinden? Wo verlierst du heute am meisten Zeit mit Copy-Paste?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 8.
 
@@ -298,6 +310,8 @@ Wenn du selbst etwas Neues entwickeln willst, fang in `scripts/` an. Das ist dei
 **Niemals:** Einen fremden Skill blind übernehmen und in einen automatisierten Flow einbauen. Erst verstehen, dann vertrauen, dann automatisieren.
 
 **Reflexion:** Welchen PM-Prozess in deinem Alltag würdest du gerne als Skill formulieren? Was würde er lesen, was würde er schreiben?
+
+> **Tipp:** Notier dir deine Antwort — am Ende des Kurses bauen wir daraus zusammen einen konkreten Plan.
 
 Sag "weiter" für Schritt 10.
 
@@ -386,14 +400,25 @@ Kein Setup nötig. Kein Durchlauf 2 der auf dich wartet. Einfach ausprobieren.
 
 ---
 
-**Kurs abgeschlossen.**
+**Kurs abgeschlossen. Jetzt: dein System aufbauen.**
 
-Du weißt wie es aufgebaut ist. Du weißt wo die Hebel sind. Der Rest ist Praxis.
+Du weißt wie es aufgebaut ist. Du weißt wo die Hebel sind.
+
+Wenn du dir während des Kurses Notizen gemacht hast — jetzt ist der Moment. Sag Claude:
+
+> "Ich habe den System-Kurs durchgearbeitet. Hier sind meine Notizen: [deine Notizen]. Hilf mir einen konkreten Plan zu erstellen: welche Context-Files befülle ich zuerst, welchen Flow starte ich, welche Skills passe ich an, was baue ich neu?"
+
+Claude arbeitet dann mit dir durch: was du schon hast, was du als erstes einrichten solltest, welcher Flow für deine aktuelle Arbeit am sinnvollsten ist.
+
+**Danach:** Wenn du das System auch mit deinem Team nutzen willst, gibt es einen eigenen Kurs: `/zeig_mir_teamwork`.
+
+**Für den Überblick:** Die Präsentation `doc/PM-System-Übersicht.html` zeigt alles nochmal komprimiert — Struktur, Flows, alle Skills, Erweiterungs-Optionen. Nützlich für Gespräche mit Kollegen oder als Referenz beim Erkunden.
 
 ---
 
 ## Zusatzmaterial
 
+- `doc/PM-System-Übersicht.html` — Präsentation: Struktur, Flows, alle Skills im Überblick
 - `README.md` — Übersicht aller Skills und Flows
 - `.claude/skills/[name]/README.md` — Kurzreferenz pro Skill
 - `.claude/skills/[name]/SKILL.md` — Vollständige Instruktionen (für wenn du anpassen willst)
