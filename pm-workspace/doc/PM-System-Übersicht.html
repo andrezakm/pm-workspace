@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das PM-System — Woche 5</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  .reveal { font-size: 32px; }
+  .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: 0.4em; }
+  .reveal h3 { font-size: 1.1em; color: #888; }
+  .reveal p { margin: 0.3em 0; }
+  .reveal .highlight { color: #4fc3f7; }
+  .reveal .warn { color: #ff8a65; }
+  .reveal .pass { color: #81c784; }
+  .reveal .dim { color: #666; font-size: 0.7em; }
+  .reveal ul { list-style: none; padding: 0; margin: 0.3em 0; }
+  .reveal ul li::before { content: "→ "; color: #4fc3f7; }
+  .reveal ul li { margin-bottom: 0.3em; }
+  .reveal .flow { font-size: 1em; letter-spacing: 0.03em; }
+  .reveal .box { border: 2px solid #4fc3f7; border-radius: 8px; padding: 0.3em 0.7em; display: inline-block; margin: 0.2em; font-size: 0.85em; }
+  .reveal .box-warn { border-color: #ff8a65; color: #ff8a65; }
+  .reveal .box-pass { border-color: #81c784; color: #81c784; }
+  .reveal .box-dim { border-color: #555; color: #888; }
+  .reveal blockquote { border-left: 4px solid #4fc3f7; padding-left: 1em; font-style: italic; color: #aaa; margin: 0.5em 0; font-size: 0.85em; }
+  .reveal table { margin: 0 auto; font-size: 0.58em; }
+  .reveal table th { color: #4fc3f7; border-bottom: 2px solid #4fc3f7; padding: 0.3em 0.8em; }
+  .reveal table td { border-bottom: 1px solid #333; padding: 0.3em 0.8em; }
+  .reveal .subtitle { color: #888; font-size: 0.75em; margin-top: -0.3em; }
+  .reveal .spacer { height: 0.5em; }
+  .reveal .spacer-sm { height: 0.25em; }
+  .reveal pre { font-size: 0.55em; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 0.8em; margin: 0.3em 0; }
+  .reveal code { font-family: 'Courier New', monospace; color: #81c784; }
+  .reveal .tree { text-align: left; display: inline-block; font-size: 0.6em; font-family: 'Courier New', monospace; color: #ccc; line-height: 1.6; }
+  .reveal .tree .c { color: #4fc3f7; }
+  .reveal .label { font-size: 0.65em; color: #888; margin-top: 0.2em; }
+  .reveal .arrow { color: #4fc3f7; font-size: 1.2em; margin: 0 0.3em; }
+  .reveal .row { display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.4em 0; }
+  .reveal .stufe { border: 1px solid #333; border-radius: 8px; padding: 0.5em 1em; min-width: 6em; text-align: center; }
+  .reveal .stufe-1 { border-color: #555; }
+  .reveal .stufe-2 { border-color: #4fc3f7; }
+  .reveal .stufe-3 { border-color: #81c784; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1: Titel -->
+<section>
+  <h1>Das PM-System</h1>
+  <h3>Von Rohdaten zum Dev-Handoff — in einem Repo</h3>
+  <p class="dim">AI-Augmented PM — Woche 5</p>
+</section>
+
+<!-- 2: Das Problem mit einzelnen Skills -->
+<section>
+  <h2>Das Problem mit einzelnen Skills</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Jeder Prompt fängt bei null an.</p>
+  <p class="fragment">Kein gemeinsamer Kontext.</p>
+  <p class="fragment">Kein Gedächtnis. Kein Zusammenhang.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Du erklärt deinem Unternehmen jeden Tag neu wer ihr seid.</p>
+</section>
+
+<!-- 3: Die Idee -->
+<section>
+  <h2>Die Idee</h2>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="box">context/</div>
+    <span class="arrow">+</span>
+    <div class="box">input/</div>
+    <span class="arrow">→</span>
+    <div class="box highlight">Skills</div>
+    <span class="arrow">→</span>
+    <div class="box box-pass">output/YYYY-MM-DD/</div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment">Kontext einmal befüllen.</p>
+  <p class="fragment">Alle Skills lesen ihn automatisch.</p>
+  <p class="fragment">Jeder Run bekommt ein eigenes Verzeichnis.</p>
+</section>
+
+<!-- 4: Anatomie -->
+<section>
+  <h2>Anatomie des pm-workspace</h2>
+  <div class="spacer-sm"></div>
+  <div class="tree">
+    pm-workspace/<br>
+    ├── <span class="c">context/</span> &nbsp;&nbsp;&nbsp;&nbsp;← Das Hirn<br>
+    │ &nbsp;&nbsp;├── company.md<br>
+    │ &nbsp;&nbsp;├── strategy.md<br>
+    │ &nbsp;&nbsp;└── product.md &nbsp;<span style="color:#555">+ team / metrics / roadmap</span><br>
+    ├── <span class="c">input/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Rohdaten rein<br>
+    │ &nbsp;&nbsp;├── raw_feedback/<br>
+    │ &nbsp;&nbsp;└── case/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Briefs &amp; Datendateien<br>
+    ├── <span class="c">output/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Artefakte raus<br>
+    │ &nbsp;&nbsp;└── YYYY-MM-DD/ &nbsp;Ein Run, ein Ordner<br>
+    └── <span class="c">.claude/skills/</span> &nbsp;Die Skills<br>
+  </div>
+</section>
+
+<!-- 5: Die 7 Bereiche -->
+<section>
+  <h2>7 Bereiche — konzeptuell</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th>Bereich</th><th>Zweck</th></tr>
+    <tr><td>Discovery</td><td>Was sagen Kunden, Nutzer, Daten?</td></tr>
+    <tr><td>Strategy</td><td>Was bauen wir — und warum?</td></tr>
+    <tr><td>Roadmap</td><td>In welcher Reihenfolge? <span style="color:#555">(Erweiterungspunkt)</span></td></tr>
+    <tr><td>Spec &amp; Eval</td><td>Was genau wird gebaut, wann ist es gut?</td></tr>
+    <tr><td>Prototyping</td><td>Funktioniert die Idee als Artefakt?</td></tr>
+    <tr><td>Handoff</td><td>Was braucht Dev zum Starten?</td></tr>
+    <tr><td>Meta</td><td>Wo stehe ich, was fehlt?</td></tr>
+  </table>
+</section>
+
+<!-- 6: Die Skills -->
+<section>
+  <h2>Die Skills — flach unter .claude/</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.62em; display: grid; grid-template-columns: 1fr 1fr; gap: 0.3em 2em; text-align: left; max-width: 800px; margin: 0 auto;">
+    <div><span class="highlight">/feedback-synthesizer</span><br><span class="dim">Feedback → Cluster</span></div>
+    <div><span class="highlight">/spec-writer</span><br><span class="dim">Brief → Spec</span></div>
+    <div><span class="highlight">/interview-analyzer</span><br><span class="dim">Interviews → Synthese</span></div>
+    <div><span class="highlight">/eval-writer</span><br><span class="dim">Spec → Eval-Kriterien</span></div>
+    <div><span class="highlight">/opportunity-scorer</span><br><span class="dim">Cluster → Scorecard</span></div>
+    <div><span class="highlight">/build-eval</span><br><span class="dim">Brief → Spec + Eval + Prototyp</span></div>
+    <div><span class="highlight">/decision-brief</span><br><span class="dim">Scorecard → 1-Pager</span></div>
+    <div><span class="highlight">/option-stormer</span><br><span class="dim">Spec → 3 Prototypen</span></div>
+    <div><span class="highlight">/devils-advocate</span><br><span class="dim">Brief → Annahmen-Kritik</span></div>
+    <div><span class="highlight">/eval-runner</span><br><span class="dim">Eval + App → PASS/FAIL</span></div>
+    <div><span class="highlight">/business-case-debater</span><br><span class="dim">Research → Debatte → Synthese</span></div>
+    <div><span class="highlight">/handoff-packager</span><br><span class="dim">Alles → Cover-Sheet für Dev</span></div>
+    <div><span class="highlight">/system-auditor</span><br><span class="dim">Workspace-Audit</span></div>
+  </div>
+</section>
+
+<!-- 7: Flow 1 -->
+<section>
+  <h2>Flow 1: Discovery → Entscheidung</h2>
+  <div class="spacer"></div>
+  <p class="dim">Rohes Feedback liegt vor. Du willst wissen: was steckt drin?</p>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="box">/feedback-synthesizer</div>
+    <span class="arrow">→</span>
+    <div class="box">/opportunity-scorer</div>
+    <span class="arrow">→</span>
+    <div class="box">/decision-brief</div>
+    <span class="arrow">→</span>
+    <div class="box">/devils-advocate</div>
+  </div>
+  <div class="spacer"></div>
+  <p class="dim fragment">Output: Decision Brief mit BUILD / SKIP / MEHR DATEN</p>
+</section>
+
+<!-- 8: Flow 2 -->
+<section>
+  <h2>Flow 2: Entscheidung → Dev-Ready</h2>
+  <div class="spacer"></div>
+  <p class="dim">Du weißt was gebaut werden soll. Du brauchst Spec, Prototyp, Handoff.</p>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="box">/spec-writer</div>
+    <span class="arrow">→</span>
+    <div class="box">/option-stormer</div>
+    <span class="arrow">→</span>
+    <div class="box">/eval-runner</div>
+    <span class="arrow">→</span>
+    <div class="box">/handoff-packager</div>
+  </div>
+  <div class="spacer"></div>
+  <p class="dim fragment">Output: Handoff mit Spec, Eval-Ergebnissen, Prototyp-Empfehlung</p>
+</section>
+
+<!-- 9: Output-Qualität -->
+<section>
+  <h2>Output-Qualität — die Grundregel</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Jeden Output lesen.</p>
+  <p class="fragment">Wenn etwas nicht stimmt — <span class="highlight">nicht von vorne anfangen.</span></p>
+  <div class="spacer"></div>
+  <blockquote class="fragment">"In der Scorecard bei Cluster 3 fehlt der Bezug zu unserem Team-Constraint. Ergänze das."</blockquote>
+  <div class="spacer"></div>
+  <p class="fragment dim">Fixe immer so früh wie möglich in der Kette:</p>
+  <p class="fragment"><span class="box-dim box">Brief</span> → <span class="box-dim box">Spec</span> → <span class="box-dim box">Eval</span> → <span class="box-warn box">Code</span></p>
+</section>
+
+<!-- 10: Kontext anpassen -->
+<section>
+  <h2>Kontext anpassen</h2>
+  <div class="spacer"></div>
+  <p>Standard: 7 Context-Files. Reicht nicht?</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Eigene Files hinzufügen:</p>
+  <p class="fragment dim">context/competitors.md — context/customers.md — context/tech-stack.md</p>
+  <div class="spacer"></div>
+  <p class="fragment">CLAUDE.md ergänzen:</p>
+  <blockquote class="fragment">- context/customers.md — immer<br>- context/competitors.md — bei Discovery und Strategy</blockquote>
+  <div class="spacer-sm"></div>
+  <p class="fragment dim">Eine Zeile. Claude liest es beim nächsten Aufruf.</p>
+</section>
+
+<!-- 11: MCP / Automatisierung -->
+<section>
+  <h2>Lokal erweitern</h2>
+  <div class="spacer"></div>
+  <p><span class="highlight">Input</span> — MCPs anbinden statt kopieren</p>
+  <p class="dim fragment">Slack → input/ &nbsp;|&nbsp; Notion → input/ &nbsp;|&nbsp; Linear → input/</p>
+  <div class="spacer"></div>
+  <p><span class="highlight">Output</span> — Artefakte weiterleiten</p>
+  <p class="dim fragment">handoff.md → Notion-Seite &nbsp;|&nbsp; → Linear-Dokument &nbsp;|&nbsp; → E-Mail-Entwurf</p>
+  <div class="spacer"></div>
+  <p class="fragment warn">Erst wenn du dem Flow vertraust.</p>
+</section>
+
+<!-- 12: Reife-Kurve -->
+<section>
+  <h2>Manuell → Übergabe → Automatisch</h2>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="stufe stufe-1">
+      <p style="color:#888; font-size:0.7em; margin:0">Stufe 1</p>
+      <p style="margin:0.2em 0"><strong>Manuell</strong></p>
+      <p class="dim" style="font-size:0.6em">Du rufst jeden Skill<br>selbst auf</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="stufe stufe-2">
+      <p style="color:#4fc3f7; font-size:0.7em; margin:0">Stufe 2</p>
+      <p style="margin:0.2em 0"><strong>Mit Übergabe</strong></p>
+      <p class="dim" style="font-size:0.6em">Automatisch laufen,<br>bewusst freigeben</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="stufe stufe-3">
+      <p style="color:#81c784; font-size:0.7em; margin:0">Stufe 3</p>
+      <p style="margin:0.2em 0"><strong>Automatisch</strong></p>
+      <p class="dim" style="font-size:0.6em">Flow läuft,<br>du greifst ein wenn nötig</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">Stufe 3 ≠ kein Mensch. Der Mensch entscheidet <em>wo</em> er eingreift.</p>
+</section>
+
+<!-- 13: Persönlich vs. Team -->
+<section>
+  <h2>Persönlicher Assistent vs. Team-Interface</h2>
+  <div class="spacer"></div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; font-size: 0.75em;">
+    <div style="border: 1px solid #555; border-radius: 8px; padding: 0.8em;">
+      <p style="color: #4fc3f7; margin: 0 0 0.4em 0"><strong>Persönlicher Assistent</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0">Du arbeitest allein</p>
+      <p style="color: #aaa; margin: 0.2em 0">Output ist für dich</p>
+      <p style="color: #aaa; margin: 0.2em 0">Kein anderer sieht den Prozess</p>
+      <p style="color: #666; margin: 0.5em 0 0 0; font-size: 0.85em">/decision-brief · /devils-advocate<br>/business-case-debater</p>
+    </div>
+    <div style="border: 1px solid #555; border-radius: 8px; padding: 0.8em;">
+      <p style="color: #81c784; margin: 0 0 0.4em 0"><strong>Team-Interface</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0">Output lesen andere</p>
+      <p style="color: #aaa; margin: 0.2em 0">Nachvollziehbarkeit zählt</p>
+      <p style="color: #aaa; margin: 0.2em 0">Format für Nicht-Nutzer</p>
+      <p style="color: #666; margin: 0.5em 0 0 0; font-size: 0.85em">/spec-writer · /handoff-packager<br>/eval-writer</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14: Skills erweitern -->
+<section>
+  <h2>Das System erweitern</h2>
+  <div class="spacer"></div>
+  <p>Skills aus der Community:</p>
+  <div class="spacer-sm"></div>
+  <ul>
+    <li><span class="highlight">Pawel Huryn</span> — github.com/phuryn/pm-skills</li>
+    <li><span class="highlight">Aakash Gupta</span> — aakashg.com</li>
+    <li><span class="highlight">Hannah Stulberg</span> — github.com/in-the-weeds-hannah-stulberg/team-os-example-repo</li>
+  </ul>
+  <div class="spacer"></div>
+  <p class="fragment warn">Niemals blind übernehmen.</p>
+  <p class="fragment dim">Lesen → Kontext prüfen → Pfade anpassen → Testen → Vertrauen → Automatisieren</p>
+</section>
+
+<!-- 15: Was es nicht ist -->
+<section>
+  <h2>Was dieses System nicht ist</h2>
+  <div class="spacer"></div>
+  <p class="fragment"><span class="warn">Kein Entscheidungsersatz</span><br><span class="dim">BUILD heißt: die Daten stützen diese Richtung. Du weißt was die Daten nicht wissen.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><span class="warn">Kein Todo-System</span><br><span class="dim">Es produziert Artefakte — keine Deadlines, keine Zuständigkeiten.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><span class="warn">Kein statisches Tool</span><br><span class="dim">Ein System das du nicht ändern kannst, kannst du nicht besitzen.</span></p>
+</section>
+
+<!-- 16: Starten -->
+<section>
+  <h2>Heute anfangen</h2>
+  <div class="spacer"></div>
+  <p class="fragment">1. <code>context/</code> befüllen — company.md + strategy.md</p>
+  <p class="fragment">2. <code>/system-auditor</code> — zeigt was noch fehlt</p>
+  <p class="fragment">3. Einen Flow wählen — manuell einmal durchlaufen</p>
+  <p class="fragment">4. Output beurteilen — einmal korrigieren lassen</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Der Rest ist Praxis.</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: true,
+    plugins: []
+  });
+</script>
+</body>
+</html>
