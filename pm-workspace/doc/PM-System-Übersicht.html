@@ -101,6 +101,7 @@
     │ &nbsp;&nbsp;└── case/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Briefs &amp; Datendateien<br>
     ├── <span class="c">output/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Artefakte raus<br>
     │ &nbsp;&nbsp;└── YYYY-MM-DD/ &nbsp;Ein Run, ein Ordner<br>
+    ├── <span class="c">scripts/</span> &nbsp;&nbsp;&nbsp;&nbsp;← Persönliche Sandbox<br>
     └── <span class="c">.claude/skills/</span> &nbsp;Die Skills<br>
   </div>
 </section>
@@ -270,12 +271,37 @@
   </div>
 </section>
 
-<!-- 14: Skills erweitern -->
+<!-- 14: Skills entwickeln -->
 <section>
-  <h2>Das System erweitern</h2>
+  <h2>Eigene Skills entwickeln</h2>
   <div class="spacer"></div>
-  <p>Skills aus der Community:</p>
-  <div class="spacer-sm"></div>
+  <div class="row">
+    <div class="stufe stufe-1">
+      <p style="color:#888; font-size:0.7em; margin:0">Schritt 1</p>
+      <p style="margin:0.2em 0"><strong>scripts/</strong></p>
+      <p class="dim" style="font-size:0.6em">Sandbox.<br>Kein Format-Zwang.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="stufe stufe-2">
+      <p style="color:#4fc3f7; font-size:0.7em; margin:0">Schritt 2</p>
+      <p style="margin:0.2em 0"><strong>SKILL.md</strong></p>
+      <p class="dim" style="font-size:0.6em">Verpacken als Skill<br>in .claude/skills/</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="stufe stufe-3">
+      <p style="color:#81c784; font-size:0.7em; margin:0">Schritt 3</p>
+      <p style="margin:0.2em 0"><strong>PR → Merge</strong></p>
+      <p class="dim" style="font-size:0.6em">Review durch Team,<br>dann für alle.</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">scripts/ ist dein Zimmer. .claude/skills/ ist das Wohnzimmer.</p>
+</section>
+
+<!-- 15: Skills aus Community -->
+<section>
+  <h2>Skills aus der Community</h2>
+  <div class="spacer"></div>
   <ul>
     <li><span class="highlight">Pawel Huryn</span> — github.com/phuryn/pm-skills</li>
     <li><span class="highlight">Aakash Gupta</span> — aakashg.com</li>
@@ -283,7 +309,7 @@
   </ul>
   <div class="spacer"></div>
   <p class="fragment warn">Niemals blind übernehmen.</p>
-  <p class="fragment dim">Lesen → Kontext prüfen → Pfade anpassen → Testen → Vertrauen → Automatisieren</p>
+  <p class="fragment dim">Lesen → Kontext prüfen → Pfade anpassen → in scripts/ testen → SKILL.md → PR</p>
 </section>
 
 <!-- 15: Was es nicht ist -->

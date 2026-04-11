@@ -113,6 +113,8 @@ Dein Zimmer. Hier passiert die eigentliche Arbeit.
 
 `output/YYYY-MM-DD/` — alle Artefakte die du produzierst. Prototypen, Decision Briefs, Eval-Ergebnisse, Synthesen, Drafts. Alles privat bis du es teilst.
 
+`scripts/` — deine Skill-Werkstatt. Hier entwickelst du neue Skills bevor sie ins Team gehen. Kein Format-Zwang, keine Reviews. Wenn etwas fertig ist, wird es zu einer SKILL.md und geht per PR ins Repo.
+
 Was hier passiert:
 - Du probierst drei Prototyp-Varianten aus (`/option-stormer`)
 - Du schreibst einen Decision Brief und lässt den Devil's Advocate drüber laufen
@@ -139,7 +141,8 @@ Fünf Typen von Inhalten, fünf Wege:
 
 | Was | Wo | Wie | Beispiel |
 |-----|-----|-----|---------|
-| **Skills** | `.claude/skills/` im Repo | Branch → PR → Review → Merge | Du ergänzt eine Risk-Sektion im decision-brief Skill. Ab jetzt hat das ganze Team sie. |
+| **Neuer Skill** | `scripts/` → `.claude/skills/` | Entwickeln in scripts/ → SKILL.md → Branch → PR → Merge | Du entwickelst einen neuen Skill lokal. Wenn er gut ist, machst du einen PR. Ab Merge gehört er allen. |
+| **Skills (verbessert)** | `.claude/skills/` im Repo | Branch → PR → Review → Merge | Du ergänzt eine Risk-Sektion im decision-brief Skill. Ab jetzt hat das ganze Team sie. |
 | **Context** | `context/` im Repo | Branch → PR → Review → Merge | Strategie-Meeting ergibt neuen Fokus. PM updated strategy.md. Alle Skills arbeiten ab jetzt mit neuem Kontext. |
 | **CLAUDE.md** | Root im Repo | Branch → PR → Review → Merge | Team beschließt neue Output-Konvention. Jemand updated CLAUDE.md. |
 | **Artefakte** | Persönlich → Slack / Meeting | Bewusste Entscheidung | Decision Brief fertig → Slack oder Weekly. |
@@ -314,13 +317,14 @@ WOHNZIMMER (Repo)           ZIMMER (Lokal)
 CLAUDE.md                   output/YYYY-MM-DD/
 context/                    Drafts
 .claude/skills/             Prototypen
+                            scripts/ ← Skill-Werkstatt
                             Experimente
 
 Übergang: PR oder Meeting    Übergang: bewusstes Teilen
 Familienregeln:              Deine Regeln:
 Kein PR ohne Review          Mach was du willst
 Skills sind Code             Probier drei Varianten
-Context ist Truth            Scheitere leise
+Context ist Truth            Bau in scripts/, promote per PR
 Änderungen sind sichtbar     Teile wenn's gut ist
 ```
 

@@ -72,6 +72,9 @@ pm-workspace/
 ├── output/           ← Artefakte raus
 │   └── YYYY-MM-DD/   Ein Verzeichnis pro Run
 │
+├── scripts/          ← Persönliche Sandbox
+│   └── ...           Neue Skills in Entwicklung
+│
 └── .claude/
     └── skills/       ← Die Skills (flach, aber konzeptuell gegliedert)
 ```
@@ -281,6 +284,16 @@ Das System ist open-ended. Die interessanteste Erweiterung kommt nicht von dir a
 3. Pfade anpassen — Input und Output auf `output/YYYY-MM-DD/` umbiegen
 4. Context-Regel prüfen — welche `context/`-Files muss er lesen?
 5. Testen — einmal manuell laufen lassen, Output beurteilen
+
+**Eigene Skills entwickeln — über scripts/:**
+
+Wenn du selbst etwas Neues entwickeln willst, fang in `scripts/` an. Das ist deine persönliche Sandbox — kein Format-Zwang, keine Reviews. Wenn es gut genug ist:
+
+1. Als `SKILL.md` verpacken → nach `.claude/skills/[name]/SKILL.md`
+2. Branch erstellen, PR aufmachen
+3. Kollegen reviewen, Merge ins Team-Repo
+
+`scripts/` ist dein Zimmer. `.claude/skills/` ist das Wohnzimmer. Der Übergang läuft bewusst über Git.
 
 **Niemals:** Einen fremden Skill blind übernehmen und in einen automatisierten Flow einbauen. Erst verstehen, dann vertrauen, dann automatisieren.
 

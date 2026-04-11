@@ -94,5 +94,8 @@ Drei Varianten, dann entscheiden — nicht eine Lösung und hoffen. Fällt eine 
 - Kontext: `context/` — wird von jedem Skill gelesen
 - Input: `input/` — Rohdaten, Briefs, Datendateien
 - Output: `output/YYYY-MM-DD/` — ein Verzeichnis pro Run
+- Scripts: `scripts/` — persönliche Sandbox für neue Skills in Entwicklung
+
+**Skill-Entwicklungs-Flow:** `scripts/` → `SKILL.md` → Branch → PR → Review → Merge
 
 CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/README.md`.
