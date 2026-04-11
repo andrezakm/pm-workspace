@@ -99,3 +99,10 @@ Drei Varianten, dann entscheiden — nicht eine Lösung und hoffen. Fällt eine 
 **Skill-Entwicklungs-Flow:** `scripts/` → `SKILL.md` → Branch → PR → Review → Merge
 
 CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/README.md`.
+
+---
+
+## Kurse
+
+- `/kurs` — Das System verstehen: Struktur, Flows, Anpassung, Erweiterung (kein Hands-on nötig)
+- `/zeig_mir_teamwork` — Teamwork in Claude Code: Zimmer/Wohnzimmer, Git-Workflow, scripts/ → PR
