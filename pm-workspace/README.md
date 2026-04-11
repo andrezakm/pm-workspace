@@ -108,7 +108,7 @@ CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/READM
 |------|-------------|-------|
 | `/kurs` | `doc/PM-System-Übersicht.html` | Das System verstehen: Struktur, Flows, Anpassung |
 | `/zeig_mir_teamwork` | `doc/PM-Teamwork-Übersicht.html` | Teamwork: Zimmer/Wohnzimmer, Übergabe-Flow |
-| `/mini_git_kurs` | `doc/Git-Grundlagen.html` | Git: Versionierung, Branches, PRs, Claude als Assistent |
+| `/mini_git_kurs` | `doc/Git-Grundlagen.html` | Git: Versionierung, Branches, PRs — das Werkzeug hinter dem Flow |
 
 **Empfohlener Kurs-Flow:**
 
@@ -119,10 +119,10 @@ Schritt 1 — Alleine starten
   → context/ befüllen, /system-auditor, ersten Flow manuell durchlaufen
 
 Schritt 2 — Mit dem Team
-  /mini_git_kurs              Git-Grundlagen (parallel oder vorher)
-  → doc/Git-Grundlagen.html als Referenz
   /zeig_mir_teamwork          Teamwork-Prinzipien, Notizen machen
   → doc/PM-Teamwork-Übersicht.html für Team-Gespräch nutzen
+  /mini_git_kurs              Git-Grundlagen — jetzt macht es Sinn
+  → doc/Git-Grundlagen.html als Referenz
 
 Schritt 3 — Plan machen
   Claude: "Hier sind meine Notizen aus beiden Kursen.
