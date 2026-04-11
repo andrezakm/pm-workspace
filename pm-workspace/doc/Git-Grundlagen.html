@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git-Grundlagen für PM-Teams</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  .reveal { font-size: 32px; }
+  .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: 0.4em; }
+  .reveal h3 { font-size: 1.1em; color: #888; }
+  .reveal p { margin: 0.3em 0; }
+  .reveal .highlight { color: #4fc3f7; }
+  .reveal .warn { color: #ff8a65; }
+  .reveal .pass { color: #81c784; }
+  .reveal .dim { color: #666; font-size: 0.7em; }
+  .reveal ul { list-style: none; padding: 0; margin: 0.3em 0; }
+  .reveal ul li::before { content: "→ "; color: #4fc3f7; }
+  .reveal ul li { margin-bottom: 0.3em; }
+  .reveal .box { border: 2px solid #4fc3f7; border-radius: 8px; padding: 0.3em 0.7em; display: inline-block; margin: 0.2em; font-size: 0.85em; }
+  .reveal .box-warn { border-color: #ff8a65; color: #ff8a65; }
+  .reveal .box-pass { border-color: #81c784; color: #81c784; }
+  .reveal .box-dim { border-color: #555; color: #888; }
+  .reveal blockquote { border-left: 4px solid #4fc3f7; padding-left: 1em; font-style: italic; color: #aaa; margin: 0.5em 0; font-size: 0.85em; }
+  .reveal table { margin: 0 auto; font-size: 0.58em; }
+  .reveal table th { color: #4fc3f7; border-bottom: 2px solid #4fc3f7; padding: 0.3em 0.8em; }
+  .reveal table td { border-bottom: 1px solid #333; padding: 0.3em 0.8em; vertical-align: top; font-family: 'Courier New', monospace; }
+  .reveal table td.txt { font-family: inherit; }
+  .reveal .subtitle { color: #888; font-size: 0.75em; margin-top: -0.3em; }
+  .reveal .spacer { height: 0.5em; }
+  .reveal .spacer-sm { height: 0.25em; }
+  .reveal pre { font-size: 0.52em; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 0.8em; margin: 0.3em 0; text-align: left; }
+  .reveal code { font-family: 'Courier New', monospace; color: #81c784; }
+  .reveal .cmd { font-family: 'Courier New', monospace; color: #81c784; font-size: 0.85em; }
+  .reveal .label { font-size: 0.65em; color: #888; margin-top: 0.2em; }
+  .reveal .arrow { color: #4fc3f7; font-size: 1.2em; margin: 0 0.3em; }
+  .reveal .row { display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.4em 0; }
+  .reveal .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; font-size: 0.8em; }
+  .reveal .card { border: 1px solid #555; border-radius: 8px; padding: 0.8em; }
+  .reveal .card-blue { border-color: #4fc3f7; }
+  .reveal .card-green { border-color: #81c784; }
+  .reveal .step { border: 1px solid #333; border-radius: 8px; padding: 0.4em 0.8em; min-width: 6em; text-align: center; font-size: 0.75em; }
+  .reveal .step-1 { border-color: #555; }
+  .reveal .step-2 { border-color: #4fc3f7; }
+  .reveal .step-3 { border-color: #81c784; }
+  .reveal .step-4 { border-color: #ff8a65; }
+  .reveal .step-5 { border-color: #ce93d8; }
+  .reveal .flow-line { font-family: 'Courier New', monospace; font-size: 0.65em; color: #ccc; text-align: left; display: inline-block; line-height: 1.8; }
+  .reveal .flow-line .c { color: #81c784; }
+  .reveal .flow-line .b { color: #4fc3f7; }
+  .reveal .flow-line .d { color: #555; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1: Titel -->
+<section>
+  <h1>Git-Grundlagen</h1>
+  <h3>Versionierung und Teamwork für PM-Teams</h3>
+  <p class="dim">AI-Augmented PM — Woche 5</p>
+</section>
+
+<!-- 2: Warum Git -->
+<section>
+  <h2>Warum Git?</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Jede Änderung ist gespeichert — wer, was, wann, warum.</p>
+  <p class="fragment">Kein Überschreiben. Kein Verlust. Jederzeit zurück.</p>
+  <p class="fragment">Mehrere arbeiten parallel — ohne Kollisionen.</p>
+  <p class="fragment">Änderungen werden reviewt <em>bevor</em> sie für alle gelten.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Im pm-workspace: Skills, context/, CLAUDE.md sind geteilte Infrastruktur.<br>Git ist der Mechanismus der das kontrolliert ermöglicht.</p>
+</section>
+
+<!-- 3: Die drei Grundbegriffe -->
+<section>
+  <h2>Die drei Grundbegriffe</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.75em; text-align: left; max-width: 700px; margin: 0 auto;">
+    <p><span class="highlight"><strong>Repository (Repo)</strong></span><br>
+    <span style="color:#aaa">Der beobachtete Ordner + seine gesamte Geschichte. Existiert lokal (dein Rechner) und remote (GitHub).</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight"><strong>Commit</strong></span><br>
+    <span style="color:#aaa">Ein gespeicherter Zustand — Foto des Repos zu einem Zeitpunkt. Hat Nachricht + Zeitstempel + Autor.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight"><strong>Branch</strong></span><br>
+    <span style="color:#aaa">Eine Abzweigung vom Hauptstand. Du arbeitest isoliert. main bleibt stabil bis du fertig bist.</span></p>
+  </div>
+  <div class="spacer"></div>
+  <div class="flow-line fragment">
+    main &nbsp;──<span class="c">●</span>──<span class="c">●</span>──<span class="c">●</span>──────────────────<span class="c">●</span>──▶<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">●</span>──<span class="b">●</span>──<span class="b">●</span>&nbsp;&nbsp;<span class="d">(dein Branch)</span>
+  </div>
+</section>
+
+<!-- 4: Lokal vs Remote -->
+<section>
+  <h2>Lokal und Remote</h2>
+  <div class="spacer-sm"></div>
+  <div class="col2">
+    <div class="card card-blue">
+      <p style="color:#4fc3f7; margin:0 0 0.3em"><strong>Lokal — dein Rechner</strong></p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">Working Directory</p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">↓ <span class="cmd">git add</span></p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">Staging Area</p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">↓ <span class="cmd">git commit</span></p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">Local History</p>
+    </div>
+    <div class="card card-green">
+      <p style="color:#81c784; margin:0 0 0.3em"><strong>Remote — GitHub</strong></p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">Geteilte Wahrheit.</p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em">Alle sehen dasselbe.</p>
+      <div class="spacer-sm"></div>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em"><span class="cmd">git push</span> → hochladen</p>
+      <p style="color:#aaa; margin:0.15em 0; font-size:0.85em"><span class="cmd">git pull</span> → holen</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment warn" style="font-size:0.75em">Vor jedem Arbeitsbeginn: <code>git pull</code></p>
+</section>
+
+<!-- 5: Die Basis-Kommandos -->
+<section>
+  <h2>Basis-Kommandos</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th>Kommando</th><th class="txt">Was es tut</th></tr>
+    <tr><td>git status</td><td class="txt">Wo stehe ich? Was ist geändert?</td></tr>
+    <tr><td>git log --oneline</td><td class="txt">Letzte Commits — kompakt</td></tr>
+    <tr><td>git diff</td><td class="txt">Was genau hat sich geändert?</td></tr>
+    <tr><td>git clone &lt;url&gt;</td><td class="txt">Repo auf deinen Rechner holen (einmalig)</td></tr>
+    <tr><td>git pull</td><td class="txt">Neuen Stand vom Remote holen</td></tr>
+    <tr><td>git add &lt;datei&gt;</td><td class="txt">Datei für Commit vorbereiten</td></tr>
+    <tr><td>git commit -m "..."</td><td class="txt">Zustand mit Nachricht speichern</td></tr>
+    <tr><td>git push</td><td class="txt">Commits auf GitHub hochladen</td></tr>
+  </table>
+</section>
+
+<!-- 6: Branches -->
+<section>
+  <h2>Branches — warum und wie</h2>
+  <div class="spacer-sm"></div>
+  <p class="dim">Direkt auf main arbeiten = andere blockieren. Branch = dein Zimmer.</p>
+  <div class="spacer-sm"></div>
+  <pre><code># Neuen Branch erstellen und drauf wechseln
+git checkout -b skill/decision-brief-risk
+
+# Änderungen machen...
+
+# Stagen und committen
+git add .claude/skills/decision-brief/SKILL.md
+git commit -m "skill: Risk-Sektion ergänzt"
+
+# Auf GitHub hochladen
+git push -u origin skill/decision-brief-risk
+
+# Nach dem Merge: zurück zu main
+git checkout main
+git pull</code></pre>
+  <div class="spacer-sm"></div>
+  <p class="dim fragment">Branch-Konventionen: <code>update/</code> · <code>skill/</code> · <code>fix/</code> · <code>context/</code></p>
+</section>
+
+<!-- 7: PR / Review / Merge -->
+<section>
+  <h2>Pull Request → Review → Merge</h2>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="step step-1">
+      <p style="color:#888; font-size:0.6em; margin:0">1</p>
+      <p style="margin:0.15em 0; font-size:0.85em"><strong>Branch</strong></p>
+      <p class="dim" style="font-size:0.55em">Arbeiten ohne<br>main zu berühren</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-2">
+      <p style="color:#4fc3f7; font-size:0.6em; margin:0">2</p>
+      <p style="margin:0.15em 0; font-size:0.85em"><strong>Push + PR</strong></p>
+      <p class="dim" style="font-size:0.55em">Auf GitHub:<br>"Bitte schaut drüber"</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-3">
+      <p style="color:#81c784; font-size:0.6em; margin:0">3</p>
+      <p style="margin:0.15em 0; font-size:0.85em"><strong>Review</strong></p>
+      <p class="dim" style="font-size:0.55em">Kollege liest Diff,<br>kommentiert oder OK</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-4">
+      <p style="color:#ff8a65; font-size:0.6em; margin:0">4</p>
+      <p style="margin:0.15em 0; font-size:0.85em"><strong>Merge</strong></p>
+      <p class="dim" style="font-size:0.55em">Drin. Für alle.<br>Ab jetzt.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-5">
+      <p style="color:#ce93d8; font-size:0.6em; margin:0">5</p>
+      <p style="margin:0.15em 0; font-size:0.85em"><strong>git pull</strong></p>
+      <p class="dim" style="font-size:0.55em">Alle holen<br>neuen Stand</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">Ein PR = eine Sache. Macht Review einfacher.</p>
+  <p class="fragment dim">Git ≠ GitHub. Git ist das Werkzeug. GitHub hostet das Repo und den PR-Prozess.</p>
+</section>
+
+<!-- 8: .gitignore -->
+<section>
+  <h2>.gitignore — was Git ignoriert</h2>
+  <div class="spacer-sm"></div>
+  <pre><code># pm-workspace/.gitignore
+
+# Output-Artefakte — nie committen, jeder macht seine eigenen Runs
+output/**
+!output/**/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+
+# macOS
+.DS_Store</code></pre>
+  <div class="spacer-sm"></div>
+  <ul>
+    <li><code>output/</code> ist persönlich — Runs, Prototypen, Drafts. Nicht teilen.</li>
+    <li><code>.gitkeep</code> hält leere Ordner am Leben (Git trackt keine leeren Ordner).</li>
+    <li>Eigene Einträge einfach hinzufügen: <code>notes/</code>, <code>*.local.md</code></li>
+  </ul>
+</section>
+
+<!-- 9: Claude macht Git -->
+<section>
+  <h2>Claude macht Git für dich</h2>
+  <div class="spacer-sm"></div>
+  <blockquote>"Erstelle einen Branch <code>update/strategy-q2</code> und committe <code>context/strategy.md</code> mit der Nachricht 'Strategy: Q2-Fokus Enterprise'."</blockquote>
+  <div class="spacer-sm"></div>
+  <pre><code>git checkout -b update/strategy-q2
+git add context/strategy.md
+git commit -m "Strategy: Q2-Fokus Enterprise"
+git push -u origin update/strategy-q2</code></pre>
+  <div class="spacer"></div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; font-size: 0.7em;">
+    <div style="border: 1px solid #81c784; border-radius: 8px; padding: 0.6em;">
+      <p style="color:#81c784; margin:0 0 0.3em"><strong>Claude macht:</strong></p>
+      <p style="color:#aaa; margin:0.15em 0">Branch erstellen</p>
+      <p style="color:#aaa; margin:0.15em 0">Dateien stagen</p>
+      <p style="color:#aaa; margin:0.15em 0">Committen &amp; Pushen</p>
+      <p style="color:#aaa; margin:0.15em 0">Status prüfen</p>
+    </div>
+    <div style="border: 1px solid #ff8a65; border-radius: 8px; padding: 0.6em;">
+      <p style="color:#ff8a65; margin:0 0 0.3em"><strong>Du entscheidest:</strong></p>
+      <p style="color:#aaa; margin:0.15em 0">PR öffnen (auf GitHub)</p>
+      <p style="color:#aaa; margin:0.15em 0">Konflikt-Inhalt</p>
+      <p style="color:#aaa; margin:0.15em 0">Finaler Merge</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10: Cheat Sheet -->
+<section>
+  <h2>Cheat Sheet — der PM-Workflow</h2>
+  <div class="spacer-sm"></div>
+  <pre><code>TÄGLICH
+git pull                         # Aktuellen Stand holen
+git status                       # Wo stehe ich?
+
+ÄNDERUNG MACHEN
+git checkout -b typ/beschreibung # Neuen Branch
+git add &lt;datei&gt;                  # Stagen
+git commit -m "Warum, nicht was" # Committen
+git push -u origin &lt;branch&gt;     # PR öffnen auf GitHub
+
+NACH DEM MERGE
+git checkout main && git pull    # Zurück + Stand holen
+
+ORIENTIERUNG
+git log --oneline                # Was ist passiert?
+git diff                         # Was hat sich geändert?
+
+NOTFALL
+git stash / git stash pop        # Änderungen kurz weglegen</code></pre>
+  <div class="spacer-sm"></div>
+  <p class="dim fragment">pull → branch → ändern → add → commit → push → PR → review → merge → pull</p>
+</section>
+
+<!-- 11: Für den pm-workspace -->
+<section>
+  <h2>Im pm-workspace konkret</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th class="txt">Was du änderst</th><th class="txt">Branch-Name</th><th class="txt">Wer reviewt</th></tr>
+    <tr><td class="txt">context/strategy.md</td><td>context/strategy-q2</td><td class="txt">Team oder Guardian</td></tr>
+    <tr><td class="txt">Skill verbessert</td><td>skill/decision-brief-risk</td><td class="txt">Kollege der ihn nutzt</td></tr>
+    <tr><td class="txt">Neuer Skill aus scripts/</td><td>skill/stakeholder-mapper</td><td class="txt">Guardian + 1 Nutzer</td></tr>
+    <tr><td class="txt">CLAUDE.md geändert</td><td>fix/claude-md-kontext</td><td class="txt">Guardian</td></tr>
+    <tr><td class="txt">learnings.md ergänzt</td><td>context/learnings-onboarding</td><td class="txt">Schnell, 1 Review</td></tr>
+  </table>
+  <div class="spacer"></div>
+  <p class="fragment dim">output/ kommt nie ins Repo. .gitignore sorgt dafür.</p>
+</section>
+
+<!-- 12: Zusammenfassung -->
+<section>
+  <h2>Das Wesentliche</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Git ist kein Entwickler-Tool.</p>
+  <p class="fragment pass">Es ist Infrastruktur für jeden der kontrolliert zusammenarbeiten will.</p>
+  <div class="spacer"></div>
+  <p class="fragment">Im pm-workspace verbindet Git Zimmer und Wohnzimmer.</p>
+  <p class="fragment dim">scripts/ → SKILL.md → Branch → PR → Review → Merge → git pull</p>
+  <div class="spacer"></div>
+  <p class="fragment highlight">Claude kennt die Kommandos. Du entscheidest was rein soll.</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: true,
+    plugins: []
+  });
+</script>
+</body>
+</html>

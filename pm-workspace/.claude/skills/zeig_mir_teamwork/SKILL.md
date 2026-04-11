@@ -97,7 +97,7 @@ Jeder klont das Repo. Jeder hat lokal eine Kopie. Änderungen an Skills, Context
 - **Review** = jemand liest die Änderungen und gibt grünes Licht (oder macht Kommentare)
 - **Merge** = die Änderungen sind drin — für alle, sofort beim nächsten `git pull`
 
-Für den genauen Ablauf gibt es einen eigenen Mini-Git-Kurs.
+Für den genauen Ablauf gibt es einen eigenen Mini-Git-Kurs: `/mini_git_kurs`.
 
 **Reflexion:** Was in eurem aktuellen PM-Prozess würde in `context/` gehören? Was würde sich ändern wenn alle dasselbe context/strategy.md lesen?
 
@@ -379,5 +379,6 @@ Claude arbeitet dann mit dir durch: was ihr schon habt, was ihr aufbauen müsst,
 
 - `doc/PM-Teamwork-Übersicht.html` — Präsentation: Zimmer/Wohnzimmer, Branch/PR/Flow, Spielregeln
 - `README.md` — Skill-Übersicht
-- Mini-Git-Kurs — Branches, PRs, Merge für PM-Teams (separater Kurs)
+- `/mini_git_kurs` — Branches, PRs, Merge für PM-Teams + Claude als Git-Assistent
+- `doc/Git-Grundlagen.html` — Präsentation: Git-Prinzipien und Kommandos im Überblick
 - `../TeamworkinClaude.md` — Vollständiges Referenz-Dokument mit Beispielen

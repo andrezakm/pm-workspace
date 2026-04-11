@@ -106,5 +106,6 @@ CLAUDE.md ist bewusst kurz. Details zu jedem Skill: `.claude/skills/[name]/READM
 
 1. `/kurs` — Das System verstehen: Struktur, Flows, Anpassung, Erweiterung
 2. `/zeig_mir_teamwork` — Teamwork in Claude Code: Zimmer/Wohnzimmer, Git-Workflow, scripts/ → PR
+3. `/mini_git_kurs` — Git-Grundlagen: Versionierung, Branches, PRs, Claude als Git-Assistent
 
 **Empfehlung:** Gehe beide Kurse der Reihe nach durch und mach dir dabei Notizen zu deiner eigenen Situation. Am Ende von Kurs 2 kannst du Claude direkt bitten, gemeinsam mit dir einen konkreten Plan zu erstellen — wie du das System auf dein Team anpasst, was du erweiterst, welche Spielregeln ihr festlegt. Die Präsentation `doc/PM-System-Übersicht.html` hilft als Überblick im Team-Gespräch.
