@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teamwork in Claude Code — Übersicht</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  .reveal { font-size: 32px; }
+  .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: 0.4em; }
+  .reveal h3 { font-size: 1.1em; color: #888; }
+  .reveal p { margin: 0.3em 0; }
+  .reveal .highlight { color: #4fc3f7; }
+  .reveal .warn { color: #ff8a65; }
+  .reveal .pass { color: #81c784; }
+  .reveal .dim { color: #666; font-size: 0.7em; }
+  .reveal ul { list-style: none; padding: 0; margin: 0.3em 0; }
+  .reveal ul li::before { content: "→ "; color: #4fc3f7; }
+  .reveal ul li { margin-bottom: 0.3em; }
+  .reveal .box { border: 2px solid #4fc3f7; border-radius: 8px; padding: 0.3em 0.7em; display: inline-block; margin: 0.2em; font-size: 0.85em; }
+  .reveal .box-warn { border-color: #ff8a65; color: #ff8a65; }
+  .reveal .box-pass { border-color: #81c784; color: #81c784; }
+  .reveal .box-dim { border-color: #555; color: #888; }
+  .reveal blockquote { border-left: 4px solid #4fc3f7; padding-left: 1em; font-style: italic; color: #aaa; margin: 0.5em 0; font-size: 0.85em; }
+  .reveal table { margin: 0 auto; font-size: 0.55em; }
+  .reveal table th { color: #4fc3f7; border-bottom: 2px solid #4fc3f7; padding: 0.3em 0.8em; }
+  .reveal table td { border-bottom: 1px solid #333; padding: 0.3em 0.8em; vertical-align: top; }
+  .reveal .subtitle { color: #888; font-size: 0.75em; margin-top: -0.3em; }
+  .reveal .spacer { height: 0.5em; }
+  .reveal .spacer-sm { height: 0.25em; }
+  .reveal pre { font-size: 0.55em; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 0.8em; margin: 0.3em 0; }
+  .reveal code { font-family: 'Courier New', monospace; color: #81c784; }
+  .reveal .tree { text-align: left; display: inline-block; font-size: 0.6em; font-family: 'Courier New', monospace; color: #ccc; line-height: 1.6; }
+  .reveal .tree .c { color: #4fc3f7; }
+  .reveal .tree .g { color: #81c784; }
+  .reveal .tree .d { color: #666; }
+  .reveal .label { font-size: 0.65em; color: #888; margin-top: 0.2em; }
+  .reveal .arrow { color: #4fc3f7; font-size: 1.2em; margin: 0 0.3em; }
+  .reveal .row { display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.4em 0; }
+  .reveal .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; font-size: 0.75em; }
+  .reveal .card { border: 1px solid #555; border-radius: 8px; padding: 0.8em; }
+  .reveal .card-blue { border-color: #4fc3f7; }
+  .reveal .card-green { border-color: #81c784; }
+  .reveal .card-orange { border-color: #ff8a65; }
+  .reveal .step { border: 1px solid #333; border-radius: 8px; padding: 0.5em 1em; min-width: 7em; text-align: center; }
+  .reveal .step-1 { border-color: #555; }
+  .reveal .step-2 { border-color: #4fc3f7; }
+  .reveal .step-3 { border-color: #81c784; }
+  .reveal .step-4 { border-color: #ff8a65; }
+  .reveal .pill { background: #1a1a1a; border: 1px solid #333; border-radius: 20px; padding: 0.15em 0.6em; font-size: 0.7em; display: inline-block; margin: 0.1em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1: Titel -->
+<section>
+  <h1>Teamwork in Claude Code</h1>
+  <h3>Gemeinsam mit einem System arbeiten — ohne Kollisionen</h3>
+  <p class="dim">AI-Augmented PM — Woche 5</p>
+</section>
+
+<!-- 2: Das Grundproblem -->
+<section>
+  <h2>Das Problem mit geteilten Tools</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Jeder hat seinen eigenen Claude-Kontext.</p>
+  <p class="fragment">Niemand weiß was der andere gerade macht.</p>
+  <p class="fragment">Skills die einer verbessert, bleiben bei ihm.</p>
+  <p class="fragment">Learnings die einer macht, gehen verloren.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Das System löst das — aber nur wenn ihr wisst wie.</p>
+</section>
+
+<!-- 3: Zimmer & Wohnzimmer -->
+<section>
+  <h2>Das Grundprinzip</h2>
+  <div class="spacer-sm"></div>
+  <div class="col2">
+    <div class="card card-blue">
+      <p style="color:#4fc3f7; margin:0 0 0.4em 0"><strong>Dein Zimmer</strong></p>
+      <p style="color:#aaa; margin:0.2em 0">Sandbox. Dein Denkraum.</p>
+      <p style="color:#aaa; margin:0.2em 0">Niemand sieht rein.</p>
+      <p style="color:#aaa; margin:0.2em 0">Kein Format-Zwang.</p>
+      <div class="spacer-sm"></div>
+      <p class="pill">output/YYYY-MM-DD/</p>
+      <p class="pill">scripts/</p>
+      <p class="pill">Drafts & Prototypen</p>
+    </div>
+    <div class="card card-green">
+      <p style="color:#81c784; margin:0 0 0.4em 0"><strong>Das Wohnzimmer</strong></p>
+      <p style="color:#aaa; margin:0.2em 0">Truth. Gilt für alle.</p>
+      <p style="color:#aaa; margin:0.2em 0">Familienregeln.</p>
+      <p style="color:#aaa; margin:0.2em 0">Nur per Review rein.</p>
+      <div class="spacer-sm"></div>
+      <p class="pill">CLAUDE.md</p>
+      <p class="pill">context/</p>
+      <p class="pill">.claude/skills/</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">Der Übergang wird bewacht — nicht automatisch, nicht heimlich.</p>
+</section>
+
+<!-- 4: Die drei Schichten -->
+<section>
+  <h2>Die drei Schichten</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th>Schicht</th><th>Was</th><th>Wer richtet ein</th></tr>
+    <tr>
+      <td><span class="highlight">1 — Geteilte Infrastruktur</span></td>
+      <td>Git Repo: CLAUDE.md, context/, .claude/skills/</td>
+      <td>Einmal, gemeinsam</td>
+    </tr>
+    <tr>
+      <td><span class="pass">2 — Geteilte Quellen</span></td>
+      <td>MCPs: Slack, Granola, Linear, Notion...</td>
+      <td>Jede Person selbst</td>
+    </tr>
+    <tr>
+      <td><span style="color:#aaa">3 — Persönlicher Workspace</span></td>
+      <td>Lokal: output/, scripts/, Experimente</td>
+      <td>Jede Person selbst</td>
+    </tr>
+  </table>
+  <div class="spacer"></div>
+  <p class="fragment dim">Geteilte Quelle ≠ geteilte Interpretation. Ein PM und ein Designer lesen denselben Slack-Thread — und sehen verschiedene Dinge. Das ist gut so.</p>
+</section>
+
+<!-- 5: Was ins Repo -->
+<section>
+  <h2>Was ins gemeinsame Repo gehört</h2>
+  <div class="spacer-sm"></div>
+  <div class="tree">
+    pm-workspace/ <span class="d">(Git Repo)</span><br>
+    ├── <span class="c">CLAUDE.md</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← System-Kern, gilt für alle<br>
+    ├── <span class="c">context/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Stand der Wahrheit<br>
+    │ &nbsp;&nbsp;├── company.md<br>
+    │ &nbsp;&nbsp;├── strategy.md<br>
+    │ &nbsp;&nbsp;└── learnings.md &nbsp;<span class="d">+ team / metrics / roadmap</span><br>
+    ├── <span class="c">.claude/skills/</span> &nbsp;← Werkzeuge des Teams<br>
+    ├── <span class="c">scripts/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Sandbox, persönlich<br>
+    └── <span class="d">output/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← NIE committen (.gitignore)</span><br>
+  </div>
+</section>
+
+<!-- 6: Der Übergang — Branch/PR/Review/Merge -->
+<section>
+  <h2>Wie etwas ins Wohnzimmer kommt</h2>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="step step-1">
+      <p style="color:#888; font-size:0.65em; margin:0">1</p>
+      <p style="margin:0.2em 0"><strong>Branch</strong></p>
+      <p class="dim" style="font-size:0.6em">Eigene Kopie.<br>Änderungen machen<br>ohne andere zu stören.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-2">
+      <p style="color:#4fc3f7; font-size:0.65em; margin:0">2</p>
+      <p style="margin:0.2em 0"><strong>Pull Request</strong></p>
+      <p class="dim" style="font-size:0.6em">"Bitte schaut<br>drüber bevor<br>es reingeht."</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-3">
+      <p style="color:#81c784; font-size:0.65em; margin:0">3</p>
+      <p style="margin:0.2em 0"><strong>Review</strong></p>
+      <p class="dim" style="font-size:0.6em">Jemand liest,<br>kommentiert,<br>gibt grünes Licht.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step step-4">
+      <p style="color:#ff8a65; font-size:0.65em; margin:0">4</p>
+      <p style="margin:0.2em 0"><strong>Merge</strong></p>
+      <p class="dim" style="font-size:0.6em">Drin. Für alle.<br>Sofort beim<br>nächsten Pull.</p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">Skills sind jetzt quasi Code. Selber Prozess, selbes Tool.</p>
+  <p class="fragment dim">Für den genauen Ablauf: Mini-Git-Kurs.</p>
+</section>
+
+<!-- 7: Was geteilt wird -->
+<section>
+  <h2>Was geteilt wird — und wie</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th>Was</th><th>Weg</th><th>Beispiel</th></tr>
+    <tr>
+      <td><strong>Neuer Skill</strong></td>
+      <td>scripts/ → SKILL.md → Branch → PR → Merge</td>
+      <td>Neuer Skill entwickelt, ab Merge für alle verfügbar</td>
+    </tr>
+    <tr>
+      <td><strong>Skill verbessert</strong></td>
+      <td>Branch → PR → Review → Merge</td>
+      <td>Risk-Sektion im decision-brief ergänzt</td>
+    </tr>
+    <tr>
+      <td><strong>Context geändert</strong></td>
+      <td>Branch → PR → Review → Merge</td>
+      <td>Neue Strategie → strategy.md update</td>
+    </tr>
+    <tr>
+      <td><strong>Artefakt geteilt</strong></td>
+      <td>Persönlich → Slack / Meeting</td>
+      <td>Decision Brief im Weekly zeigen</td>
+    </tr>
+    <tr>
+      <td><strong>Learning</strong></td>
+      <td>context/learnings.md → PR</td>
+      <td>"FAQ war besser als Chat" — eingetragen</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 8: Beispiel-Flow Anna & Ben -->
+<section>
+  <h2>Beispiel: Anna &amp; Ben</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.65em; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em 2em; text-align: left; max-width: 860px; margin: 0 auto;">
+    <div>
+      <p style="color:#4fc3f7; margin:0 0 0.3em"><strong>Anna — Discovery (Zimmer)</strong></p>
+      <p style="color:#aaa; margin:0.15em 0">/feedback-synthesizer auf Slack + Granola</p>
+      <p style="color:#aaa; margin:0.15em 0">/opportunity-scorer → Scorecard</p>
+      <p style="color:#aaa; margin:0.15em 0">/decision-brief → BUILD</p>
+      <p style="color:#aaa; margin:0.15em 0">/devils-advocate → stärkste Gegenthese</p>
+    </div>
+    <div>
+      <p style="color:#81c784; margin:0 0 0.3em"><strong>Ben — Spec/Eval/Prototyp (Zimmer)</strong></p>
+      <p style="color:#aaa; margin:0.15em 0">/spec-writer → Spec</p>
+      <p style="color:#aaa; margin:0.15em 0">/option-stormer → 3 Varianten A/B/C</p>
+      <p style="color:#aaa; margin:0.15em 0">/eval-runner → 8 PASS, 1 FAIL</p>
+      <p style="color:#aaa; margin:0.15em 0">/handoff-packager → Package für Dev</p>
+    </div>
+  </div>
+  <div class="spacer-sm"></div>
+  <div class="row">
+    <div class="box" style="font-size:0.65em">Annas Brief im Weekly</div>
+    <span class="arrow">→</span>
+    <div class="box" style="font-size:0.65em">Team: "Go"</div>
+    <span class="arrow">→</span>
+    <div class="box" style="font-size:0.65em">Ben übernimmt</div>
+    <span class="arrow">→</span>
+    <div class="box box-pass" style="font-size:0.65em">Handoff an Dev</div>
+  </div>
+  <p class="fragment dim" style="font-size:0.65em; margin-top:0.5em">Skills-Verbesserungen gehen per PR ins Repo. Learnings in context/learnings.md.</p>
+</section>
+
+<!-- 9: Learnings schließen die Schleife -->
+<section>
+  <h2>Learnings schließen die Schleife</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Ein Tool lernt nicht.</p>
+  <p class="fragment pass">Ein System das durch Benutzung besser wird, tut es —</p>
+  <p class="fragment warn">— aber nur wenn Menschen die Schleife schließen.</p>
+  <div class="spacer"></div>
+  <blockquote class="fragment">"FAQ-Pattern war klar besser als Chat-Interface. User wollen suchen, nicht chatten."<br>→ context/learnings.md → PR → alle Skills wissen es beim nächsten Mal.</blockquote>
+  <div class="spacer-sm"></div>
+  <p class="fragment dim">Das ist der schwierigste Schritt. Nach dem Handoff hat niemand mehr Energie. Deshalb: expliziter Schritt, kein Nachgedanke.</p>
+</section>
+
+<!-- 10: Spielregeln festlegen -->
+<section>
+  <h2>Was ihr als Team festlegen müsst</h2>
+  <div class="spacer-sm"></div>
+  <table>
+    <tr><th>Frage</th><th>Warum es zählt</th></tr>
+    <tr>
+      <td>Wer ist der Guardian des Wohnzimmers?</td>
+      <td>Wer merged PRs, hält context/ aktuell, hat Skill-Überblick</td>
+    </tr>
+    <tr>
+      <td>Wie läuft ein Skill-PR ab?</td>
+      <td>Wer reviewed, wie schnell, welche Kriterien</td>
+    </tr>
+    <tr>
+      <td>Wann ist ein Artefakt "geteilt genug"?</td>
+      <td>Draft-Brief im Slack vs. finaler Brief im Meeting</td>
+    </tr>
+    <tr>
+      <td>Wie fließen Learnings zurück?</td>
+      <td>Nach jedem Flow? Wöchentlich? Wer schreibt sie?</td>
+    </tr>
+    <tr>
+      <td>Wer onboardet neue Team-Mitglieder?</td>
+      <td>Repo erklären, MCPs einrichten, erster gemeinsamer Run</td>
+    </tr>
+  </table>
+  <div class="spacer-sm"></div>
+  <p class="fragment warn" style="font-size:0.75em">Das muss jemand sein — kein Tool.</p>
+</section>
+
+<!-- 11: Prinzipien, keine Pflicht -->
+<section>
+  <h2>Was dieser Flow ist — und was nicht</h2>
+  <div class="spacer"></div>
+  <p class="fragment pass">Prinzipien, kein Pflichtprogramm.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Auf welcher Granularität ihr übergebt,</p>
+  <p class="fragment">wie schnell ihr reviewt,</p>
+  <p class="fragment">wann ein Artefakt "geteilt genug" ist —</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment warn">das müsst ihr in eurem Team aushandeln.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment dim">Es gibt keine universelle Antwort. Nur die Antwort die zu eurer Kultur, eurer Größe, eurem Tempo passt.</p>
+</section>
+
+<!-- 12: Heute anfangen -->
+<section>
+  <h2>Heute anfangen</h2>
+  <div class="spacer"></div>
+  <p class="fragment">1. Repo aufsetzen — einer erstellt, alle klonen</p>
+  <p class="fragment">2. <code>context/</code> gemeinsam befüllen — die erste Konversation die zählt</p>
+  <p class="fragment">3. Eine Spielregel festlegen: wie läuft ein Skill-PR ab?</p>
+  <p class="fragment">4. Ersten gemeinsamen Flow durchlaufen</p>
+  <p class="fragment">5. Learning eintragen — bewusst, als letzten Schritt</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Danach: Guardian des Wohnzimmers bestimmen. Dann läuft es.</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: true,
+    plugins: []
+  });
+</script>
+</body>
+</html>

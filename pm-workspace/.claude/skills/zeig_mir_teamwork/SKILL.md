@@ -371,13 +371,13 @@ Wenn du dir während des Kurses Notizen gemacht hast — jetzt ist der Moment. S
 
 Claude arbeitet dann mit dir durch: was ihr schon habt, was ihr aufbauen müsst, welche Spielregeln ihr festlegen solltet, wer den Guardian des Wohnzimmers macht.
 
-**Für den Überblick:** Die Präsentation `doc/PM-System-Übersicht.html` zeigt alles nochmal komprimiert — Struktur, Flows, Bereiche. Nützlich als Referenz im Team-Gespräch oder beim Onboarding neuer Kollegen.
+**Für den Überblick:** Die Präsentation `doc/PM-Teamwork-Übersicht.html` zeigt alles nochmal komprimiert — Zimmer/Wohnzimmer, Branch/PR/Review/Merge, den Anna-Ben-Flow, Spielregeln. Nützlich als Referenz im Team-Gespräch oder beim Onboarding neuer Kollegen.
 
 ---
 
 ## Zusatzmaterial
 
-- `doc/PM-System-Übersicht.html` — Präsentation: Struktur, Flows, alle Skills im Überblick
+- `doc/PM-Teamwork-Übersicht.html` — Präsentation: Zimmer/Wohnzimmer, Branch/PR/Flow, Spielregeln
 - `README.md` — Skill-Übersicht
 - Mini-Git-Kurs — Branches, PRs, Merge für PM-Teams (separater Kurs)
 - `../TeamworkinClaude.md` — Vollständiges Referenz-Dokument mit Beispielen
