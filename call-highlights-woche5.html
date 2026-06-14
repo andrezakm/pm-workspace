@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Highlights — Woche 5: The System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  .reveal { font-size: 32px; }
+  .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.5em; margin-bottom: 0.4em; }
+  .reveal h3 { font-size: 1.1em; color: #888; }
+  .reveal p { margin: 0.3em 0; }
+  .reveal .highlight { color: #4fc3f7; }
+  .reveal .warn { color: #ff8a65; }
+  .reveal .pass { color: #81c784; }
+  .reveal .dim { color: #666; font-size: 0.7em; }
+  .reveal ul { list-style: none; padding: 0; margin: 0.3em 0; }
+  .reveal ul li::before { content: "\2192 "; color: #4fc3f7; }
+  .reveal ul li { margin-bottom: 0.3em; }
+  .reveal .box { border: 2px solid #4fc3f7; border-radius: 8px; padding: 0.3em 0.7em; display: inline-block; margin: 0.2em; font-size: 0.85em; }
+  .reveal .box-warn { border-color: #ff8a65; color: #ff8a65; }
+  .reveal .box-pass { border-color: #81c784; color: #81c784; }
+  .reveal .box-dim { border-color: #555; color: #888; }
+  .reveal blockquote { border-left: 4px solid #4fc3f7; padding-left: 1em; font-style: italic; color: #aaa; margin: 0.5em 0; font-size: 0.85em; }
+  .reveal table { margin: 0 auto; font-size: 0.58em; }
+  .reveal table th { color: #4fc3f7; border-bottom: 2px solid #4fc3f7; padding: 0.3em 0.8em; }
+  .reveal table td { border-bottom: 1px solid #333; padding: 0.3em 0.8em; }
+  .reveal .spacer { height: 0.5em; }
+  .reveal .spacer-sm { height: 0.25em; }
+  .reveal .arrow { color: #4fc3f7; font-size: 1.2em; margin: 0 0.3em; }
+  .reveal .row { display: flex; justify-content: center; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0.4em 0; }
+  .reveal .tree { text-align: left; display: inline-block; font-size: 0.6em; font-family: 'Courier New', monospace; color: #ccc; line-height: 1.6; }
+  .reveal .tree .c { color: #4fc3f7; }
+  .reveal .label { font-size: 0.65em; color: #888; margin-top: 0.2em; }
+  .reveal .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; font-size: 0.75em; }
+  .reveal .card { border: 1px solid #555; border-radius: 8px; padding: 0.8em; }
+  .reveal .flow-vertical { font-size: 0.7em; text-align: left; display: inline-block; line-height: 2; }
+  .reveal .flow-vertical .step { color: #4fc3f7; }
+  .reveal .flow-vertical .result { color: #888; font-size: 0.85em; }
+  .reveal code { font-family: 'Courier New', monospace; color: #81c784; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- 1: Titel -->
+<section>
+  <h1>Woche 5</h1>
+  <h3>The System</h3>
+  <p class="dim">Call Highlights — AI-Augmented PM</p>
+</section>
+
+<!-- 2: Was ist passiert -->
+<section>
+  <h2>Was ist diese Woche passiert?</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Nicht einen Skill gebaut.</p>
+  <p class="fragment">Nicht einen Prompt geschrieben.</p>
+  <p class="fragment highlight">Ein ganzes System.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Alles aus den letzten 4 Wochen lebt jetzt zusammen in einem Repo.</p>
+</section>
+
+<!-- 3: Frage -->
+<section>
+  <h2>Die Frage</h2>
+  <div class="spacer"></div>
+  <p style="font-size: 1.3em;">Was ist der Unterschied zwischen<br>"ich habe 14 Skills" und<br><span class="highlight">"ich habe ein System"</span>?</p>
+  <div class="spacer"></div>
+  <p class="fragment" style="font-size: 1.5em; color: #4fc3f7;">Kontext.</p>
+</section>
+
+<!-- 4: Die 4 Saulen -->
+<section>
+  <h2>4 Ordner. Das ist das System.</h2>
+  <div class="spacer-sm"></div>
+  <div class="tree">
+    pm-workspace/<br>
+    <br>
+    <span class="c">context/</span> &nbsp;&nbsp;&nbsp;Das Fundament. Wer seid ihr, was ist die Strategie.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 Files. Jeder Skill liest sie. Immer.<br>
+    <br>
+    <span class="c">skills/</span> &nbsp;&nbsp;&nbsp;&nbsp;Die Werkzeuge. 14+ Skills in 7 Bereichen.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jeder mit eigenem SKILL.md.<br>
+    <br>
+    <span class="c">input/</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Das Rohmaterial. Feedback, Interviews, Briefs.<br>
+    <br>
+    <span class="c">output/</span> &nbsp;&nbsp;&nbsp;&nbsp;Die Ergebnisse. Pro Run ein Ordner.<br>
+  </div>
+</section>
+
+<!-- 5: CLAUDE.md -->
+<section>
+  <h2>CLAUDE.md ist kurz. Absichtlich.</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Unter 500 Tokens.</p>
+  <p class="fragment">Claude lädt sie bei <span class="warn">jeder</span> Session.</p>
+  <p class="fragment">Je größer sie wird, desto weniger Kontext bleibt für die echte Arbeit.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Details leben in den SKILL.md Files.</p>
+  <!-- removed -->
+</section>
+
+<!-- 6: Der Flow -->
+<section>
+  <h2>Der Hauptflow</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.55em; display: grid; grid-template-columns: auto auto; gap: 0.15em 1em; align-items: center; text-align: left; margin: 0 auto; width: fit-content;">
+    <span class="step">/feedback-synthesizer</span> <span class="result">Feedback &rarr; Cluster</span>
+    <span class="step">/opportunity-scorer</span> <span class="result">Cluster &rarr; Scorecard</span>
+    <span class="step">/decision-brief</span> <span class="result">Scorecard &rarr; BUILD / SKIP / MEHR DATEN</span>
+    <span class="step">/devils-advocate</span> <span class="result">Brief &rarr; Gegenargumente</span>
+    <span class="step">/spec-writer</span> <span class="result">Brief &rarr; Spec (Was, nicht Wie)</span>
+    <span class="step">/option-stormer</span> <span class="result">Spec &rarr; 3 Prototypen</span>
+    <span class="step">/eval-runner</span> <span class="result">Eval + App &rarr; PASS / FAIL</span>
+    <span class="step">/handoff-packager</span> <span class="result">Alles &rarr; Dev-Ready</span>
+  </div>
+</section>
+
+<!-- 7: Kein Wasserfall -->
+<section>
+  <h2>Starte wo es passt</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Du hast schon eine Hypothese?<br><span class="dim">Spring direkt zum /decision-brief.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Du hast schon eine Spec?<br><span class="dim">Direkt zum /option-stormer.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Du willst alles auf einmal?<br><span class="dim">/build-eval macht Spec + Eval + Prototyp in einem.</span></p>
+  <div class="spacer"></div>
+  <p class="fragment highlight">Reihenfolge, wo Du sie brauchst. Freiheit sonst.</p>
+</section>
+
+<!-- 8: Neue Skills -->
+<section>
+  <h2>Die neuen Skills dieser Woche</h2>
+  <div class="spacer"></div>
+  <div class="split">
+    <div class="card">
+      <p style="color: #4fc3f7; margin: 0 0 0.3em 0"><strong>/option-stormer</strong></p>
+      <p style="color: #aaa; margin: 0; font-size: 0.85em">3 Prototypen statt einen.<br>Strukturell verschieden, nicht kosmetisch.<br>Dann vergleichen und entscheiden.</p>
+      <p style="color: #666; margin: 0.4em 0 0 0; font-size: 0.75em">"Ich baue nicht eine Lösung und hoffe."</p>
+    </div>
+    <div class="card">
+      <p style="color: #4fc3f7; margin: 0 0 0.3em 0"><strong>/handoff-packager</strong></p>
+      <p style="color: #aaa; margin: 0; font-size: 0.85em">Cover-Sheet mit Links.<br>Nächste Schritte für Dev.<br>PM-Eval vs. Dev-Eval getrennt.</p>
+      <p style="color: #666; margin: 0.4em 0 0 0; font-size: 0.75em">Kein Copy-Paste. Nur Verweise.</p>
+    </div>
+  </div>
+  <div class="spacer-sm"></div>
+  <div style="border: 1px solid #555; border-radius: 8px; padding: 0.5em; font-size: 0.75em; max-width: 400px; margin: 0 auto;">
+    <p style="color: #81c784; margin: 0 0 0.2em 0"><strong>/system-auditor</strong></p>
+    <p style="color: #aaa; margin: 0; font-size: 0.9em">Gesundheitscheck. Was fehlt, was als nächstes.</p>
+  </div>
+</section>
+
+<!-- 9: Teamwork Titel -->
+<section>
+  <h2>Teamwork</h2>
+  <div class="spacer"></div>
+  <p style="font-size: 1.3em;">Was passiert wenn<br><span class="highlight">2 PMs</span> mit demselben System arbeiten?</p>
+</section>
+
+<!-- 10: Zimmer und Wohnzimmer -->
+<section>
+  <h2>Dein Zimmer. Das Wohnzimmer.</h2>
+  <div class="spacer"></div>
+  <div class="split">
+    <div class="card">
+      <p style="color: #ff8a65; margin: 0 0 0.3em 0"><strong>Dein Zimmer</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Dein lokaler <code>output/</code></p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Hier denkst du nach</p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Hier scheitert keiner</p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">3 Prototypen, halbfertige Drafts</p>
+      <div class="spacer-sm"></div>
+      <p style="color: #666; margin: 0; font-size: 0.75em">Deine Regeln. Dein Tempo.</p>
+    </div>
+    <div class="card">
+      <p style="color: #81c784; margin: 0 0 0.3em 0"><strong>Das Wohnzimmer</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Das Git-Repo</p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">CLAUDE.md, context/, skills/</p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Was hier liegt, gilt für alle</p>
+      <p style="color: #aaa; margin: 0.2em 0; font-size: 0.85em">Skills sind Code. Context ist Truth.</p>
+      <div class="spacer-sm"></div>
+      <p style="color: #666; margin: 0; font-size: 0.75em">Familienregeln. PR und Review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11: Der Übergang -->
+<section>
+  <h2>Der Übergang wird bewacht</h2>
+  <div class="spacer"></div>
+  <p class="fragment">Nichts geht automatisch vom Zimmer ins Wohnzimmer.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Synchron: <span class="dim">im Weekly zeigen, besprechen</span></p>
+  <p class="fragment">Asynchron: <span class="dim">Slack, PR, Review</span></p>
+  <div class="spacer"></div>
+  <p class="fragment highlight">Du entscheidest wann du teilst.</p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Selbes Prinzip wie ein Pull Request:<br>aus meinem Branch in den Trunk — aber nur nach Review.</p>
+</section>
+
+<!-- 12: Drei Schichten -->
+<section>
+  <h2>Die drei Schichten</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.7em; text-align: left; max-width: 700px; margin: 0 auto;">
+    <div style="border-left: 3px solid #81c784; padding-left: 1em; margin-bottom: 0.8em;">
+      <p style="color: #81c784; margin: 0;"><strong>1. Geteilte Infrastruktur (Git)</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0;">Skills, Context, CLAUDE.md. Änderungen per PR.</p>
+    </div>
+    <div style="border-left: 3px solid #4fc3f7; padding-left: 1em; margin-bottom: 0.8em;">
+      <p style="color: #4fc3f7; margin: 0;"><strong>2. Geteilte Quellen (APIs / MCPs)</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0;">Slack, Granola, Jira. Alle sehen dasselbe. Jeder extrahiert was er braucht.</p>
+    </div>
+    <div style="border-left: 3px solid #ff8a65; padding-left: 1em;">
+      <p style="color: #ff8a65; margin: 0;"><strong>3. Persönlicher Workspace (Lokal)</strong></p>
+      <p style="color: #aaa; margin: 0.2em 0;">Dein Output. Deine Drafts. Privat bis du bereit bist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13: Anna und Ben -->
+<section>
+  <h2>Beispiel: Anna und Ben</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.65em; text-align: left; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+    <p><span class="highlight">Anna</span> macht Discovery. Feedback-Cluster, Opportunity Score, Decision Brief.</p>
+    <p>Alles in <span style="color: #ff8a65;">ihrem Zimmer</span>. Niemand sieht es.</p>
+    <div class="spacer-sm"></div>
+    <p>Anna ist zufrieden. Zeigt den Brief im <span style="color: #81c784;">Weekly</span>. Team sagt: Go.</p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">Ben</span> übernimmt. Spec, Prototyp, Eval, Handoff.</p>
+    <p>In <span style="color: #ff8a65;">seinem Zimmer</span>. Übergibt das Handoff-Package an Dev.</p>
+    <div class="spacer-sm"></div>
+    <p>Am Ende: Learnings zuruck ins <span style="color: #81c784;">Repo</span>.</p>
+    <p class="dim">Ben hat den eval-writer verbessert. PR, Review, Merge. Ab jetzt hat Anna ihn auch.</p>
+  </div>
+</section>
+
+<!-- 14: Learnings -->
+<section>
+  <h2>Learnings zurückschreiben</h2>
+  <div class="spacer"></div>
+  <p><code>context/learnings.md</code> ist das Gedächtnis.</p>
+  <div class="spacer-sm"></div>
+  <p class="fragment">Das System wird besser durch Benutzung.</p>
+  <p class="fragment warn">Aber NUR wenn Learnings auch eingetragen werden.</p>
+  <div class="spacer"></div>
+  <blockquote class="fragment">"Onboarding-Agent: FAQ-Pattern war klar besser als Chat-Interface. User wollen suchen, nicht chatten."</blockquote>
+  <div class="spacer-sm"></div>
+  <p class="fragment dim">Ein Satz. Ein PR. Ab jetzt weiß das System das.</p>
+</section>
+
+<!-- 15: Was ihr diese Woche tun sollt -->
+<section>
+  <h2>Was ihr diese Woche tut</h2>
+  <div class="spacer"></div>
+  <p class="fragment"><span class="highlight">1.</span> &nbsp;<code>context/</code> ausfüllen. Alle 7 Files. Euer Unternehmen.<br><span class="dim">Ziel: unter 30 Minuten.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><span class="highlight">2.</span> &nbsp;<code>/system-auditor</code> ausführen.<br><span class="dim">Zeigt was fehlt und was als nächstes kommt.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><span class="highlight">3.</span> &nbsp;Einen Flow durchspielen. Eigener Kontext, eigene Daten.<br><span class="dim">Nicht NeoEmployee. Euer Ding.</span></p>
+  <div class="spacer-sm"></div>
+  <p class="fragment"><span class="highlight">4.</span> &nbsp;Optional: Einen Skill anpassen oder neu bauen.<br><span class="dim">scripts/ ist die Sandbox dafür.</span></p>
+</section>
+
+<!-- 16: Selbstlern-Kurse -->
+<section>
+  <h2>Kurse im System</h2>
+  <div class="spacer"></div>
+  <div style="font-size: 0.8em;">
+    <p><span class="highlight">/kurs</span><br><span class="dim">PM-System-Übersicht. Das System verstehen.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">/zeig_mir_teamwork</span><br><span class="dim">Teamwork-Prinzipien. Zimmer und Wohnzimmer.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">/mini_git_kurs</span><br><span class="dim">Git-Grundlagen. Branches, PRs, Merge.</span></p>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment dim">Claude erklärt das System — im System.</p>
+</section>
+
+<!-- 17: FAQ -->
+<section>
+  <h2>Häufige Fragen</h2>
+  <div class="spacer-sm"></div>
+  <div style="font-size: 0.7em; text-align: left; max-width: 700px; margin: 0 auto;">
+    <p><span class="highlight">"Muss ich Git können?"</span><br><span style="color: #aaa;">Alleine: nein. Im Team: ja, die Basics. Dafür gibt's /mini_git_kurs.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">"Was wenn sich mein Kontext ändert?"</span><br><span style="color: #aaa;">Dann änderst du die Context-Files. strategy.md ist kein Tattoo.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">"Kann ich eigene Skills bauen?"</span><br><span style="color: #aaa;">Ja. scripts/ zum Experimentieren. Wenn's funktioniert: SKILL.md, fertig.</span></p>
+    <div class="spacer-sm"></div>
+    <p><span class="highlight">"Was ist anders als die letzten Wochen?"</span><br><span style="color: #aaa;">Kontext. Die Skills wussten nichts voneinander. Jetzt schon.</span></p>
+  </div>
+</section>
+
+<!-- 18: Closing -->
+<section>
+  <h2>Der Kern</h2>
+  <div class="spacer"></div>
+  <p style="font-size: 1.2em;">Ein PM braucht kein perfektes System.</p>
+  <div class="spacer-sm"></div>
+  <p style="font-size: 1.2em;">Ein PM braucht ein System<br><span class="highlight">das mit ihm wächst.</span></p>
+  <div class="spacer"></div>
+  <p class="fragment dim">Diese Woche ist der Punkt wo das passiert.</p>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: true,
+    plugins: []
+  });
+</script>
+</body>
+</html>

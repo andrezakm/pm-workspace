@@ -32,7 +32,8 @@ Strategy
 ├── /opportunity-scorer     Cluster → Scorecard (Vision / Wiederholbarkeit / Baubarkeit)
 ├── /decision-brief         Scorecard → 1-Pager (BUILD / SKIP / MEHR DATEN)
 ├── /devils-advocate        Brief → Annahmen-Kritik + Verdikt
-└── /business-case-debater  Vollständige Analyse: Research → Debatte → Synthese
+├── /business-case-debater  Vollständige Analyse: Research → Debatte → Synthese
+└── /PTW-workshop           Play-to-Win Strategie-Workshop: 5 Perspektiven → Choice Cascade + Reverse Engineering
 
 Roadmap
 └── (Erweiterungspunkt — Plugin-Kandidaten: Linear, Jira, Notion)
