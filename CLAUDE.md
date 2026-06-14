@@ -20,4 +20,4 @@ spec-writer, eval-writer, build-eval sind die Grenze zwischen PM und Dev.
 
 ## Navigation
 
-Für Skills: lies zuerst `README.md` (Skill-Übersicht und Flows), für Details zu einem einzelnen Skill `.claude/skills/[name]/README.md`.
+Für Skills: die semantische Gliederung der 7 Bereiche steht in `skills/`, Gesamtübersicht und Flows in `README.md`. Ausführbar liegen die Skills flach in `.claude/skills/[name]/`.
