@@ -21,13 +21,12 @@
     --font-serif:   "Fraunces", Georgia, serif;
     --font-sans:    "Space Grotesk", -apple-system, sans-serif;
     --font-mono:    ui-monospace, "SF Mono", Menlo, monospace;
-    --slide-pad-x:  96px;
-    --slide-pad-y:  80px;
+    --slide-pad-x:  100px;
+    --slide-pad-y:  76px;
   }
   html, body { margin: 0; padding: 0; background: #000; }
   deck-stage:not(:defined) { visibility: hidden; }
 
-  /* --- SLIDE BASE --- */
   deck-stage > section {
     width: 1920px; height: 1080px;
     background: var(--color-paper); color: var(--color-ink);
@@ -41,8 +40,7 @@
   deck-stage > section.blue  { background: var(--color-blue);   color: var(--color-paper); }
   deck-stage > section.yellow{ background: var(--color-yellow); color: var(--color-ink); }
 
-  /* --- EYEBROW --- */
-  .eyebrow { display: flex; align-items: center; gap: 18px; font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute-paper); flex-shrink: 0; }
+  .eyebrow { display: flex; align-items: center; gap: 18px; font-family: var(--font-mono); font-size: 23px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute-paper); flex-shrink: 0; }
   .ink .eyebrow, .blue .eyebrow { color: var(--mute-ink); }
   .yellow .eyebrow { color: rgba(11,11,11,.65); }
   .eyebrow .num { background: var(--color-ink); color: var(--color-paper); padding: 4px 12px; font-weight: 700; }
@@ -53,385 +51,512 @@
   .ink .eyebrow .rule, .blue .eyebrow .rule { background: var(--rule-ink); }
   .yellow .eyebrow .rule { background: rgba(11,11,11,.25); }
 
-  /* --- FOOTER STRIP --- */
-  .slide-foot { position: absolute; bottom: 28px; left: var(--slide-pad-x); right: var(--slide-pad-x); display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute-paper); }
+  .slide-foot { position: absolute; bottom: 26px; left: var(--slide-pad-x); right: var(--slide-pad-x); display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 21px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute-paper); }
   .ink .slide-foot, .blue .slide-foot { color: var(--mute-ink); }
   .yellow .slide-foot { color: rgba(11,11,11,.6); }
 
-  /* --- TYPE UTILITIES --- */
   .display { font-family: var(--font-display); font-weight: 900; line-height: 0.86; letter-spacing: -0.02em; }
   .italic  { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
   .pill    { padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-  .pill-ink   { background: var(--color-ink);    color: var(--color-paper); }
   .pill-paper { background: var(--color-paper);  color: var(--color-ink); }
-  .pill-blue  { background: var(--color-blue);   color: var(--color-paper); }
-  .pill-yellow{ background: var(--color-yellow); color: var(--color-ink); }
   .blue-text  { color: var(--color-blue); }
   .yellow-text{ color: var(--color-yellow); }
+  b, strong { font-weight: 700; }
+  em.s { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  code { font-family: var(--font-mono); font-size: 0.82em; background: rgba(11,11,11,.07); padding: 2px 8px; }
+  .ink code, .blue code { background: rgba(244,239,230,.13); }
+  .yellow code { background: rgba(11,11,11,.1); }
 
-  /* --- COVER --- */
   .layout-cover { justify-content: space-between; }
   .layout-cover .top { display: flex; justify-content: space-between; align-items: center; }
-  .layout-cover .mark { width: 88px; height: 88px; border-radius: 50%; background: var(--color-paper); color: var(--color-ink); display: inline-flex; align-items: center; justify-content: center; font-family: "Futura PT","Avenir Next","Century Gothic",sans-serif; font-weight: 500; font-size: 44px; letter-spacing: -0.02em; }
-  .layout-cover .meta { font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.18em; text-transform: uppercase; text-align: right; line-height: 1.6; }
-  .layout-cover h1 { margin: 0; font-size: 300px; line-height: 0.82; }
+  .layout-cover .mark { width: 84px; height: 84px; border-radius: 50%; background: var(--color-paper); color: var(--color-ink); display: inline-flex; align-items: center; justify-content: center; font-family: "Futura PT","Avenir Next","Century Gothic",sans-serif; font-weight: 500; font-size: 42px; }
+  .layout-cover .meta { font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; text-align: right; line-height: 1.65; }
+  .layout-cover h1 { margin: 0; font-size: 250px; line-height: 0.82; }
   .layout-cover h1 .row { display: block; }
-  .layout-cover .author { display: flex; justify-content: space-between; align-items: flex-end; font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; }
-  .layout-cover .author .name { font-family: var(--font-display); font-weight: 900; font-size: 40px; letter-spacing: -0.01em; text-transform: none; }
-  .layout-cover .author .name em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .layout-cover .tag { font-family: var(--font-serif); font-style: italic; font-size: 40px; line-height: 1.25; max-width: 1300px; margin-top: 8px; }
+  .layout-cover .author { display: flex; justify-content: space-between; align-items: flex-end; font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; }
 
-  /* --- AGENDA --- */
-  .layout-agenda h2 { margin: 24px 0 48px; font-size: 180px; line-height: 0.86; }
+  .layout-agenda h2 { margin: 18px 0 36px; font-size: 150px; line-height: 0.86; }
   .layout-agenda h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-agenda ol { list-style: none; margin: 0; padding: 0; counter-reset: ag; display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; }
-  .layout-agenda li { counter-increment: ag; display: grid; grid-template-columns: 100px 1fr; gap: 24px; align-items: baseline; padding: 22px 0; border-top: 1px solid var(--rule-paper); }
-  .layout-agenda li:nth-child(odd) { padding-right: 48px; }
-  .layout-agenda li:nth-child(even) { padding-left: 48px; border-left: 1px solid var(--rule-paper); }
-  .layout-agenda li::before { content: counter(ag, decimal-leading-zero); font-family: var(--font-display); font-weight: 900; font-size: 80px; line-height: 0.86; letter-spacing: -0.03em; color: var(--color-blue); }
-  .layout-agenda li .body { font-family: var(--font-display); font-weight: 900; font-size: 50px; line-height: 0.95; letter-spacing: -0.01em; }
+  .layout-agenda ol { list-style: none; margin: 0; padding: 0; counter-reset: ag; display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; flex: 1; }
+  .layout-agenda li { counter-increment: ag; display: grid; grid-template-columns: 78px 1fr; gap: 22px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--rule-paper); }
+  .layout-agenda li::before { content: counter(ag, decimal-leading-zero); font-family: var(--font-display); font-weight: 900; font-size: 60px; line-height: 0.86; color: var(--color-blue); }
+  .layout-agenda li .body { font-family: var(--font-display); font-weight: 900; font-size: 42px; line-height: 0.98; }
   .layout-agenda li .body em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-agenda li .sub { font-family: var(--font-mono); font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute-paper); margin-top: 10px; }
+  .layout-agenda li .sub { font-family: var(--font-sans); font-size: 21px; line-height: 1.35; color: var(--mute-paper); margin-top: 8px; }
 
-  /* --- SECTION BREAK --- */
-  .layout-section .super { font-family: var(--font-mono); font-size: 32px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 32px; opacity: .7; }
-  .layout-section h2 { margin: 0; font-size: 280px; line-height: 0.88; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.025em; }
+  .layout-section .super { font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 28px; opacity: .7; }
+  .layout-section h2 { margin: 0; font-size: 230px; line-height: 0.88; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.025em; }
   .layout-section h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
   .layout-section h2 .row { display: block; }
-  .layout-section .subline { margin-top: 36px; font-family: var(--font-serif); font-style: italic; font-size: 42px; line-height: 1.2; max-width: 1500px; }
+  .layout-section .subline { margin-top: 32px; font-family: var(--font-serif); font-style: italic; font-size: 40px; line-height: 1.25; max-width: 1500px; }
 
-  /* --- CONTENT --- */
-  .layout-content h2 { margin: 20px 0 18px; font-size: 110px; line-height: 0.9; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
+  .layout-content h2 { margin: 14px 0 16px; font-size: 92px; line-height: 0.92; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
   .layout-content h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-content .lede { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 36px; line-height: 1.25; max-width: 1550px; margin: 0 0 28px; }
-  .layout-content ul { list-style: none; margin: 0; padding: 0; max-width: 1650px; }
-  .layout-content ul li { display: block; position: relative; padding: 16px 0 16px 68px; border-top: 1px solid var(--rule-paper); font-family: var(--font-sans); font-size: 30px; line-height: 1.32; }
+  .layout-content .lede { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 33px; line-height: 1.28; max-width: 1600px; margin: 0 0 22px; }
+  .layout-content .body { font-family: var(--font-sans); font-size: 25px; line-height: 1.5; max-width: 1640px; margin: 0 0 22px; }
+  .layout-content ul { list-style: none; margin: 0; padding: 0; max-width: 1680px; }
+  .layout-content ul li { display: block; position: relative; padding: 13px 0 13px 60px; border-top: 1px solid var(--rule-paper); font-family: var(--font-sans); font-size: 25px; line-height: 1.4; }
   .ink .layout-content ul li, .blue .layout-content ul li { border-top-color: var(--rule-ink); }
-  .yellow .layout-content ul li { border-top-color: rgba(11,11,11,.25); }
-  .layout-content ul li::before { content: '→'; position: absolute; left: 0; top: 16px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 32px; color: var(--color-blue); }
+  .yellow .layout-content ul li { border-top-color: rgba(11,11,11,.22); }
+  .layout-content ul li::before { content: '→'; position: absolute; left: 0; top: 13px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 28px; color: var(--color-blue); }
   .ink .layout-content ul li::before, .blue .layout-content ul li::before { color: var(--color-yellow); }
   .yellow .layout-content ul li::before { color: var(--color-ink); }
   .layout-content ul li:last-child { border-bottom: 1px solid var(--rule-paper); }
   .ink .layout-content ul li:last-child, .blue .layout-content ul li:last-child { border-bottom-color: var(--rule-ink); }
-  .yellow .layout-content ul li:last-child { border-bottom-color: rgba(11,11,11,.25); }
+  .yellow .layout-content ul li:last-child { border-bottom-color: rgba(11,11,11,.22); }
+  .layout-content ul li b { font-weight: 700; }
   .layout-content ul li em { font-family: var(--font-serif); font-style: italic; }
-  .layout-content code, .layout-content ul li code { font-family: var(--font-mono); font-size: 0.82em; background: rgba(11,11,11,.07); padding: 2px 8px; }
-  .ink .layout-content code, .blue .layout-content code { background: rgba(244,239,230,.12); }
+  .layout-content .foot-note { margin-top: 20px; font-family: var(--font-serif); font-style: italic; font-size: 24px; line-height: 1.3; color: var(--mute-paper); max-width: 1600px; }
+  .ink .layout-content .foot-note, .blue .layout-content .foot-note { color: var(--mute-ink); }
 
-  /* --- TWO-COL --- */
-  .layout-two h2 { margin: 20px 0 36px; font-size: 110px; line-height: 0.9; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
+  .layout-cascade h2 { margin: 14px 0 22px; font-size: 84px; line-height: 0.92; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
+  .layout-cascade h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .cgrid { display: flex; flex-direction: column; gap: 12px; }
+  .crow { display: grid; grid-template-columns: 60px 360px 1fr; gap: 26px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--rule-paper); }
+  .ink .crow, .blue .crow { border-top-color: var(--rule-ink); }
+  .crow .cn { font-family: var(--font-display); font-weight: 900; font-size: 50px; color: var(--color-blue); line-height: 0.9; }
+  .ink .crow .cn, .blue .crow .cn { color: var(--color-yellow); }
+  .crow .ct { font-family: var(--font-display); font-weight: 800; font-size: 34px; line-height: 1.0; letter-spacing: -0.01em; }
+  .crow .ct .q { display: block; font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute-paper); margin-top: 7px; font-weight: 400; }
+  .ink .crow .ct .q, .blue .crow .ct .q { color: var(--mute-ink); }
+  .crow .cd { font-family: var(--font-sans); font-size: 24px; line-height: 1.42; }
+  .crow .cd em { font-family: var(--font-serif); font-style: italic; }
+
+  .layout-two h2 { margin: 14px 0 26px; font-size: 88px; line-height: 0.92; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
   .layout-two h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .layout-two .lede { font-family: var(--font-serif); font-style: italic; font-size: 30px; line-height: 1.25; max-width: 1640px; margin: 0 0 24px; }
   .layout-two .cols { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-  .layout-two .col { padding: 36px 48px; }
+  .layout-two .col { padding: 30px 44px; }
   .layout-two .col + .col { border-left: 1px solid var(--rule-paper); }
-  .layout-two .col .label { display: inline-block; padding: 6px 14px; margin-bottom: 22px; font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
+  .layout-two .col .label { display: inline-block; padding: 6px 14px; margin-bottom: 18px; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
   .layout-two .col.left .label  { background: var(--color-ink);  color: var(--color-paper); }
   .layout-two .col.right .label { background: var(--color-blue); color: var(--color-paper); }
-  .layout-two .col li { padding: 16px 0 16px 52px; border-top: 1px solid var(--rule-paper); font-family: var(--font-sans); font-size: 26px; line-height: 1.34; position: relative; list-style: none; }
   .layout-two .col ul { margin: 0; padding: 0; }
+  .layout-two .col li { padding: 13px 0 13px 48px; border-top: 1px solid var(--rule-paper); font-family: var(--font-sans); font-size: 23px; line-height: 1.4; position: relative; list-style: none; }
   .layout-two .col li:last-child { border-bottom: 1px solid var(--rule-paper); }
-  .layout-two .col.left  li::before { content: '×'; position: absolute; left: 0; top: 14px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 34px; color: var(--mute-paper); line-height: 1; }
-  .layout-two .col.right li::before { content: '→'; position: absolute; left: 0; top: 14px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 34px; color: var(--color-blue); line-height: 1; }
+  .layout-two .col.left  li::before { content: '×'; position: absolute; left: 0; top: 12px; font-family: -apple-system, sans-serif; font-weight: 700; font-size: 30px; color: var(--mute-paper); line-height: 1; }
+  .layout-two .col.right li::before { content: '→'; position: absolute; left: 0; top: 12px; font-family: -apple-system, sans-serif; font-weight: 700; font-size: 30px; color: var(--color-blue); line-height: 1; }
   .layout-two .col li em { font-family: var(--font-serif); font-style: italic; }
 
-  /* --- THREE-UP --- */
-  .layout-three h2 { margin: 20px 0 36px; font-size: 110px; line-height: 0.9; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
+  .layout-three h2 { margin: 14px 0 14px; font-size: 84px; line-height: 0.92; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; }
   .layout-three h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-three .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .layout-three .card { padding: 36px 34px; display: flex; flex-direction: column; }
+  .layout-three .lede { font-family: var(--font-serif); font-style: italic; font-size: 28px; line-height: 1.25; margin: 0 0 22px; max-width: 1640px; }
+  .layout-three .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .layout-three .card { padding: 32px 30px; display: flex; flex-direction: column; }
   .layout-three .card.a { background: var(--color-blue);   color: var(--color-paper); }
   .layout-three .card.b { background: var(--color-ink);    color: var(--color-paper); }
   .layout-three .card.c { background: var(--color-yellow); color: var(--color-ink); }
-  .layout-three .card .top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .8; }
-  .layout-three .card .title { margin-top: 40px; font-family: var(--font-display); font-weight: 900; font-size: 58px; line-height: 0.94; letter-spacing: -0.01em; }
+  .layout-three .card .top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .8; }
+  .layout-three .card .title { margin-top: 26px; font-family: var(--font-display); font-weight: 900; font-size: 48px; line-height: 0.96; letter-spacing: -0.01em; }
   .layout-three .card .title em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-three .card .body { margin-top: 22px; font-family: var(--font-sans); font-size: 25px; line-height: 1.42; }
-  .layout-three .card .foot { margin-top: auto; font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; padding-top: 22px; border-top: 1px solid currentColor; opacity: .85; }
+  .layout-three .card .ctext { margin-top: 18px; font-family: var(--font-sans); font-size: 23px; line-height: 1.45; }
+  .layout-three .card .foot { margin-top: auto; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; padding-top: 20px; border-top: 1px solid currentColor; opacity: .85; }
 
-  /* --- MANIFEST --- */
   .layout-manifest { justify-content: center; }
-  .layout-manifest .body { font-family: var(--font-display); font-weight: 900; font-size: 190px; line-height: 0.92; letter-spacing: -0.02em; }
+  .layout-manifest .body { font-family: var(--font-display); font-weight: 900; font-size: 150px; line-height: 0.94; letter-spacing: -0.02em; }
   .layout-manifest .body em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
   .layout-manifest .body .row { display: block; }
+  .layout-manifest .gloss { margin-top: 40px; font-family: var(--font-sans); font-size: 26px; line-height: 1.5; max-width: 1500px; }
+  .ink .layout-manifest .gloss { color: var(--mute-ink); }
 
-  /* --- CLOSING --- */
   .layout-closing { justify-content: space-between; }
-  .layout-closing h2 { margin: 24px 0 0; font-size: 240px; line-height: 0.82; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.025em; }
+  .layout-closing h2 { margin: 14px 0 0; font-size: 150px; line-height: 0.86; font-family: var(--font-display); font-weight: 900; letter-spacing: -0.025em; }
   .layout-closing h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .layout-closing h2 .row { display: block; }
-  .layout-closing .actions { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; }
-  .layout-closing .contact { display: flex; flex-direction: column; gap: 12px; }
-  .layout-closing .contact a { font-family: var(--font-mono); font-size: 26px; letter-spacing: 0.02em; color: inherit; text-decoration: none; border-bottom: 2px solid var(--color-yellow); padding-bottom: 4px; align-self: flex-start; }
-  .layout-closing .contact .helper { font-family: var(--font-serif); font-style: italic; font-size: 28px; opacity: .85; }
-
-  /* --- FRAGMENTS --- */
-  .frag { opacity: 0; transition: opacity .35s ease, transform .35s ease; }
-  .frag.frag-up { transform: translateY(20px); }
-  .frag.visible { opacity: 1; transform: none; }
+  .layout-closing .body { font-family: var(--font-sans); font-size: 26px; line-height: 1.55; max-width: 1500px; margin-top: 22px; }
+  .ink .layout-closing .body { color: var(--color-paper); }
+  .layout-closing .steps { margin: 22px 0 0; padding: 0; list-style: none; counter-reset: st; }
+  .layout-closing .steps li { counter-increment: st; position: relative; padding: 10px 0 10px 60px; font-family: var(--font-sans); font-size: 27px; line-height: 1.4; }
+  .layout-closing .steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; font-family: var(--font-display); font-weight: 900; font-size: 34px; color: var(--color-yellow); line-height: 1; }
+  .layout-closing .files { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--font-mono); font-size: 19px; letter-spacing: 0.02em; opacity: .8; }
 </style>
 </head>
 <body>
 
 <deck-stage no-rail>
 
-  <!-- 01 · COVER -->
+  <!-- 01 COVER -->
   <section class="layout-cover ink" data-screen-label="01 Cover">
     <div class="top">
       <div class="mark">üp</div>
-      <div class="meta">AI-Augmented PM · Woche 5<br/>Strategie-Skill · Lauf 14.06.2026<br/>Rekonstruiertes Lehrbeispiel</div>
+      <div class="meta">AI-Augmented PM · Woche 5<br/>Strategie-Skill · Lauf 14.06.2026<br/>Selbsterklärendes Lese-Deck</div>
     </div>
-    <h1 class="display"><span class="row">PTW-</span><span class="row italic yellow-text">Workshop.</span></h1>
+    <div>
+      <h1 class="display"><span class="row">PTW-</span><span class="row italic yellow-text">Workshop.</span></h1>
+      <div class="tag">Ein Strategie-Workshop, simuliert von einem KI-Skill — erklärt von vorne bis hinten am echten Fall LEGO 2004. Kein Vorwissen nötig.</div>
+    </div>
     <div class="author">
-      <div class="name">Play to <em>Win</em> · simuliert</div>
-      <div>Fallstudie · LEGO 2004</div>
+      <div>Play to Win · Lafley &amp; Martin</div>
+      <div>Blättern: ← / → · Vollbild: F</div>
     </div>
   </section>
 
-  <!-- 02 · AGENDA -->
-  <section class="layout-agenda" data-screen-label="02 Agenda">
-    <div class="eyebrow"><span class="num">§ AGENDA</span><span>Sechs Stationen</span><span class="rule"></span><span>14.06.26</span></div>
-    <h2 class="display">Der <em>Durchlauf.</em></h2>
-    <ol>
-      <li><div><div class="body">Was der Skill <em>macht</em></div><div class="sub">Fünf Perspektiven</div></div></li>
-      <li><div><div class="body">Wie man ihn <em>verwendet</em></div><div class="sub">Drei Quellen, sechs Schritte</div></div></li>
-      <li><div><div class="body">Der <em>Fall</em></div><div class="sub">LEGO am Abgrund</div></div></li>
-      <li><div><div class="body">Der <em>Run</em></div><div class="sub">Sechzehn Agenten</div></div></li>
-      <li><div><div class="body">Das <em>Ergebnis</em></div><div class="sub">Die Cascade</div></div></li>
-      <li><div><div class="body">Realität &amp; <em>Erklärung</em></div><div class="sub">Treffer, Abweichung, warum</div></div></li>
-    </ol>
-    <div class="slide-foot"><span>PTW-Workshop · Anleitung</span><span>02 / 18</span></div>
+  <!-- 02 WORUM ES GEHT -->
+  <section class="layout-content" data-screen-label="02 Worum">
+    <div class="eyebrow"><span class="num">§ 00</span><span>Wie du dieses Deck liest</span><span class="rule"></span></div>
+    <h2 class="display">Zum Selbst-<em>Durcharbeiten.</em></h2>
+    <p class="lede">Dieses Deck erklärt sich selbst. Du brauchst keinen Vortrag dazu und kein Vorwissen — weder über Strategie-Frameworks noch über den Fall LEGO.</p>
+    <p class="body">Es zeigt einen <b>Skill für Claude Code</b> namens <code>/PTW-workshop</code>: Er führt aus rohen Dokumenten einen vollständigen Strategie-Workshop durch. Wir erklären erst, <b>was</b> der Skill tut und <b>welche Begriffe</b> dahinterstehen, fahren ihn dann an einem echten Fall vor, zeigen das <b>Ergebnis</b> und gleichen es mit der <b>Realität</b> ab.</p>
+    <ul>
+      <li>Am Ende verstehst du das Verfahren — und kannst den Skill <b>selbst starten</b>.</li>
+      <li>Blättern: <b>← / →</b> oder Leertaste · Vollbild: <b>F</b> · Sprung: Zahlentasten.</li>
+    </ul>
+    <div class="slide-foot"><span>PTW-Workshop · Anleitung</span><span>02 / 27</span></div>
   </section>
 
-  <!-- 03 · § 01 SECTION -->
+  <!-- 03 SECTION 01 -->
   <section class="layout-section ink" data-screen-label="03 Section 01">
-    <div class="eyebrow"><span class="num">§ 01</span><span>Erstens</span><span class="rule"></span></div>
+    <div class="eyebrow"><span class="num">§ 01</span><span>Erster Teil</span><span class="rule"></span></div>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-      <div class="super">Was der Skill kann —</div>
-      <h2><span class="row">Strategie als</span><span class="row yellow-text"><em>Workshop.</em></span></h2>
+      <div class="super">Bevor wir ihn starten —</div>
+      <h2><span class="row">Was der Skill</span><span class="row yellow-text"><em>macht.</em></span></h2>
     </div>
-    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>03 / 18</span></div>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>03 / 27</span></div>
   </section>
 
-  <!-- 04 · § 01 CONTENT -->
-  <section class="layout-content" data-screen-label="04 Was">
-    <div class="eyebrow"><span class="num">§ 01.01</span><span>Fünf Linsen auf dieselben Dokumente</span><span class="rule"></span></div>
-    <h2 class="display">Kein Prompt — ein <em>Workshop.</em></h2>
-    <p class="lede">Fünf Personas analysieren dieselben Unterlagen, jede aus ihrer eigenen Linse und mit ihrem eigenen blinden Fleck.</p>
+  <!-- 04 DER SKILL IN EINEM SATZ -->
+  <section class="layout-content" data-screen-label="04 In einem Satz">
+    <div class="eyebrow"><span class="num">§ 01.01</span><span>Die Grundidee</span><span class="rule"></span></div>
+    <h2 class="display">Ein Workshop, kein <em>Prompt.</em></h2>
+    <p class="lede">Statt einer einzelnen Frage an die KI simuliert der Skill eine ganze Workshop-Runde: mehrere Teilnehmer, mehrere Schritte, mit Pausen, in denen du eingreifst.</p>
+    <p class="body">Du gibst dem Skill <b>Organisationsdokumente</b> (Strategiepapiere, Berichte, Markt-Notizen). Daraus erzeugt er einen <b>qualifizierten Strategieentwurf</b> nach der Methode <em class="s">Play to Win</em> — und macht explizit, worauf diese Strategie wettet und was man zuerst testen müsste.</p>
     <ul>
-      <li><em>Die Runde:</em> CEO · CFO · Head of Product · Tech Lead · Employee Rep</li>
-      <li><em>Die Methoden:</em> 1-2-4-All · Remember the Future · Reverse Engineering</li>
-      <li><em>Das Ergebnis:</em> Choice Cascade + reverse-engineerte Annahmen + Experiment-Designs</li>
-      <li><em>Das Prinzip:</em> ein Ausgangspunkt fürs Gespräch — keine Schlussfolgerung</li>
+      <li><b>Fünf Perspektiven</b> lesen dieselben Dokumente — jede aus ihrer eigenen Rolle.</li>
+      <li><b>Sechs Schritte</b> mit Checkpoints, an denen du prüfst und korrigierst.</li>
+      <li>Das Ergebnis ist <b>ein Ausgangspunkt fürs Gespräch</b>, keine fertige Wahrheit.</li>
     </ul>
-    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>04 / 18</span></div>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>04 / 27</span></div>
   </section>
 
-  <!-- 05 · § 02 CONTENT (Quellen) -->
-  <section class="layout-content" data-screen-label="05 Wie">
-    <div class="eyebrow"><span class="num">§ 02.01</span><span>Aufruf &amp; Quellen</span><span class="rule"></span></div>
-    <h2 class="display">Drei Quellen, <em>ein Aufruf.</em></h2>
-    <p class="lede"><code>/PTW-workshop</code> im <code>pm-workspace</code> — der Workshop fragt zuerst, woher die Dokumente kommen.</p>
+  <!-- 05 WAS IST PLAY TO WIN -->
+  <section class="layout-content blue" data-screen-label="05 Play to Win">
+    <div class="eyebrow"><span class="num">§ 01.02</span><span>Begriff erklärt</span><span class="rule"></span></div>
+    <h2 class="display">Was ist <em>Play to Win?</em></h2>
+    <p class="lede">„Play to Win" (A.G. Lafley &amp; Roger Martin) ist eine Methode, Strategie als eine Kette von fünf zusammenhängenden Entscheidungen zu fassen — die <b>Choice Cascade</b>.</p>
+    <p class="body">Der Kern: Strategie heißt <b>wählen</b> — und Wählen heißt, etwas sichtbar <b>nicht</b> zu tun. Eine Aussage, die nichts ausschließt, ist keine Strategie. Die fünf Entscheidungen bauen aufeinander auf: Jede beantwortet eine Frage, die die vorige aufwirft, und prüft die vorige auf Realität.</p>
     <ul>
-      <li><em>A</em> — <code>context/</code>: das Kontext-Fundament des eigenen Unternehmens</li>
-      <li><em>B</em> — eigene Dokumente in <code>input/ptw-workshop/</code> ablegen oder einfügen</li>
-      <li><em>C</em> — eine Firma nennen, der Skill recherchiert öffentlich bekannte Muster</li>
-      <li>Jeder Schritt mit <em>Checkpoint</em>: anhalten, prüfen, korrigieren</li>
+      <li>Klingt eine Strategie so, dass jeder Wettbewerber sie genauso unterschreiben würde, ist sie <b>keine Wahl</b>.</li>
+      <li>Auf der nächsten Seite die fünf Boxen — am Beispiel wird es konkret.</li>
     </ul>
-    <div class="slide-foot"><span>§ 02 · Wie man ihn verwendet</span><span>05 / 18</span></div>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>05 / 27</span></div>
   </section>
 
-  <!-- 06 · § 02 CONTENT (Schritte) -->
-  <section class="layout-content ink" data-screen-label="06 Schritte">
-    <div class="eyebrow"><span class="num">§ 02.02</span><span>Der Ablauf</span><span class="rule"></span></div>
+  <!-- 06 DIE CHOICE CASCADE -->
+  <section class="layout-cascade" data-screen-label="06 Choice Cascade">
+    <div class="eyebrow"><span class="num">§ 01.03</span><span>Die Choice Cascade — fünf Entscheidungen</span><span class="rule"></span></div>
+    <h2 class="display">Die fünf <em>Boxen.</em></h2>
+    <div class="cgrid">
+      <div class="crow"><div class="cn">1</div><div class="ct">Winning Aspiration<span class="q">Wofür wollen wir gewinnen?</span></div><div class="cd">Der Zweck — was Erfolg bedeutet, für welche Kunden, gegen welche Wettbewerber. Nach außen gerichtet, nicht „Umsatz verdoppeln".</div></div>
+      <div class="crow"><div class="cn">2</div><div class="ct">Where to Play<span class="q">Wo spielen wir?</span></div><div class="cd">Das gewählte Spielfeld: Segmente, Kanäle, Regionen, Kategorien. Muss eng genug sein, um <em>etwas Sichtbares auszuschließen</em>.</div></div>
+      <div class="crow"><div class="cn">3</div><div class="ct">How to Win<span class="q">Wie gewinnen wir dort?</span></div><div class="cd">Das Rezept, genau auf diesem Feld zu gewinnen — nicht allgemein. Kostenführerschaft, Differenzierung oder ein spezifischer Mechanismus.</div></div>
+      <div class="crow"><div class="cn">4</div><div class="ct">Capabilities<span class="q">Was müssen wir können?</span></div><div class="cd">Das sich verstärkende System an Fähigkeiten, das den How-to-Win liefert. Test: Können oder wollen Wettbewerber es <em>nicht</em> nachmachen?</div></div>
+      <div class="crow"><div class="cn">5</div><div class="ct">Management Systems<span class="q">Was hält das alles?</span></div><div class="cd">Strukturen, Kennzahlen, Anreize, die die Fähigkeiten aufbauen und tragen. Ohne sie bleibt die Strategie eine Wunschliste.</div></div>
+    </div>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>06 / 27</span></div>
+  </section>
+
+  <!-- 07 DIE FÜNF PERSPEKTIVEN -->
+  <section class="layout-content" data-screen-label="07 Personas">
+    <div class="eyebrow"><span class="num">§ 01.04</span><span>Die Teilnehmer</span><span class="rule"></span></div>
+    <h2 class="display">Fünf <em>Perspektiven.</em></h2>
+    <p class="lede">Der Skill spielt fünf Rollen — jede liest dieselben Dokumente durch ihre eigene Brille, mit eigenen Stärken und eigenem blinden Fleck. So kippt die Analyse nicht in eine Richtung.</p>
+    <ul>
+      <li><b>CEO</b> — Langfrist-Vision, Markenidentität: „Wofür stehen wir in zehn Jahren?"</li>
+      <li><b>CFO</b> — Finanzen, Risiko, Liquidität: „Können wir uns das leisten? Worauf wetten wir?"</li>
+      <li><b>Head of Product</b> — Kundennutzen: „Welches Problem lösen wir, für wen?"</li>
+      <li><b>Tech Lead</b> — Umsetzbarkeit: „Was läuft real durch Produktion und Lieferkette?"</li>
+      <li><b>Employee Rep</b> — gelebte Kultur: „Was wird hier wirklich belohnt, was nur behauptet?"</li>
+    </ul>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>07 / 27</span></div>
+  </section>
+
+  <!-- 08 DIE METHODEN -->
+  <section class="layout-content" data-screen-label="08 Methoden">
+    <div class="eyebrow"><span class="num">§ 01.05</span><span>Die drei Werkzeuge im Workshop</span><span class="rule"></span></div>
+    <h2 class="display">Wie sie <em>denken.</em></h2>
+    <p class="lede">Der Workshop nutzt drei bewährte Moderations-Techniken — hier kurz erklärt, weil sie gleich im Ablauf auftauchen.</p>
+    <ul>
+      <li><b>1-2-4-All</b> — erst denkt jeder <em>allein</em> (1), dann in <em>Paaren</em> (2), dann verdichtet die <em>ganze Gruppe</em> (All). Verhindert, dass eine laute Stimme den Raum dominiert.</li>
+      <li><b>Remember the Future</b> — die Teilnehmer stellen sich vor, es ist drei Jahre später und die Strategie hat funktioniert, und arbeiten <em>rückwärts</em>: Was war entscheidend? Das deckt auf, was die Vorwärts-Analyse übersieht.</li>
+      <li><b>Reverse Engineering</b> — die Frage „Was <em>müsste wahr sein</em>, damit diese Strategie gewinnt?". Sie verwandelt Behauptungen in <em>testbare Wetten</em>.</li>
+    </ul>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>08 / 27</span></div>
+  </section>
+
+  <!-- 09 WAS RAUSKOMMT -->
+  <section class="layout-content ink" data-screen-label="09 Output">
+    <div class="eyebrow"><span class="num">§ 01.06</span><span>Das Resultat</span><span class="rule"></span></div>
+    <h2 class="display">Was am Ende <em>dasteht.</em></h2>
+    <p class="body">Der Skill produziert drei zusammenhängende Dinge — alle als Dateien, die du lesen und korrigieren kannst:</p>
+    <ul>
+      <li><b>Die Choice Cascade</b> — der Strategieentwurf in den fünf Boxen, mit Konfidenz-Angaben und offenen Fragen.</li>
+      <li><b>Die Annahmen, sortiert</b> — worauf die Strategie wettet, geteilt in „wichtig &amp; bekannt" (darauf darf man bauen) und „wichtig &amp; <em>unbekannt</em>" (das sind die riskanten Wetten).</li>
+      <li><b>Experiment-Designs</b> — für die riskanten Wetten: was man billig testet, <em>bevor</em> man sich festlegt.</li>
+    </ul>
+    <p class="foot-note">Leitsatz: Der Entwurf ist gut genug, um das Gespräch zu schärfen — und ehrlich genug, um seine eigenen Lücken zu zeigen.</p>
+    <div class="slide-foot"><span>§ 01 · Was der Skill macht</span><span>09 / 27</span></div>
+  </section>
+
+  <!-- 10 SECTION 02 -->
+  <section class="layout-section blue" data-screen-label="10 Section 02">
+    <div class="eyebrow"><span class="num">§ 02</span><span>Zweiter Teil</span><span class="rule"></span></div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <div class="super">In drei Minuten startklar —</div>
+      <h2><span class="row">Wie man ihn</span><span class="row"><em>startet.</em></span></h2>
+    </div>
+    <div class="slide-foot"><span>§ 02 · Wie man ihn verwendet</span><span>10 / 27</span></div>
+  </section>
+
+  <!-- 11 KONKRET STARTEN -->
+  <section class="layout-content" data-screen-label="11 Starten">
+    <div class="eyebrow"><span class="num">§ 02.01</span><span>Aufruf &amp; Datenquellen</span><span class="rule"></span></div>
+    <h2 class="display">Loslegen.</h2>
+    <p class="body">Repo klonen, in den Ordner wechseln, Claude Code starten — dann <code>/PTW-workshop</code> eingeben. Der Workshop fragt dich zuerst, <b>woher die Dokumente kommen</b>. Drei Wege:</p>
+    <ul>
+      <li><b>A — context/</b>: das Workspace-Fundament (Infos zum <em>eigenen</em> Unternehmen). Ideal, um die eigene Strategie zu schärfen.</li>
+      <li><b>B — eigene Dokumente</b>: Strategiepapiere in den Chat einfügen oder in <code>input/ptw-workshop/</code> ablegen.</li>
+      <li><b>C — Web-Recherche</b>: einfach eine Firma nennen — der Skill recherchiert öffentlich bekannte Muster und baut daraus die Grundlage.</li>
+    </ul>
+    <p class="foot-note">Im Beispiel gleich nutzen wir Weg B: ein vorbereitetes Dokumenten-Set zu LEGO liegt im Repo bei.</p>
+    <div class="slide-foot"><span>§ 02 · Wie man ihn verwendet</span><span>11 / 27</span></div>
+  </section>
+
+  <!-- 12 DIE SECHS SCHRITTE -->
+  <section class="layout-content" data-screen-label="12 Sechs Schritte">
+    <div class="eyebrow"><span class="num">§ 02.02</span><span>Der Ablauf von Anfang bis Ende</span><span class="rule"></span></div>
     <h2 class="display">Sechs <em>Schritte.</em></h2>
     <ul>
-      <li><em>1</em> — Individuelle Analyse: fünf Personas lesen unabhängig</li>
-      <li><em>2</em> — Paar-Diskussionen: Paare finden Spannung, ein Integrator verdichtet</li>
-      <li><em>3</em> — Gruppen-Synthese: der erste Cascade-Entwurf</li>
-      <li><em>4</em> — Remember the Future: aus drei Jahren rückwärts denken</li>
-      <li><em>5 / 5a</em> — Reverse Engineering: Annahmen quadrieren, Experimente entwerfen</li>
-      <li><em>6</em> — Finale Synthese: der qualifizierte Entwurf</li>
+      <li><b>1 · Einzel-Analyse</b> — fünf Rollen lesen unabhängig und notieren ihre Sicht auf jede der fünf Boxen.</li>
+      <li><b>2 · Paar-Diskussionen</b> — Rollen tun sich paarweise zusammen, finden Gemeinsames und Reibung; ein Integrator verdichtet.</li>
+      <li><b>3 · Gruppen-Synthese</b> — alles fließt in einen ersten Cascade-Entwurf zusammen.</li>
+      <li><b>4 · Remember the Future</b> — Rückblick aus drei Jahren: Was war entscheidend?</li>
+      <li><b>5 · Reverse Engineering</b> — die Annahmen freilegen und sortieren; dann Experimente entwerfen.</li>
+      <li><b>6 · Finale Synthese</b> — der qualifizierte Entwurf, der alles bündelt.</li>
     </ul>
-    <div class="slide-foot"><span>§ 02 · Wie man ihn verwendet</span><span>06 / 18</span></div>
+    <p class="foot-note">Nach jedem Schritt ein <b>Checkpoint</b>: Der Workshop hält an, zeigt das Zwischenergebnis und wartet auf dein „weiter" oder deine Korrektur. In Schritt 2 wählst du, wie die Paare gebildet werden.</p>
+    <div class="slide-foot"><span>§ 02 · Wie man ihn verwendet</span><span>12 / 27</span></div>
   </section>
 
-  <!-- 07 · § 03 SECTION (blue) -->
-  <section class="layout-section blue" data-screen-label="07 Section 03">
-    <div class="eyebrow"><span class="num">§ 03</span><span>Der Fall</span><span class="rule"></span></div>
+  <!-- 13 SECTION 03 -->
+  <section class="layout-section ink" data-screen-label="13 Section 03">
+    <div class="eyebrow"><span class="num">§ 03</span><span>Dritter Teil</span><span class="rule"></span></div>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-      <div class="super">Februar 2004 —</div>
-      <h2><span class="row">LEGO am</span><span class="row"><em>Abgrund.</em></span></h2>
-      <div class="subline">1,4 Mrd DKK Verlust. Das schlechteste Jahr der Firmengeschichte. Und ein Twist.</div>
+      <div class="super">Jetzt fahren wir ihn vor —</div>
+      <h2><span class="row">Der Fall:</span><span class="row yellow-text"><em>LEGO 2004.</em></span></h2>
+      <div class="subline">Ein berühmter Beinahe-Zusammenbruch — und was man daraus über Strategie lernt.</div>
     </div>
-    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>07 / 18</span></div>
+    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>13 / 27</span></div>
   </section>
 
-  <!-- 08 · § 03 CONTENT (Twist) -->
-  <section class="layout-content" data-screen-label="08 Twist">
-    <div class="eyebrow"><span class="num">§ 03.01</span><span>Der versteckte Dreh</span><span class="rule"></span></div>
-    <h2 class="display">Überinnovation als <em>Ursache.</em></h2>
-    <p class="lede">Die landläufige Erzählung: gerettet durch Kreativität. Das Gegenteil stimmt.</p>
+  <!-- 14 DIE AUSGANGSLAGE -->
+  <section class="layout-content" data-screen-label="14 Ausgangslage">
+    <div class="eyebrow"><span class="num">§ 03.01</span><span>Worum es geht — auch ohne Vorwissen</span><span class="rule"></span></div>
+    <h2 class="display">Am <em>Abgrund.</em></h2>
+    <p class="lede">LEGO — der dänische Hersteller der Klemmbausteine — stand Anfang 2004 kurz vor der Pleite. Wir versetzen den Workshop in genau diesen Moment.</p>
     <ul>
-      <li>Über ein Jahrzehnt diversifiziert: Themenparks, Mode, Videospiele, Actionfiguren</li>
-      <li>Bauelemente von rund 6.000 auf über <em>12.000</em> explodiert</li>
-      <li>Die Rettung war kein neuer Einfall — sondern <em>radikaler Fokus</em></li>
-      <li>Genau das macht den Fall zum Play-to-Win-Lehrstück: eine echte Entscheidung schließt etwas aus</li>
+      <li><b>Die Lage:</b> 2003 rund 1,4 Mrd DKK Verlust, Umsatz in zwei Jahren um ein Drittel eingebrochen, hoher Schuldenstand. Analysten hielten eine Insolvenz binnen 18 Monaten für möglich.</li>
+      <li><b>Die Vorgeschichte:</b> Seit den 1990ern war das Grundpatent auf den Stein abgelaufen — billige Nachbauten drängten in den Markt, Kinder wanderten zu Videospielen ab.</li>
+      <li><b>Die Reaktion:</b> LEGO hatte breit diversifiziert — Themenparks, Kleidung, eigene Videospiele, Actionfiguren — und das Sortiment von ~6.000 auf über 12.000 Bauteile aufgebläht.</li>
     </ul>
-    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>08 / 18</span></div>
+    <p class="foot-note">Die strategische Grundfrage 2004: Worauf setzen wir künftig — und worauf <em>nicht mehr</em>?</p>
+    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>14 / 27</span></div>
   </section>
 
-  <!-- 09 · § 03 CONTENT (Hindsight-Falle) -->
-  <section class="layout-content yellow" data-screen-label="09 Hindsight">
-    <div class="eyebrow"><span class="num">§ 03.02</span><span>Eine methodische Falle</span><span class="rule"></span></div>
-    <h2 class="display">Zu schlaues <em>Material.</em></h2>
-    <p class="lede">Die Falldokumente sind aus öffentlichen Quellen rekonstruiert — die erste Fassung verriet die Antwort schon.</p>
+  <!-- 15 DER TWIST -->
+  <section class="layout-content yellow" data-screen-label="15 Twist">
+    <div class="eyebrow"><span class="num">§ 03.02</span><span>Warum der Fall lehrreich ist</span><span class="rule"></span></div>
+    <h2 class="display">Der überraschende <em>Dreh.</em></h2>
+    <p class="lede">Die naheliegende Erzählung lautet: „LEGO wurde durch Kreativität und Innovation gerettet." Der Fall zeigt das Gegenteil.</p>
+    <p class="body">Die Über-Diversifikation war nicht die Rettung, sondern die <b>Ursache</b> der Krise: zu viele Felder, zu viele Teile, zu wenig Fokus. Die eigentliche Rettung war später kein neuer Einfall, sondern <b>radikale Disziplin</b> — die bewusste Entscheidung, vieles wegzulassen.</p>
     <ul>
-      <li>Erste Version: die fertige Diagnose stand bereits im Material</li>
-      <li>Die fünf Personas spielten sie nur zurück — ein Echo, kein Workshop</li>
-      <li>Also neutralisiert: Rohdaten ja, Interpretation raus, Gegenargumente gleichgewichtig rein</li>
-      <li>Der Lehrpunkt für eigene Cases: <em>Fakten ja, Diagnose nein</em></li>
+      <li>Genau das macht den Fall zum Play-to-Win-Lehrstück: Eine echte <b>Where-to-Play</b>-Entscheidung schließt etwas Sichtbares aus.</li>
+      <li>Spannend für den Test: Wird der Workshop diesen unbequemen, kontra-intuitiven Schluss <em>selbst</em> finden?</li>
     </ul>
-    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>09 / 18</span></div>
+    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>15 / 27</span></div>
   </section>
 
-  <!-- 10 · § 04 SECTION -->
-  <section class="layout-section ink" data-screen-label="10 Section 04">
-    <div class="eyebrow"><span class="num">§ 04</span><span>Der Run</span><span class="rule"></span></div>
+  <!-- 16 HINDSIGHT-FALLE -->
+  <section class="layout-content" data-screen-label="16 Hindsight">
+    <div class="eyebrow"><span class="num">§ 03.03</span><span>Eine ehrliche Zwischenbemerkung zur Methode</span><span class="rule"></span></div>
+    <h2 class="display">Eine <em>Falle</em> im Material.</h2>
+    <p class="lede">Die Falldokumente sind aus öffentlichen Quellen rekonstruiert — keine echten LEGO-Interna. Beim Bauen lauert dabei eine Falle, die hier offen benannt wird.</p>
+    <p class="body">Die <b>erste Fassung</b> der Dokumente enthielt bereits die fertige Diagnose („Fokus ist die Lösung"). Die fünf Rollen haben sie dann nur <em>zurückgespielt</em> — ein Echo, kein echter Workshop. Wer einen Fall im Nachhinein baut, schreibt die Antwort leicht unbewusst hinein.</p>
+    <ul>
+      <li><b>Die Korrektur:</b> Dokumente neutralisiert — Rohdaten und sich <em>widersprechende</em> Stimmen ja, fertige Interpretation nein, Gegenargumente gleichgewichtig.</li>
+      <li><b>Der Lehrpunkt</b> für jeden, der eigene Fälle baut: <em>Fakten ja, Diagnose nein.</em></li>
+    </ul>
+    <div class="slide-foot"><span>§ 03 · Der Fall</span><span>16 / 27</span></div>
+  </section>
+
+  <!-- 17 SECTION 04 -->
+  <section class="layout-section" data-screen-label="17 Section 04">
+    <div class="eyebrow"><span class="num">§ 04</span><span>Vierter Teil</span><span class="rule"></span></div>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-      <div class="super">Zufalls-Pairing, Halt an jedem Checkpoint —</div>
-      <h2><span class="row">Sechzehn</span><span class="row yellow-text"><em>Agenten.</em></span></h2>
+      <div class="super">Schritt für Schritt —</div>
+      <h2><span class="row">Wie der Run</span><span class="row blue-text"><em>lief.</em></span></h2>
     </div>
-    <div class="slide-foot"><span>§ 04 · Wie der Run lief</span><span>10 / 18</span></div>
+    <div class="slide-foot"><span>§ 04 · Wie der Run lief</span><span>17 / 27</span></div>
   </section>
 
-  <!-- 11 · § 04 CONTENT -->
-  <section class="layout-content" data-screen-label="11 Run">
-    <div class="eyebrow"><span class="num">§ 04.01</span><span>Konvergenz — und ein Fund</span><span class="rule"></span></div>
-    <h2 class="display">Fünf Linsen, ein <em>Faden.</em></h2>
+  <!-- 18 SCHRITT 1+2 -->
+  <section class="layout-content" data-screen-label="18 Schritt 1-2">
+    <div class="eyebrow"><span class="num">§ 04.01</span><span>Schritte 1 und 2 — allein, dann zu zweit</span><span class="rule"></span></div>
+    <h2 class="display">Erst <em>spreizen.</em></h2>
+    <p class="body">In <b>Schritt 1</b> lasen die fünf Rollen die LEGO-Dokumente unabhängig. Bemerkenswert: Sie konvergierten weitgehend — stritten aber produktiv, <em>wo</em> die Strategie bricht.</p>
     <ul>
-      <li>Die fünf Personas konvergierten unabhängig — und stritten produktiv, <em>wo</em> die Cascade bricht</li>
-      <li>Remember the Future schärfte das Urteil: die richtige Cascade in der <em>richtigen Reihenfolge</em> verdrahten</li>
-      <li>Beim neutralisierten Re-Run fanden die Agenten das alte Echo <em>selbst</em></li>
-      <li>Read-before-Overwrite + Beleg-Disziplin = emergente Selbstkorrektur</li>
+      <li><b>CEO:</b> „Es gibt gar keine Strategie — nur zwei rivalisierende Selbstbilder, die sich neutralisieren."</li>
+      <li><b>CFO:</b> „Die teuerste Lücke ist kein Produkt, sondern das <em>fehlende Mess-System</em>: ohne Kosten je Bauteil ist jeder Schnitt blind."</li>
+      <li><b>Employee:</b> „Keine zerbrochene Strategie, sondern eine <em>erfolgreich umgesetzte schlechte</em> — die Anreize belohnen genau das Falsche."</li>
     </ul>
-    <div class="slide-foot"><span>§ 04 · Wie der Run lief</span><span>11 / 18</span></div>
+    <p class="foot-note">In <b>Schritt 2</b> bildeten Zufalls-Paare gemeinsame Schlüsse; ein Integrator verband sie — etwa: „Kultur-Wandel und Daten-System sind <em>dasselbe</em> Problem von zwei Enden."</p>
+    <div class="slide-foot"><span>§ 04 · Wie der Run lief</span><span>18 / 27</span></div>
   </section>
 
-  <!-- 12 · § 05 SECTION -->
-  <section class="layout-section" data-screen-label="12 Section 05">
-    <div class="eyebrow"><span class="num">§ 05</span><span>Das Ergebnis</span><span class="rule"></span></div>
+  <!-- 19 SCHRITT 3-6 -->
+  <section class="layout-content" data-screen-label="19 Schritt 3-6">
+    <div class="eyebrow"><span class="num">§ 04.02</span><span>Schritte 3 bis 6 — verdichten und prüfen</span><span class="rule"></span></div>
+    <h2 class="display">Dann <em>schließen.</em></h2>
+    <ul>
+      <li><b>Schritt 3</b> verdichtete alles zum ersten Entwurf. Sein Kernurteil: „Richtung sicher, Schnitt ungedeckt, Systeme unverdrahtet."</li>
+      <li><b>Schritt 4</b> (Remember the Future): Alle fünf Rückblicke kamen zum selben Schluss — gerettet hat nicht die bessere Idee, sondern das <em>Verdrahten der richtigen Strategie in der richtigen Reihenfolge</em>.</li>
+      <li><b>Schritt 5 + 6</b> legten die Wetten offen und bündelten den finalen Entwurf.</li>
+    </ul>
+    <p class="foot-note">Nebenbeobachtung: Beim sauberen Re-Run bemerkten die KI-Teilnehmer das alte „Echo" der ersten Fassung <em>selbst</em> — und verwarfen es. Ein Mensch hatte die Falle erkannt; das Werkzeug fing sie beim zweiten Mal mit ab.</p>
+    <div class="slide-foot"><span>§ 04 · Wie der Run lief</span><span>19 / 27</span></div>
+  </section>
+
+  <!-- 20 SECTION 05 -->
+  <section class="layout-section blue" data-screen-label="20 Section 05">
+    <div class="eyebrow"><span class="num">§ 05</span><span>Fünfter Teil</span><span class="rule"></span></div>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
       <div class="super">Was am Ende stand —</div>
-      <h2><span class="row">Die <em>Cascade.</em></span></h2>
+      <h2><span class="row">Das</span><span class="row"><em>Ergebnis.</em></span></h2>
     </div>
-    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>12 / 18</span></div>
+    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>20 / 27</span></div>
   </section>
 
-  <!-- 13 · § 05 CONTENT (Cascade) -->
-  <section class="layout-content" data-screen-label="13 Cascade">
-    <div class="eyebrow"><span class="num">§ 05.01</span><span>Die Choice Cascade</span><span class="rule"></span></div>
-    <h2 class="display">Vier <em>Boxen.</em></h2>
+  <!-- 21 DIE CASCADE (LEGO) -->
+  <section class="layout-cascade" data-screen-label="21 Ergebnis-Cascade">
+    <div class="eyebrow"><span class="num">§ 05.01</span><span>Der Strategieentwurf in den fünf Boxen</span><span class="rule"></span></div>
+    <h2 class="display">Die Cascade für <em>LEGO.</em></h2>
+    <div class="cgrid">
+      <div class="crow"><div class="cn">1</div><div class="ct">Winning Aspiration</div><div class="cd">Das tiefste, beste <em>System des Bauens</em> sein — plus eigene, ans Bausystem gekoppelte Erzählwelten. Für alle, die bauen: Kinder <em>und</em> erwachsene Fans.</div></div>
+      <div class="crow"><div class="cn">2</div><div class="ct">Where to Play</div><div class="cd">Der Kern-Baukasten plus treue Fans; Lizenzen nur als Brücke. <em>Ausschluss</em>: Mode, Medien, fremdbespielte Felder — und kein Preiskampf gegen die Billig-Klone.</div></div>
+      <div class="crow"><div class="cn">3</div><div class="ct">How to Win</div><div class="cd">Differenzierung über System-Tiefe und Qualität, nicht über Breite. Im Maschinenraum: harte <em>Kostendisziplin</em> — was nicht das Bauen vertieft, fliegt raus.</div></div>
+      <div class="crow"><div class="cn">4</div><div class="ct">Capabilities</div><div class="cd">Präzisions-Fertigung des Steins (Klemmkraft, Kompatibilität über Jahrzehnte) — etwas, das Billig-Nachbauer nicht erreichen.</div></div>
+      <div class="crow"><div class="cn">5</div><div class="ct">Management Systems</div><div class="cd">Das fehlende Fundament: eine Kosten-/Deckungsbeitragsrechnung je Bauteil und Anreize, die Disziplin statt Wildwuchs belohnen.</div></div>
+    </div>
+    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>21 / 27</span></div>
+  </section>
+
+  <!-- 22 DIE KRITISCHSTE WETTE -->
+  <section class="layout-content" data-screen-label="22 Wette">
+    <div class="eyebrow"><span class="num">§ 05.02</span><span>Reverse Engineering — worauf die Strategie wettet</span><span class="rule"></span></div>
+    <h2 class="display">Die kritischste <em>Wette.</em></h2>
+    <p class="body">Der Workshop sortierte die Annahmen nach zwei Achsen: <b>Wichtigkeit</b> (hängt die Strategie davon ab?) und <b>Wissen</b> (haben wir Belege?). Daraus zwei Gruppen:</p>
     <ul>
-      <li><em>Winning Aspiration</em> — das tiefste System des kreativen Bauens + eigene Erzählwelten</li>
-      <li><em>Where to Play</em> — Kern-Baukasten + Fans/AFOL; Ausschluss von Mode/Medien, kein Preiskampf</li>
-      <li><em>How to Win</em> — System-Tiefe statt geliehener Lizenz; Kostendisziplin, nicht Kostenführerschaft</li>
-      <li><em>Kritischste Wette</em> — „Bauen ist lebendig", seit 1999 nie getestet</li>
+      <li><b>Wichtig &amp; bekannt</b> — z. B. „den Preiskampf gegen Billig-Klone kann LEGO strukturell nicht gewinnen". Belegt — darauf darf man bauen.</li>
+      <li><b>Wichtig &amp; unbekannt</b> — die riskanten Wetten, die man <em>zuerst testen</em> muss. Spitzenreiter: <b>„Bauen ist als Verhalten lebendig"</b> — wollen Kinder überhaupt noch selbst bauen? Diese Annahme trug die ganze Strategie und war seit 1999 <em>nie an einem Nutzer gemessen</em>.</li>
     </ul>
-    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>13 / 18</span></div>
+    <p class="foot-note">Pointe: Genau diese Annahme trug auch den alten Kurs — nur mit umgekehrtem Vorzeichen. <em>Ein</em> billiger Nutzertest entscheidet beide Lager.</p>
+    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>22 / 27</span></div>
   </section>
 
-  <!-- 14 · § 05 MANIFEST -->
-  <section class="layout-manifest ink" data-screen-label="14 Manifest">
-    <div class="eyebrow"><span class="num">§ 05.02</span><span>Das Kernurteil</span><span class="rule"></span></div>
+  <!-- 23 KERNURTEIL -->
+  <section class="layout-manifest ink" data-screen-label="23 Kernurteil">
+    <div class="eyebrow"><span class="num">§ 05.03</span><span>Das Kernurteil in einem Satz</span><span class="rule"></span></div>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
       <div class="body">
         <span class="row">RICHTUNG <span class="italic yellow-text">sicher.</span></span>
         <span class="row">SCHNITT <span class="italic">ungedeckt.</span></span>
         <span class="row">SYSTEME <span class="italic">unverdrahtet.</span></span>
       </div>
+      <div class="gloss">Heißt im Klartext: <b>Wohin</b> LEGO muss, ist klar und belegt. <b>Welche Hälfte</b> des Sortiments genau wegfällt, ist ohne das fehlende Kosten-System nicht sauber entscheidbar. Und die nötigen Anreize/Strukturen sind noch nicht gebaut. Der wichtigste nächste Schritt ist deshalb kein großer Beschluss, sondern <b>billige Tests zuerst</b>.</div>
     </div>
-    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>14 / 18</span></div>
+    <div class="slide-foot"><span>§ 05 · Das Ergebnis</span><span>23 / 27</span></div>
   </section>
 
-  <!-- 15 · § 06 TWO-COL (vs Realität) -->
-  <section class="layout-two" data-screen-label="15 vs Realität">
-    <div class="eyebrow"><span class="num">§ 06</span><span>Ergebnis vs. reale Historie · 2004–2012</span><span class="rule"></span></div>
-    <h2 class="display">Workshop vs. <em>Realität.</em></h2>
+  <!-- 24 SECTION 06 -->
+  <section class="layout-section" data-screen-label="24 Section 06">
+    <div class="eyebrow"><span class="num">§ 06</span><span>Sechster Teil</span><span class="rule"></span></div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <div class="super">Die ehrliche Probe —</div>
+      <h2><span class="row">Stimmt das</span><span class="row blue-text"><em>überhaupt?</em></span></h2>
+      <div class="subline">Wir gleichen den Entwurf mit dem ab, was LEGO 2004–2012 wirklich getan hat.</div>
+    </div>
+    <div class="slide-foot"><span>§ 06 · Abgleich mit der Realität</span><span>24 / 27</span></div>
+  </section>
+
+  <!-- 25 VS REALITÄT -->
+  <section class="layout-two" data-screen-label="25 vs Realität">
+    <div class="eyebrow"><span class="num">§ 06.01</span><span>Workshop-Entwurf gegen die reale Historie</span><span class="rule"></span></div>
+    <h2 class="display">Treffer und <em>Abweichung.</em></h2>
+    <p class="lede">Jørgen Vig Knudstorp übernahm Ende 2004 als erster Nicht-Familien-CEO. Wie nah kommt der Workshop an das, was er tat?</p>
     <div class="cols">
-      <div class="col left">
-        <span class="label">Abweichung</span>
+      <div class="col right">
+        <span class="label">Workshop traf</span>
         <ul>
-          <li>Lizenz <em>begrenzen</em> — real wurde sie Säule (~30 % → ~60 % US-Umsatz)</li>
-          <li>Outsourcing-<em>Vorsicht</em> — real gescheitert und zurückgeholt</li>
+          <li>Zurück zum Kern — real „Back to the Brick"</li>
+          <li>Komplexität halbiert (~13.000 → ~7.000 Teile)</li>
+          <li>Erst <em>kleiner &amp; profitabel</em>, dann Wachstum — genau so</li>
+          <li>Bilanz zu Geld: Legoland 2005 verkauft (460 Mio USD)</li>
+          <li>„Kinder wollen <em>mehr</em> Tiefe" — Marktforschung bestätigte es</li>
         </ul>
       </div>
-      <div class="col right">
-        <span class="label">Treffer</span>
+      <div class="col left">
+        <span class="label">Workshop wich ab</span>
         <ul>
-          <li>„Back to the Brick", Komplexität halbiert</li>
-          <li>Survival-Sequenz: erst kleiner, dann Wachstum</li>
-          <li>Legoland 2005 für Cash verkauft (460 Mio USD)</li>
-          <li>„Kinder wollen Tiefe" — die Ethnografie bestätigte es</li>
+          <li>Lizenz <em>begrenzen</em> — real wurde sie eine Säule (~30 % → ~60 %)</li>
+          <li>Vorsicht bei Auslagerung der Produktion — real aggressiv ausgelagert (und teils zurückgeholt)</li>
         </ul>
       </div>
     </div>
-    <div class="slide-foot"><span>§ 06 · Ergebnis vs. Realität</span><span>15 / 18</span></div>
+    <div class="slide-foot"><span>§ 06 · Abgleich mit der Realität</span><span>25 / 27</span></div>
   </section>
 
-  <!-- 16 · § 07 THREE-UP (Erklärung) -->
-  <section class="layout-three" data-screen-label="16 Erklärung">
-    <div class="eyebrow"><span class="num">§ 07</span><span>Warum sie abweichen</span><span class="rule"></span></div>
+  <!-- 26 DIE 3 ERKLÄRUNGEN -->
+  <section class="layout-three" data-screen-label="26 Erklärungen">
+    <div class="eyebrow"><span class="num">§ 06.02</span><span>Warum weicht der Entwurf an Stellen ab?</span><span class="rule"></span></div>
     <h2 class="display">Drei <em>Erklärungen.</em></h2>
+    <p class="lede">Die Treffer reichen über das Offensichtliche hinaus. Die Abweichungen sind die ehrlich interessanten Stellen — und gut erklärbar:</p>
     <div class="grid">
       <div class="card a">
         <div class="top"><span>Nr. 01</span><span>→</span></div>
-        <div class="title">Evolution, kein <em>One-Shot</em></div>
-        <div class="body">Der Workshop ist eine Momentaufnahme (Feb 2004). Die reale Strategie war eine Iteration über acht Jahre. Lizenz-Hochlauf und Outsourcing-Rückzug waren Anpassungen über Zeit.</div>
+        <div class="title">Momentaufnahme statt <em>Evolution</em></div>
+        <div class="ctext">Der Workshop liefert <b>einen</b> kohärenten Stand (Feb 2004). Die echte Strategie war eine Iteration über acht Jahre. Lizenz-Hochlauf und Auslagerung waren Anpassungen <em>über Zeit</em> — nicht Teil eines Erstplans.</div>
         <div class="foot">Der wichtigste Punkt</div>
       </div>
       <div class="card b">
         <div class="top"><span>Nr. 02</span><span>→</span></div>
         <div class="title">Reinheit vs. <em>Pragmatismus</em></div>
-        <div class="body">Der Workshop optimiert auf Kohärenz. Die Realität wählte unter Liquiditätsdruck den Cash-Pragmatismus — Lizenz brachte Geld, also wuchs sie.</div>
+        <div class="ctext">Der Workshop optimiert auf <b>strategische Sauberkeit</b>. Die Realität wählte unter Geldnot <b>Pragmatismus</b>: Lizenzen brachten Cash, also wuchsen sie — auch wenn das „unrein" ist. Beides verteidigbar.</div>
         <div class="foot">Risikoneigung, nicht Logik</div>
       </div>
       <div class="card c">
         <div class="top"><span>Nr. 03</span><span>→</span></div>
-        <div class="title">Hindsight im <em>Daten-Design</em></div>
-        <div class="body">Auch neutralisiert stammen die Rohdaten aus dem realen Fall. Die Trefferquote ist teils im Material angelegt. Der echte Test: ein Fall mit unbekanntem Ausgang.</div>
+        <div class="title">Rest-Wissen im <em>Material</em></div>
+        <div class="ctext">Auch neutralisiert stammen die Daten aus dem realen Fall — ein Teil der Treffer ist im Material angelegt. Der echte Test eines Strategie-Skills ist ein Fall mit <b>unbekanntem Ausgang</b>.</div>
         <div class="foot">Ehrlich bleiben</div>
       </div>
     </div>
-    <div class="slide-foot"><span>§ 07 · Wie man die Unterschiede erklärt</span><span>16 / 18</span></div>
+    <div class="slide-foot"><span>§ 06 · Abgleich mit der Realität</span><span>26 / 27</span></div>
   </section>
 
-  <!-- 17 · § 08 CONTENT (Was sonst auffällt) -->
-  <section class="layout-content yellow" data-screen-label="17 Auffällig">
-    <div class="eyebrow"><span class="num">§ 08</span><span>Was sonst auffällt</span><span class="rule"></span></div>
-    <h2 class="display">Der Wert liegt nicht in der <em>Antwort.</em></h2>
-    <ul>
-      <li>Die <em>Divergenz</em> ist wertvoller als die Konvergenz — dort sitzt die Strategiearbeit</li>
-      <li>An einer Stelle war der Workshop <em>klüger</em> als die Realität (Outsourcing-Vorbehalt)</li>
-      <li>Strategie ist ein Prozess — den Skill <em>wiederholen</em>, nicht einmal befragen</li>
-      <li>Der Mensch im Loop fand die Hindsight-Falle, nicht der Agent</li>
-    </ul>
-    <div class="slide-foot"><span>§ 08 · Beobachtungen</span><span>17 / 18</span></div>
-  </section>
-
-  <!-- 18 · CLOSING -->
-  <section class="layout-closing blue" data-screen-label="18 Closing">
-    <div class="eyebrow"><span class="num">§ ENDE</span><span>Alles im Repo</span><span class="rule"></span></div>
-    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-      <h2><span class="row">Selbst</span><span class="row italic">nachlaufen.</span></h2>
+  <!-- 27 CLOSING -->
+  <section class="layout-closing ink" data-screen-label="27 Closing">
+    <div class="eyebrow"><span class="num">§ ENDE</span><span>Mitnehmen &amp; selbst starten</span><span class="rule"></span></div>
+    <h2><span class="row">Jetzt <em>du.</em></span></h2>
+    <p class="body">Was bleibt: Der Wert liegt nicht in der „Antwort", sondern in den freigelegten <b>Spannungen, Annahmen und Tests</b>. Strategie ist ein Prozess — fahr den Skill erneut, wenn sich der Kontext ändert. Und der Mensch behält das Urteil; das Werkzeug schärft das Gespräch.</p>
+    <ol class="steps">
+      <li>Repo klonen, in den Ordner wechseln, <code>claude</code> starten</li>
+      <li><code>/PTW-workshop</code> aufrufen — Quelle wählen (eigene Firma, eigene Dokumente oder eine Firma per Web-Recherche)</li>
+      <li>Den sechs Schritten folgen, an den Checkpoints korrigieren</li>
+    </ol>
+    <div class="files">
+      <span>Fall &amp; Lauf: input/ptw-workshop/ · output/…/ptw-lego/</span>
+      <span>Skill: .claude/skills/PTW-workshop/</span>
     </div>
-    <div class="actions">
-      <div class="contact">
-        <a href="../.claude/skills/PTW-workshop/SKILL.md">.claude/skills/PTW-workshop/ ↗</a>
-        <a href="../input/ptw-workshop/">input/ptw-workshop/ — der Fall ↗</a>
-        <a href="../output/2026-06-14/strategy/ptw-lego/6_final/PTW-draft-final.md">output/…/ptw-lego/ — das Ergebnis ↗</a>
-        <div class="helper">Aufrufen mit <span class="pill pill-paper" style="font-style:normal; font-family:var(--font-mono); font-size:24px;">/PTW-workshop</span></div>
-      </div>
-    </div>
-    <div class="slide-foot"><span>überproduct · AI-Augmented PM · Woche 5</span><span>18 / 18</span></div>
+    <div class="slide-foot"><span>überproduct · AI-Augmented PM · Woche 5</span><span>27 / 27</span></div>
   </section>
 
 </deck-stage>
@@ -2173,7 +2298,6 @@
 </script>
 
 <script>
-// F — toggle native fullscreen
 (function () {
   window.addEventListener('keydown', function (e) {
     if (e.key !== 'f' && e.key !== 'F') return;
@@ -2187,32 +2311,6 @@
       (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document);
     }
   });
-})();
-</script>
-<script>
-/* FRAGMENTS — reveal .frag elements on the current slide before advancing. */
-(function () {
-  const stage = document.querySelector('deck-stage');
-  if (!stage) return;
-  const slides = [...stage.querySelectorAll(':scope > section')];
-  const states = slides.map(s => ({ frags: [...s.querySelectorAll('.frag')], shown: 0 }));
-  function applyState(idx) { const st = states[idx]; if (!st) return; st.frags.forEach((el, i) => el.classList.toggle('visible', i < st.shown)); }
-  slides.forEach((_, i) => applyState(i));
-  let curr = 0;
-  window.addEventListener('message', (e) => {
-    if (e.data && typeof e.data.slideIndexChanged === 'number') {
-      if (curr !== e.data.slideIndexChanged) { curr = e.data.slideIndexChanged; if (states[curr]) { states[curr].shown = 0; applyState(curr); } }
-    }
-  });
-  window.addEventListener('keydown', (e) => {
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    const forward = (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown');
-    const back = (e.key === 'ArrowLeft' || e.key === 'PageUp');
-    if (!forward && !back) return;
-    const st = states[curr]; if (!st || !st.frags.length) return;
-    if (forward && st.shown < st.frags.length) { st.shown++; applyState(curr); e.stopPropagation(); e.preventDefault(); }
-    else if (back && st.shown > 0) { st.shown--; applyState(curr); e.stopPropagation(); e.preventDefault(); }
-  }, true);
 })();
 </script>
 </body>
