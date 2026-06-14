@@ -131,7 +131,7 @@ Meta               → Navigieren: Wo stehe ich, was fehlt?
 
 Der natürliche Flow durch diese Bereiche ist die PM-Kernaufgabe — von Rohdaten zur Entscheidung zur Übergabe. Aber du musst nicht immer den ganzen Weg gehen. Manchmal fängst du bei Strategy an. Manchmal brauchst du nur einen Handoff.
 
-**Die drei häufigsten Flows im PM-Alltag:**
+**Vier typische Flows im PM-Alltag:**
 
 **Flow 1: Discovery → Entscheidung**
 Rohes Feedback liegt vor. Du willst wissen: was steckt drin, was ist die wichtigste Opportunity?
@@ -144,6 +144,10 @@ Du weißt was gebaut werden soll. Du brauchst Spec, Prototyp, Handoff.
 **Flow 3: Strategische Analyse**
 Du willst einen Business Case durchleuchten — mit Web-Research und strukturierter Debatte.
 `/business-case-debater` (eigenständiges Subsystem, läuft interaktiv)
+
+**Flow 4: Insight validieren**
+Du hast eine Erkenntnis oder Hypothese — aus einem Gespräch, einem Datenpunkt, einem Bauchgefühl. Bevor du sie weiterverfolgst, prüfst du sie systematisch gegen euren Kontext: Wo widerspricht sie dem Bekannten, was ergänzt sie, welche Annahmen stecken drin, wie testest du sie billig?
+`/insight-validator` (First Impression → Up-/Downside mit Web-Research → Experiment-Design, interaktiv mit Haltepunkten)
 
 **Reflexion:** Welcher dieser Flows wäre heute in deinem Alltag am nützlichsten? Was liegt gerade auf deinem Tisch das du damit angehen könntest?
 

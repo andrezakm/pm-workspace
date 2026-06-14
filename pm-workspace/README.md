@@ -32,6 +32,7 @@ Strategy
 ├── /opportunity-scorer     Cluster → Scorecard (Vision / Wiederholbarkeit / Baubarkeit)
 ├── /decision-brief         Scorecard → 1-Pager (BUILD / SKIP / MEHR DATEN)
 ├── /devils-advocate        Brief → Annahmen-Kritik + Verdikt
+├── /insight-validator      Insight → Validierung gegen Kontext + Experiment-Design
 ├── /business-case-debater  Vollständige Analyse: Research → Debatte → Synthese
 └── /PTW-workshop           Play-to-Win Strategie-Workshop: 5 Perspektiven → Choice Cascade + Reverse Engineering
 
