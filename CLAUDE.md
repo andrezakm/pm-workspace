@@ -20,4 +20,4 @@ spec-writer, eval-writer, build-eval sind die Grenze zwischen PM und Dev.
 
 ## Navigation
 
-Für Skills: lies zuerst `skills/README.md`
+Für Skills: lies zuerst `README.md` (Skill-Übersicht und Flows), für Details zu einem einzelnen Skill `.claude/skills/[name]/README.md`.

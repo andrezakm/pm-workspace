@@ -20,7 +20,7 @@ Die Dokumente beschreiben **die Situation und die Spannungen**, aber bewusst **n
 
 ## So nutzt du den Case
 
-1. Claude Code im `pm-workspace/` öffnen
+1. Claude Code im Repo-Ordner öffnen
 2. `/PTW-workshop` aufrufen
 3. Als Quelle **(B) Eigene Dokumente** wählen und auf `input/ptw-workshop/` verweisen
 4. Den 6 Schritten und Checkpoints folgen
