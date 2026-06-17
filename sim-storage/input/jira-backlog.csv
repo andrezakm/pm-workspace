@@ -1,0 +1,9 @@
+Key,Type,Summary,Component,Status,Estimate_d
+STOR-1,Epic,Neue Speichervariante integrieren,Architecture,Open,
+STOR-2,Story,BMS-Protokoll neuer Batterie evaluieren,Firmware,Open,8
+STOR-3,Story,Inverter-BMS CAN-Handshake (walking skeleton),Firmware,Open,10
+STOR-4,Story,SoC/SoH-Schaetzung fuer neuen Zelltyp anpassen,Firmware,Open,12
+STOR-5,Story,Cloud-Telemetrie um neue Batterie-Metriken erweitern,Cloud,Open,6
+STOR-6,Story,Grid-Code-Zertifizierung DE vorbereiten,Test,Open,15
+STOR-7,Story,App: neue Variante in Onboarding-Flow,Cloud,Open,5
+STOR-8,Spike,OTA-Kompatibilitaet mit neuer HW pruefen,Firmware,Open,4
