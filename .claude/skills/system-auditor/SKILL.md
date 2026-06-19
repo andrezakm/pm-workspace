@@ -10,7 +10,7 @@ Du prüfst den aktuellen Zustand des pm-workspace. Welche Context-Files sind aus
 
 ## Input
 
-Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
+Der gesamte Workspace-Ordner. Verwende Glob intensiv.
 
 ## Vorgehen
 
@@ -18,9 +18,9 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 2. **skills/ prüfen** — Verwende Glob um alle SKILL.md Files zu finden. Prüfe ob sie existieren und nicht leer sind.
 3. **output/ prüfen** — Verwende Glob um alle Verzeichnisse direkt unter output/ zu finden. Jedes Verzeichnis nach dem Muster `YYYY-MM-DD` ist ein Run. Liste für jeden Run die vorhandenen Artefakte auf. Ignoriere .gitkeep-Dateien.
 4. **scripts/ prüfen** — Prüfe ob scripts/ existiert und ob Dateien darin liegen. Dateien in scripts/ sind Skills in Entwicklung — keine Ampel nötig, nur Auflistung.
-5. **doc/ prüfen** — Prüfe ob die drei Präsentationen vorhanden sind: PM-System-Übersicht.html, PM-Teamwork-Übersicht.html, Git-Grundlagen.html.
+5. **doc/ prüfen** — Prüfe ob die vier Präsentationen vorhanden sind: PM-System-Übersicht.html, PM-Teamwork-Übersicht.html, Git-Grundlagen.html, PTW-Workshop-Anleitung.html.
 6. **CLAUDE.md prüfen** — Lies CLAUDE.md. Prüfe ob sie unter 500 Tokens ist und die wichtigsten Sektionen enthält.
-7. **Bericht schreiben** — Schreibe output/YYYY-MM-DD/meta/system-audit.md.
+7. **Bericht schreiben** — Schreibe output/meta/system-audit.md.
 
 ## Qualitätskriterien
 
@@ -58,6 +58,7 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 | strategy | decision-brief | ✅ / ❌ |
 | strategy | devils-advocate | ✅ / ❌ |
 | strategy | business-case-debater | ✅ / ❌ |
+| strategy | insight-validator | ✅ / ❌ |
 | spec-eval | spec-writer | ✅ / ❌ |
 | spec-eval | eval-writer | ✅ / ❌ |
 | spec-eval | build-eval | ✅ / ❌ |
@@ -89,6 +90,7 @@ Der gesamte pm-workspace/ Ordner. Verwende Glob intensiv.
 | PM-System-Übersicht.html | ✅ / ❌ |
 | PM-Teamwork-Übersicht.html | ✅ / ❌ |
 | Git-Grundlagen.html | ✅ / ❌ |
+| PTW-Workshop-Anleitung.html | ✅ / ❌ |
 
 ## CLAUDE.md
 
